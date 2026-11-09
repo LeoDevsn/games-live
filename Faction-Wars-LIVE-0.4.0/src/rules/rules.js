@@ -1,0 +1,17 @@
+// AP: current owner instruction > GDD Zero > I-B > engineering specification.
+const freeze = o => { Object.freeze(o); Object.values(o).forEach(v=>v&&typeof v==='object'&&!Object.isFrozen(v)&&freeze(v)); return o; };
+export const RULES=freeze({version:'2026-10-29/DEC-01',tick:50,prep:25000,combat:300000,results:15000,
+ units:{G:{hp:120,damage:10,range:1,speed:4,rate:10,armor:0},D:{hp:200,damage:7,range:1,speed:3,rate:7,armor:10},A:{hp:75,damage:12,range:3,speed:5,rate:12,armor:0},C:{hp:90,damage:6,nexusDamage:35,range:2,speed:2,rate:5,armor:0},N:{hp:2000,damage:20,range:4,speed:0,rate:10,armor:0}},
+ costs:{A:[1,2],G:[2,3],D:[3,4]},caps:{global:32,faction:16,lane:8,credits:20},
+ champion:{hp:115,damage:110,armor:5},abilities:{G:{duration:0,cd:12000,mult:150},A:{duration:0,cd:15000,mult:125},D:{duration:5000,cd:20000,armor:20}},
+ stances:{balanced:{damage:100,armor:0,composition:[1,1,2]},offensive:{damage:110,armor:0,composition:[2,0,2]},defensive:{damage:90,armor:15,composition:[0,2,2]}},
+ bands:[[30,15,25,30],[50,25,35,50],[100,50,85,100],[200,60,105,120],[300,70,125,140],[400,80,145,160],[500,90,165,180],[600,100,185,200],[9007199254740991,110,205,220]],
+ collective:{speech:{duration:6000,cd:20000},flame:{duration:8000,cd:30000}},wave:20000,creditLikes:200,energyLikes:100,window:10000});
+export const PROFILE=freeze({version:'spatial-4-formation-siege30',formationOrder:true,formationGap:300,siegeWaveMs:30000,archerRetreat:false,movementScale:2,movementApproval:'owner-2026-10-29',unitsPerTile:10,positionUnitsPerTile:1000,path:32000,center:16000,zoneHalf:500,wallRadius:3000,defenseRegion:4000,spawn:1000,hitbox:100,speedConvention:'approved speed in historical units/s; 10 historical units = 1 tile',sampling:'post movement / post damage',projectiles:'visual only; same-cycle damage',archerPreferred:1600});
+export const factions=['R','S'];
+export const other=f=>f==='R'?'S':'R';
+export const ordered=a=>[...a].sort((a,b)=>a.id.localeCompare(b.id,'en'));
+export function canonical(x){if(Array.isArray(x))return '['+x.map(canonical).join(',')+']';if(x&&typeof x==='object')return '{'+Object.keys(x).sort().map(k=>JSON.stringify(k)+':'+canonical(x[k])).join(',')+'}';return JSON.stringify(x);}
+// Small deterministic fingerprint for browser metadata; persistence uses SHA-256.
+export function fingerprint(x){let h=2166136261;for(const c of canonical(x))h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h.toString(16).padStart(8,'0');}
+export const rulesHash=fingerprint(RULES),profileHash=fingerprint(PROFILE);

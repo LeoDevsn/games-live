@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png -text
+*.zip -text
+*.docx -text
+*.sqlite -text
+sources/** -text
+src/ui/vendor/** -text
+
+*.blend -text

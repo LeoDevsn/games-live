@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-05T13:06:33.696Z",
+  "preparationSeconds": 30,
+  "registrationIntervalMs": 2000,
+  "periodicCheckAdvanced": true,
+  "phase": "running",
+  "round": 33,
+  "liveActive": true,
+  "connection": "connected",
+  "centralCountdownServed": true,
+  "testsPassed": 80,
+  "platformPresentationChecks": 3,
+  "sourceReloadRequired": true,
+  "externalTikTokFollowerQueries": false,
+  "preview": "../previews/arena-entrada-celular-contagem.png",
+  "localLikeMeasurementsMs": [
+    13,
+    4,
+    7
+  ],
+  "voiceCacheMs": [
+    9,
+    3
+  ]
+}

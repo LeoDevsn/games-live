@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conectar vozes — Jelly Battle</title><link rel="stylesheet" href="setup.css"><script src="setup.js" defer></script></head>
+<body><main>
+  <a href="/">← Voltar ao Jelly Battle</a><p class="eyebrow">CONFIGURAÇÃO DA LIVE</p>
+  <h1>Bob Esponja e Patrick na sua live.</h1>
+  <p>Cadastre as duas vozes da sua conta Fish Audio. Os agradecimentos vão usar o nome de quem enviar o presente.</p>
+  <section><h2>1. Conectar Fish Audio</h2>
+    <form id="setupForm" autocomplete="off">
+      <label>Chave de API Fish Audio<input id="apiKey" type="password" autocomplete="new-password" maxlength="1024" placeholder="Cole a chave de API aqui"></label>
+      <p id="keyState" role="status">Verificando configuração…</p>
+      <label>Time A · Bob Esponja<input id="voiceA" maxlength="250" placeholder="ID ou link da voz na Fish Audio" required></label>
+      <label>Time B · Patrick<input id="voiceB" maxlength="250" placeholder="ID ou link da voz na Fish Audio" required></label>
+      <p>Sugestões para ouvir: <a href="https://fish.audio/pt/m/01b057e7592b4b97a6963423f91f5e22/" target="_blank" rel="noopener noreferrer">Bob Esponja em português ↗</a> · <a href="https://fish.audio/pt/m/01e30e3594d0470bbffe7a3a39931e7c/" target="_blank" rel="noopener noreferrer">Patrick Estrela em português ↗</a></p>
+      <label>Modelo<select id="model"><option value="s2.1-pro">S2.1 Pro</option><option value="s2.1-pro-free">S2.1 Pro Free</option><option value="s2-pro">S2 Pro</option><option value="s1">S1</option><option value="drama-3">Drama 3</option></select></label>
+      <button id="save" type="submit">Salvar conexão das vozes</button><p id="saveStatus" role="status"></p>
+    </form>
+    <p class="hint">A chave é salva no arquivo privado .env deste computador. Ela não aparece no jogo ou no download do projeto.</p>
+    <p><a href="https://fish.audio/app/api-keys" target="_blank" rel="noopener noreferrer">Obter a chave na minha conta Fish Audio ↗</a></p>
+  </section>
+  <section><h2>2. Ouvir os dois personagens</h2>
+    <label>Nome para o agradecimento<input id="testName" maxlength="60" value="Larissa"></label>
+    <div class="buttons"><button id="testA" type="button">Ouvir Bob Esponja</button><button id="testB" type="button">Ouvir Patrick</button></div>
+    <p id="testStatus" role="status">Salve as vozes antes de testar. Cada geração pode consumir créditos Fish Audio.</p>
+    <audio id="preview" controls hidden></audio>
+  </section>
+  <section><h2>3. Conectar TikFinity</h2>
+    <p>Abra o TikFinity Desktop neste computador e conecte sua live. Depois confira a conexão abaixo.</p>
+    <button id="checkTikfinity" type="button">Verificar TikFinity</button><p id="tikfinityStatus" role="status">Ainda não verificado.</p>
+    <p>O espectador digita <strong>A</strong> para Bob Esponja ou <strong>B</strong> para Patrick. Os likes e presentes seguintes ajudam o time escolhido.</p>
+    <p><a href="/?studio=1">Abrir arena para transmissão →</a></p>
+  </section>
+</main></body></html>

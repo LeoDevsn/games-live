@@ -1,0 +1,1 @@
+{"version":"0.2.0","configurations":[{"name":"Faction Wars offline (Node24)","type":"node","request":"launch","program":"${workspaceFolder}/src/adapters/local/server.js","cwd":"${workspaceFolder}","console":"integratedTerminal","skipFiles":["<node_internals>/**"]}]}

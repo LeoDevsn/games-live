@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "scope": "HTTP, SSE e WebSocket reais locais com eventos sintéticos; não é LIVE real nem revisão visual",
+  "checks": [
+    "comando pelo socket inicia participação",
+    "msgId duplicado não duplica usuário/crédito",
+    "curtidas delta aplicam economia aprovada",
+    "assets atuais servidos",
+    "fonte somente leitura acompanha mesma partida"
+  ],
+  "credits": 2,
+  "personalEnergy": 4
+}

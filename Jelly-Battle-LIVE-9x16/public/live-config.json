@@ -1,0 +1,6 @@
+{
+  "websocketUrl": "ws://localhost:21213/",
+  "autoConnect": true,
+  "defaultGiftSeconds": 2,
+  "gifts": []
+}

@@ -1,0 +1,11 @@
+import http from 'node:http';import {readFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';
+export function createStudioServer({backendPort=4173}={}){return http.createServer((req,res)=>{
+ const requestPath=new URL(req.url,'http://localhost').pathname;
+ if(req.method==='POST'&&requestPath==='/api/audience/voice'){let raw='';req.on('data',chunk=>{raw+=chunk;if(raw.length>1024)req.destroy();});req.on('end',()=>{let body;try{body=JSON.parse(raw);if(body.public!==true||!Number.isInteger(body.id)||!['welcome','help'].includes(body.kind))throw Error();}catch{res.writeHead(400);res.end();return;}const upstream=http.request({hostname:'127.0.0.1',port:backendPort,path:requestPath,method:'POST',headers:{'Content-Type':'application/json'}},response=>{res.writeHead(response.statusCode,response.headers);response.pipe(res);});upstream.on('error',()=>{if(!res.headersSent)res.writeHead(502);res.end();});upstream.end(JSON.stringify(body));});return;}
+ if(req.method!=='GET'){res.writeHead(405);res.end('Somente leitura');return;}
+ const path=new URL(req.url,'http://localhost').pathname;
+ if(path==='/api/health'){const version=JSON.parse(readFileSync(fileURLToPath(new URL('../package.json',import.meta.url)))).version;res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({app:'faction-wars-capture',version,backendPort}));return;}
+ if(path==='/'||path==='/studio/overlay.js'){const file=path==='/'?'overlay.html':'overlay.js';res.writeHead(200,{'Content-Type':file.endsWith('.html')?'text/html':'text/javascript','Cache-Control':'no-store'});res.end(readFileSync(fileURLToPath(new URL('../studio/'+file,import.meta.url))));return;}
+ if(path!=='/api/stream'&&!path.startsWith('/src/')){res.writeHead(404);res.end();return;}
+ const upstream=http.get({hostname:'127.0.0.1',port:backendPort,path: path==='/api/stream'?'/api/stream?audience=1':req.url},response=>{res.writeHead(response.statusCode,response.headers);response.pipe(res);res.on('close',()=>response.destroy());});upstream.on('error',()=>{if(!res.headersSent){res.writeHead(502);res.end('Inicie npm start no PC');}else res.destroy();});res.on('close',()=>upstream.destroy());
+ });}

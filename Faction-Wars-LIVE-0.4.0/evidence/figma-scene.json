@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "checks": [
+    "texture key collision contract rejects duplicates",
+    "static sidebar image preserved separately from dynamic objective Canvas",
+    "new faction entry renders waiting and countdown states",
+    "entry overlay hides during combat",
+    "combat HUD and all 30 unit objects",
+    "end-of-route collision clearance",
+    "unit removal",
+    "winner and faction result screens",
+    "CanvasTexture refresh contracts"
+  ],
+  "scope": "Production ArenaScene methods with Phaser API contract double and real native Canvas HUD textures. Browser rendering/FPS not measured."
+}

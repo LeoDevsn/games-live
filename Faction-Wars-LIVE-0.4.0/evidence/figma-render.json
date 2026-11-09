@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "width": 1080,
+  "height": 1920,
+  "assets": [
+    "background",
+    "title",
+    "clock",
+    "credits-R",
+    "credits-S",
+    "nexus-R",
+    "nexus-S",
+    "objectives",
+    "point-A",
+    "point-B",
+    "point-C"
+  ],
+  "checks": [
+    "all local Figma images decode",
+    "actual runtime HUD and markers render",
+    "time/credits/health redraw",
+    "all objective states",
+    "sprite sheets at projected routes"
+  ],
+  "previews": [
+    "../previews/faction-wars-layout-final.png",
+    "../previews/faction-wars-combate-final.png"
+  ],
+  "scope": "Canvas components used by the runtime, with synthetic test values. Not a browser/Studio screenshot."
+}

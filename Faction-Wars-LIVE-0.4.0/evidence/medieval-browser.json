@@ -1,0 +1,213 @@
+{
+  "status": "pass",
+  "timestamp": "2026-10-29T16:03:54.408Z",
+  "sourceDigest": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "runtime": "v24.19.0",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "animationProof": {
+    "walk": [
+      2,
+      3,
+      4,
+      1
+    ],
+    "attack": [
+      2,
+      3,
+      4
+    ],
+    "hurt": [
+      2,
+      3,
+      4
+    ],
+    "death": [
+      2,
+      3
+    ]
+  },
+  "checks": [
+    "actual walking/attack/hurt/death frame advancement",
+    "actual contested Rubra owner in sidebar",
+    "Safira and neutral indicators",
+    "neutral capture progress from real step",
+    "one shared Nexus per faction",
+    "no defense label",
+    "real Siege destroys Nexus through lane C",
+    "zero HP bar",
+    "Nexus victory replay"
+  ],
+  "before": {
+    "engine": "Phaser",
+    "version": "3.90.0",
+    "ready": true,
+    "assetsReady": true,
+    "canvasWidth": 1080,
+    "canvasHeight": 1920,
+    "art": "Blender prerendered 3D",
+    "objectiveStates": [
+      {
+        "owner": "R",
+        "status": "Em contestação",
+        "label": "Em contestação · Proprietário: Aliança Rubra",
+        "progress": 200,
+        "contested": true
+      },
+      {
+        "owner": "S",
+        "status": "Coalizão Safira",
+        "label": "Coalizão Safira",
+        "progress": -200,
+        "contested": false
+      },
+      {
+        "owner": null,
+        "status": "Neutro",
+        "label": "Neutro",
+        "progress": 0,
+        "contested": false
+      }
+    ],
+    "nexusLabels": [
+      "ALIANÇA RUBRA",
+      "COALIZÃO SAFIRA"
+    ],
+    "nexusBars": {
+      "S": 8.4,
+      "R": 480
+    },
+    "objectiveSidebar": [
+      {
+        "state": "Em\ncontestação",
+        "owner": "Dono:\nRubra"
+      },
+      {
+        "state": "Coalizão\nSafira",
+        "owner": ""
+      },
+      {
+        "state": "Neutro",
+        "owner": ""
+      }
+    ],
+    "units": 7,
+    "activeFx": 0,
+    "phase": "combat",
+    "paused": true,
+    "frames": 2,
+    "framesReceived": 1,
+    "interpolatedFrames": 0,
+    "damageEffects": 0,
+    "abilityEffects": 0,
+    "birthEffects": 0,
+    "deathEffects": 0,
+    "droppedCosmetics": 0,
+    "abilities": {},
+    "animationFrames": {
+      "walk": [],
+      "attack": [],
+      "hurt": [],
+      "death": []
+    }
+  },
+  "afterRenderer": {
+    "engine": "Phaser",
+    "version": "3.90.0",
+    "ready": true,
+    "assetsReady": true,
+    "canvasWidth": 1080,
+    "canvasHeight": 1920,
+    "art": "Blender prerendered 3D",
+    "objectiveStates": [
+      {
+        "owner": "R",
+        "status": "Em contestação",
+        "label": "Em contestação · Proprietário: Aliança Rubra",
+        "progress": 200,
+        "contested": true
+      },
+      {
+        "owner": "S",
+        "status": "Coalizão Safira",
+        "label": "Coalizão Safira",
+        "progress": -200,
+        "contested": false
+      },
+      {
+        "owner": null,
+        "status": "Neutro",
+        "label": "Neutro",
+        "progress": 10,
+        "contested": false
+      }
+    ],
+    "nexusLabels": [
+      "ALIANÇA RUBRA",
+      "COALIZÃO SAFIRA"
+    ],
+    "nexusBars": {
+      "S": 0,
+      "R": 480
+    },
+    "objectiveSidebar": [
+      {
+        "state": "Em\ncontestação",
+        "owner": "Dono:\nRubra"
+      },
+      {
+        "state": "Coalizão\nSafira",
+        "owner": ""
+      },
+      {
+        "state": "Neutro",
+        "owner": ""
+      }
+    ],
+    "units": 5,
+    "activeFx": 6,
+    "phase": "results",
+    "paused": true,
+    "frames": 128,
+    "framesReceived": 39,
+    "interpolatedFrames": 73,
+    "damageEffects": 9,
+    "abilityEffects": 2,
+    "birthEffects": 0,
+    "deathEffects": 2,
+    "droppedCosmetics": 0,
+    "abilities": {
+      "Golpe Poderoso": 2
+    },
+    "animationFrames": {
+      "walk": [
+        2,
+        3,
+        4,
+        1
+      ],
+      "attack": [
+        2,
+        3,
+        4
+      ],
+      "hurt": [
+        2,
+        3,
+        4
+      ],
+      "death": [
+        2,
+        3
+      ]
+    },
+    "hurtEffects": 6
+  },
+  "errors": []
+}

@@ -1,0 +1,913 @@
+{
+  "source": "Arena Figma.zip / local .fig",
+  "stage": {
+    "width": 941,
+    "height": 1672
+  },
+  "arena": {
+    "id": "1:27",
+    "name": "Arena — fundo",
+    "type": "ROUNDED_RECTANGLE",
+    "parentId": "0:1",
+    "size": {
+      "x": 941,
+      "y": 1672
+    },
+    "transform": {
+      "m00": 1,
+      "m01": 0,
+      "m02": 0,
+      "m10": 0,
+      "m11": 1,
+      "m12": 0
+    },
+    "visible": true
+  },
+  "colliderGroup": {
+    "id": "22:72",
+    "name": "COLISORES",
+    "type": "FRAME",
+    "parentId": "0:1",
+    "size": {
+      "x": 1008.6630859375,
+      "y": 1658.6632080078125
+    },
+    "transform": {
+      "m00": 1,
+      "m01": 0,
+      "m02": -32,
+      "m10": 0,
+      "m11": 1,
+      "m12": -32
+    },
+    "visible": true
+  },
+  "colliders": [
+    {
+      "id": "12:22",
+      "name": "bloco-colisor",
+      "type": "ROUNDED_RECTANGLE",
+      "parentId": "22:72",
+      "size": {
+        "x": 77,
+        "y": 944
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 302,
+        "m10": 0,
+        "m11": 1,
+        "m12": 286
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                77,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                77,
+                944
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                944
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12:24",
+      "name": "bloco-colisor",
+      "type": "ROUNDED_RECTANGLE",
+      "parentId": "22:72",
+      "size": {
+        "x": 77,
+        "y": 944
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 561,
+        "m10": 0,
+        "m11": 1,
+        "m12": 286
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                77,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                77,
+                944
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                944
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12:26",
+      "name": "bloco-colisor",
+      "type": "ROUNDED_RECTANGLE",
+      "parentId": "22:72",
+      "size": {
+        "x": 85,
+        "y": 1014
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 43,
+        "m10": 0,
+        "m11": 1,
+        "m12": 291
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                85,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                85,
+                1014
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                1014
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12:28",
+      "name": "bloco-colisor",
+      "type": "ROUNDED_RECTANGLE",
+      "parentId": "22:72",
+      "size": {
+        "x": 86,
+        "y": 965
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 811,
+        "m10": 0,
+        "m11": 1,
+        "m12": 324
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                86,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                86,
+                965
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                965
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12:30",
+      "name": "bloco-colisor",
+      "type": "ELLIPSE",
+      "parentId": "22:72",
+      "size": {
+        "x": 257,
+        "y": 223
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 341,
+        "m10": 0,
+        "m11": 1,
+        "m12": 1248
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                257,
+                111.5
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                257,
+                173.07974243164062,
+                199.46859741210938,
+                223,
+                128.5,
+                223
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                57.531410217285156,
+                223,
+                0,
+                173.07974243164062,
+                0,
+                111.5
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                0,
+                49.920249938964844,
+                57.531410217285156,
+                0,
+                128.5,
+                0
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                199.46859741210938,
+                0,
+                257,
+                49.920249938964844,
+                257,
+                111.5
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12:31",
+      "name": "bloco-colisor",
+      "type": "ELLIPSE",
+      "parentId": "22:72",
+      "size": {
+        "x": 257,
+        "y": 223
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 341,
+        "m10": 0,
+        "m11": 1,
+        "m12": 74.00001525878906
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                257,
+                111.5
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                257,
+                173.07974243164062,
+                199.46859741210938,
+                223,
+                128.5,
+                223
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                57.531410217285156,
+                223,
+                0,
+                173.07974243164062,
+                0,
+                111.5
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                0,
+                49.920249938964844,
+                57.531410217285156,
+                0,
+                128.5,
+                0
+              ]
+            },
+            {
+              "kind": "C",
+              "values": [
+                199.46859741210938,
+                0,
+                257,
+                49.920249938964844,
+                257,
+                111.5
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21:64",
+      "name": "bloco-colisor",
+      "type": "VECTOR",
+      "parentId": "22:72",
+      "size": {
+        "x": 251.21585083007812,
+        "y": 377.6327819824219
+      },
+      "transform": {
+        "m00": 0.7071067094802856,
+        "m01": 0.7071067094802856,
+        "m02": -32.000003814697266,
+        "m10": -0.7071067094802856,
+        "m11": 0.7071067094802856,
+        "m12": 1359.636474609375
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                125.60758972167969,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21:66",
+      "name": "bloco-colisor",
+      "type": "VECTOR",
+      "parentId": "22:72",
+      "size": {
+        "x": 251.21585083007812,
+        "y": 377.6327819824219
+      },
+      "transform": {
+        "m00": 0.7071067094802856,
+        "m01": -0.7071067094802856,
+        "m02": 799.0266723632812,
+        "m10": 0.7071067094802856,
+        "m11": 0.7071067094802856,
+        "m12": 1173
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                125.60758972167969,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21:68",
+      "name": "bloco-colisor",
+      "type": "VECTOR",
+      "parentId": "22:72",
+      "size": {
+        "x": 251.21585083007812,
+        "y": 377.6327819824219
+      },
+      "transform": {
+        "m00": 0.30901697278022766,
+        "m01": -0.9510564208030701,
+        "m02": 376.15008544921875,
+        "m10": 0.9510564208030701,
+        "m11": 0.30901697278022766,
+        "m12": -31.999985832522725
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                125.60758972167969,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21:70",
+      "name": "bloco-colisor",
+      "type": "VECTOR",
+      "parentId": "22:72",
+      "size": {
+        "x": 251.21585083007812,
+        "y": 377.6327819824219
+      },
+      "transform": {
+        "m00": 0.30901697278022766,
+        "m01": 0.9510564208030701,
+        "m02": 483,
+        "m10": -0.9510564208030701,
+        "m11": 0.30901697278022766,
+        "m12": 206.92044067382812
+      },
+      "visible": true,
+      "geometry": [
+        {
+          "windingRule": "NONZERO",
+          "commands": [
+            {
+              "kind": "M",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                0,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                125.60758972167969,
+                0
+              ]
+            },
+            {
+              "kind": "L",
+              "values": [
+                251.21583557128906,
+                377.6327819824219
+              ]
+            },
+            {
+              "kind": "Z",
+              "values": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "id": "1:18",
+      "name": "HUD — Créditos Rubra",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 119,
+        "y": 111
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 820,
+        "m10": 0,
+        "m11": 1,
+        "m12": 1214
+      },
+      "visible": true
+    },
+    {
+      "id": "5:19",
+      "name": "HUD — Vida Aliança Rubra",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 215,
+        "y": 69
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 362,
+        "m10": 0,
+        "m11": 1,
+        "m12": 1395
+      },
+      "visible": true
+    },
+    {
+      "id": "5:32",
+      "name": "Faction Wars — nome do jogo em moldura dourada",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 434,
+        "y": 73
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 0,
+        "m10": 0,
+        "m11": 1,
+        "m12": 6
+      },
+      "visible": true
+    },
+    {
+      "id": "5:35",
+      "name": "HUD — Tempo Combate",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 158,
+        "y": 98
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 754,
+        "m10": 0,
+        "m11": 1,
+        "m12": 14
+      },
+      "visible": true
+    },
+    {
+      "id": "10:2",
+      "name": "HUD — Créditos Safira",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 119,
+        "y": 111
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 811,
+        "m10": 0,
+        "m11": 1,
+        "m12": 243
+      },
+      "visible": true
+    },
+    {
+      "id": "10:3",
+      "name": "HUD — Objetivos",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 125,
+        "y": 596
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 811,
+        "m10": 0,
+        "m11": 1,
+        "m12": 486
+      },
+      "visible": true
+    },
+    {
+      "id": "10:4",
+      "name": "HUD — Vida Coalizão Safira",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 215,
+        "y": 69
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 363,
+        "m10": 0,
+        "m11": 1,
+        "m12": 85
+      },
+      "visible": true
+    },
+    {
+      "id": "12:10",
+      "name": "Mapa — B — Neutro",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 76,
+        "y": 76
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 432,
+        "m10": 0,
+        "m11": 1,
+        "m12": 684
+      },
+      "visible": true
+    },
+    {
+      "id": "12:16",
+      "name": "Mapa — A — Neutro",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 76,
+        "y": 76
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 186,
+        "m10": 0,
+        "m11": 1,
+        "m12": 684
+      },
+      "visible": true
+    },
+    {
+      "id": "20:34",
+      "name": "Mapa — C — Neutro",
+      "type": "FRAME",
+      "parentId": "0:1",
+      "size": {
+        "x": 76,
+        "y": 76
+      },
+      "transform": {
+        "m00": 1,
+        "m01": 0,
+        "m02": 678,
+        "m10": 0,
+        "m11": 1,
+        "m12": 687
+      },
+      "visible": true
+    }
+  ],
+  "referenceBoard": {
+    "id": "20:31",
+    "name": "Objetivos — marcadores para o mapa",
+    "type": "FRAME",
+    "parentId": "0:1",
+    "size": {
+      "x": 560,
+      "y": 620
+    },
+    "transform": {
+      "m00": 1,
+      "m01": 0,
+      "m02": 1041,
+      "m10": 0,
+      "m11": 1,
+      "m12": 486
+    },
+    "visible": true
+  },
+  "status": "Imported geometry and design positions only; not integrated into the running game."
+}

@@ -1,0 +1,345 @@
+Matriz de rastreabilidade atualizada
+Requisitos vigentes estados documentais e cobertura
+Faction Wars LIVE | Reauditoria independente | 28 de outubro de 2026
+APROVADO = declarado aprovado na consolidação; PROVISÓRIO = referência de simulação/proposta, sem força de regra final; PENDENTE = decisão ou especificação ausente; SUBSTITUÍDO = regra histórica superada. VALIDAR/NÃO VERIFICADO é eixo de evidência, não revogação de aprovação. “Resolvido documentalmente” fecha o escopo de regra identificado, sem alegar funcionamento técnico.
+R01–R33 mantêm identidade da matriz anterior; R34–R43 cobrem as novas decisões. WT-001–060 foram revisados, WT-061–084 são novos. A coluna de testes aponta cenários futuros, nunca evidência de execução.
+Requisitos 1 a 8
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R01§1
+Objetivo, fictício, PT/EN, migração autorizadaAprovado
+S3/S4/S5WT-34,40,51,52WORK-AUD 018,024,029
+R02I-A/G; I-B §1
+25 s preparação, até 300 s combate, 15 s resultados; tempo lógico pausaAprovado com bordas pendentes
+S2→S3/S4/S5WT-017,018,023,079WORK-AUD 009
+R03I-B §1; II §§2/5
+Resultado único, destruição Nexus e empate técnico; timeout sem HPAprovado com ordem pendente
+S1/S2→S4/S5WT-15,16,42WORK-AUD 007,026
+R04I-B §1
+Atributos novos G 10/A 12, alcances 1/3/1 e velocidades 4/5/3Aprovado
+S1→S2WT-06,07,09,10,55,60WORK-AUD 001,002
+R05I-B §§1/2
+24 convencionais+6 Cercos iniciais; limites convencionais 32/16/8Aprovado; cap Cerco pendente
+S1/S3WT-01,02,53WORK-AUD 006
+R06§3.3
+Posturas e arredondamento finalAprovado
+S1/S3WT-06,07,11WORK-AUD 002
+R07§3.4; AT-03
+Bônus e exclusividade de CampeãoAprovado
+S1/S3WT-02,03,04,33,55WORK-AUD 003,006
+R08I-D
+Muralha próprio+até 3 aliados; seleção 2 Cercos+1 tropaAprovado com detalhes pendentes
+S1/S3/S5WT-06,07,08,33WORK-AUD 002,003
+
+Requisitos 9 a 16
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R09§3.6
+IA determinística e recuo permanenteAprovado com detalhes abertos
+S1/S2/S5WT-09,10,43WORK-AUD 001,004
+R10§4.1; AT-04/08/09
+Custos, likes/créditos e decaimentoAprovado
+S3→S1/S5WT-03,24,26,27,28WORK-AUD 014
+R11I-B §2
+Até 2 convocações sequenciais, sem fila; Campeão automáticoAprovado
+S3→S1/S4WT-003,004,005,019,053,061,062,063,064,082WORK-AUD 005,006,012
+R12I-B §2
+Categorias de rota separadas; voto associado à classeAprovado com substituição pendente
+S3/S1/S4WT-20,21,22,23WORK-AUD 012,013,019
+R13I-C; I-B §§1/8
+Neutro 10 s; reversão 20 s ou 10 s com Cerco; crédito MVP separadoAprovado com bordas pendentes
+S2/S1WT-012,013,065,066,067,068WORK-AUD 001,008,035,042
+R14I-B §1
+Nexus 2000 HP, ataque 20/1 s/4 tiles; maioria só no timeoutAprovado; contagem contestada pendente
+S2/S1/S4WT-014,015,016,077,078WORK-AUD 007,008,031,040
+R15I-B §2
+Aliases G/W, D/GD, A aprovados; PT/ENAprovado; normalização pendente
+S3/S5WT-21,22,51,56WORK-AUD 013,029
+R16§6.2
+3 ações, facção fixa, substituição e status 30 sAprovado com gramática aberta
+S3/S4WT-20,21,22,23,47,56WORK-AUD 012,013,019
+
+Requisitos 17 a 24
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R17I-F; I-B §1
+Contagem pessoal por 100 likes, resíduos na partida, independente de tetoAprovado; provedor não verificado
+S3/S4/S5WT-24,25,28,37WORK-AUD 010,011,014
+R18§6.3; AT-10/13
+Atividade 60 s, amostra 30 s, 2 mediçõesAprovado com zero e identidade abertos
+S3/S1WT-29,30,54WORK-AUD 016
+R19§6.4; AT-23
+Presentes exclusivamente cosméticosAprovado
+S3/S5/S4WT-34,46WORK-AUD 018,027,029
+R20§7.1; AT-10/11
+9 faixas, 100 likes/E e teto 2×DiscursoAprovado
+S3/S1/S4WT-24,29,31,32WORK-AUD 010,015,016
+R21§7.2; AT-11/12
+Autocast, rodízio flexível, CDs própriosAprovado com simultaneidade aberta
+S3/S1/S5WT-31,32,33WORK-AUD 015
+R22I-F; I-B §1
+XP 30/100/20; 3×até 50 votos; 2 E; anulada 30Aprovado com admissão pendente
+S4/S3/S5WT-035,036,037,038,079,084WORK-AUD 010,019,021,026
+R23§8.2
+Curva 25(n−1)²+75(n−1)Aprovado; rebalanceamento não autorizado
+S4/S3WT-39WORK-AUD 020
+R24§8.3; AT-26
+14 faixas de patente e continuidade 101+Aprovado
+S4/S5WT-39,40,57WORK-AUD 024
+
+Requisitos 25 a 32
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R25II §8.4; I-B §6
+Rankings históricos e temporadas; distinguir dos novos MVPsAprovado com detalhes pendentes
+S4/S3/S5WT-35,40,59WORK-AUD 022,024
+R26II §8.5; I-B §9
+Quatro conquistas históricas versus pendência geral atualPendente de esclarecimento de escopo
+S4/S3WT-38,41,58WORK-AUD 021,023,039
+R27§9; AT-23/24
+1080×1920, cores, áudio e efeitosAprovado com critérios visuais abertos
+S5/S1/S2/S3WT-46,51WORK-AUD 029
+R28§10.1
+Node/Phaser/SQLite e integraçãoProposta técnica; validação externa
+S5/S3WT-25,45,47,48,52WORK-AUD 011,017,018,028
+R29I-G
+Checkpoint 10 s, log durável, commit único, resultado antes do prêmioAprovado; protocolo e execução pendentes
+TodosWT-018,042,043,044,045,050,053,081,082WORK-AUD 009,021,025,026
+R30I-B §9; II §10.3
+20 Hz/60 FPS/100 eventos/s/24 h; incluir CercosMetas; não verificadas
+TodosWT-048,049,050,077WORK-AUD 027,028,032
+R31Abertura; I-H; I-B §1
+Histórico preservado com substituições de 28/10Substituído onde há decisão posterior
+TodosWT-01,03,19,24,26,31,35WORK-AUD —
+R32Abertura; I-B §9
+Precedência posterior e aprovação exclusiva do proprietárioAprovado
+TodosWT-01 a 54; registro de decisõesWORK-AUD 030
+
+Requisitos 33 a 40
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R33Abertura; I-B §9
+Consolidação para reauditoria, sem autorização de implementarAprovado
+TodosReauditoria antes do handoffWORK-AUD 030
+R34I-B §1
+Cerco automático por 20 s, ataque 6/35, captura eavançoAprovado; cap/efeitos pendentes
+S1→S2/S5WT-055,065,066,077,078WORK-AUD 001,032,040,042
+R35I-B §3
+Representante automático, P=5 E+10 V, prioridade nunca representadosAprovado com snapshot pendente
+S3→S1/S4/S5WT-072,073,074,082WORK-AUD 006,025,037
+R36I-B §4
+Seis estatísticas por nascimento e totais por espectadorAprovado com atribuição pendente
+S1/S2→S4/S5WT-071,081WORK-AUD 025,036
+R37I-B §§6/9
+MVP por classe/facção, até 6, sem ranking permanenteConceito aprovado; fórmula pendente
+S1/S2/S3→S4/S5WT-074,075,076WORK-AUD 033,036
+R38I-B §6
+Pesos 25/30/20/10/15; 10/10/20/45/15; 35/30/10/5/20Provisório para simulação
+S4/S5WT-075WORK-AUD 033
+R39I-B §7
+Defesa porcausalidade, ameaça dinâmica, sem dupla contagemAprovado; detector pendente
+S1→S4/S5WT-069,070WORK-AUD 003,034,036
+R40I-B §8
+Progresso efetivo igualmente entre Campeões, sem estornoAprovado; precisão/escopo pendentes
+S2→S4/S5WT-067,068,081WORK-AUD 008,025,035,042
+
+Requisitos 41 a 43
+ID e fonte
+Requisito e estado
+Dependências e rastreio
+R41I-B §4
+!meustatus/!mystatus e relatório próprioConceito aprovado; resposta pública proposta
+S3/S4/S5WT-080,083WORK-AUD 011,017,024,027,038
+R42I-B §5
+3 telas de 5 s; sem MVP anulada; 6/7 s não aprovadosAprovado; layout pendente
+S2/S4→S5WT-038,051,076WORK-AUD 029,033
+R43I-B §§4/9
+Conquistas novas de Campeão e portal futuroPendente; fora da entrega inicial para portal
+S4/S5WT-058,080WORK-AUD 039
+
+Substituições expressas que afetam aceitação
+Histórico superado
+Regra atual
+Testes
+Estados 30/240/300 eespera prolongada
+25/até 300/15, ciclo máx 340
+WT-017/018
+Domínio 3 pontos por 15 s e HP no timeout
+Sem vitória antecipada territorial; maioria de 3 no timeout, se não empate
+WT-014/015/016
+Danos G 12/A 10 e alcances 2/16/2
+G 10/A 12, D 7; alcances 1/3/1
+WT-006/055/060
+Formação somente 24 e 32 entidades totais
+24 convencionais+6 Cercos; 32 só convencionais
+WT-001/048/077
+Muralha até 2 aliados
+Até 3; preferência 2 Cercos+1 tropa
+WT-008/069
+Quantidade porjanela não fechada
+Até 2 sequenciais; sem fila
+WT-053/061/062/063
+2 XP×até 25 votos e 3 XP/E
+3 XP×até 50 e 2 XP/E
+WT-035/036/037/084
+Entrada durante combate
+Entrada tardia enfila próxima; sem participação atual
+WT-079
+Aliases apenas propostos
+G/W, D/GD, A oficiais
+WT-056
+Replay, ficha privada, rodízio terceira tela
+3 telas de 5 s; MVPs por facção
+WT-076
+APROVADO não elimina lacunas de fronteira. PROVISÓRIO: pesos MVP de referência, stack Node/Phaser/SQLite, saída pública de consulta, 6/7 s por tela e portal futuro não se tornam requisitos finais. O portal está fora da entrega inicial.
+
+Reconciliação deAT01 aAT26
+AT histórico
+Situação em28/10
+WT atuais
+AT-01
+Revisado
+001,055,077
+AT-02
+Preservado só para convencionais
+002,005,053,077
+AT-03
+Preservado e ampliado para representante
+002,003,004,072,073
+AT-04
+Preservado
+003,004,061,062
+AT-05
+Preservado
+003,005,061
+AT-06
+Detalhado
+019,020,023,063,064
+AT-07
+Preservado
+021,025,036,053,083
+AT-08
+Detalhado pessoal/coletivo
+024,028,037
+AT-09
+Preservado com lacunas
+026,027
+AT-10
+Preservado com lacunas
+029,030
+AT-11
+Preservado com Cerco a esclarecer
+031,032,078
+AT-12
+Preservado com marcador pendente
+032,082
+AT-13
+Preservado
+030
+AT-14
+Revisado para Cerco
+012,013,065,066,067
+AT-15
+Substituído
+014,016
+AT-16
+Preservado; ordem pendente
+015
+AT-17
+Substituído
+017,018
+AT-18
+Substituído valores; resultado exclusivo
+035,036,037,084
+AT-19
+Preservado; sem MVP
+038,044,076
+AT-20
+Detalhado documentalmente
+042,050
+AT-21
+Ampliado estado novo
+043,044,053,081,082
+AT-22
+Preservado
+045
+AT-23
+Ampliado telas/saída
+034,046,051,076,080
+AT-24
+Revisar carga com Cercos
+048,049,050,077
+AT-25
+Escopo deconquistas pendente
+025,040,041,058,059
+AT-26
+Preservado
+040,057
+
+Reconciliação das pendênciasP01 aP19
+P histórico
+Reconciliação
+WORK-AUD
+P-01
+XP/E mudou para 2; curva vigente; ritmo/antiabuso abertos
+010,016,020
+P-02
+Unidade pessoal resolvida; payload não verificado
+010,011
+P-03
+Janela/duas tentativas resolvidas; parciais residuais
+005,012,013
+P-04
+Rota por classe definida; substituição/rodízio residuais
+012
+P-05
+Semfila/cancelamento resolvidos; atomicidade pendente
+005,006
+P-06
+Autocast/ordem ainda abertos
+015
+P-07
+Participação na preparação definida; bordas/recuperação abertas
+019,021,025,026
+P-08
+Integração ampliada e não verificada
+011,017,038
+P-09
+Publicação não homologada
+018
+P-10
+Rollover aberto
+022
+P-11
+Rankings/conquistas/MVP não confundir
+021,022,023,033,039
+P-12
+Intervalo reforço fechado; relógio de admissão aberto
+009,012,027
+P-13
+Domínio 15 s superado; ordem resultado aberta
+002,007,031
+P-14
+Mapa 32 tiles e Muralha 3 aliados; geometria/raio abertos
+001,003,004,008
+P-15
+Resíduos pessoais dentro partida; coletivos/replay abertos
+014,025
+P-16
+Recalibrar metas após combate 300 s e 2 convocações
+020,028,032
+P-17
+Buffs em spawn/Cerco pendentes
+002,003,015,040
+P-18
+Aliases aprovados; safearea/nomenclatura pendentes
+013,024,029
+P-19
+Retema futuro condicionado; direitos/escopo abertos
+018,024,039
+Novas pendências de I-B §9: fórmula MVP→033; defesa→034; território→035/042; Tik Tok→011/017/038; status→038; MVP elegível→033; conquistas→039; limites→001/007/028/032; reforços extremos→006/012/053(testes); auditoria anterior→esta matriz. Não há item P 0/P 1 tratado como teste executado.

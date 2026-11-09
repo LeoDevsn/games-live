@@ -1,0 +1,2 @@
+import {createStudioServer} from './studio-server.js';
+const server=createStudioServer({backendPort:Number(process.env.PORT)||4173});server.on('error',e=>{console.error(e.message);process.exitCode=1;});server.listen(Number(process.env.STUDIO_PORT)||4176,'127.0.0.1',()=>console.log('Arena para captura: http://127.0.0.1:'+(server.address().port)+' — 1080×1920, somente leitura. Mantenha npm start aberto e controle a batalha por lá. Não inicia transmissão.'));for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>{server.closeAllConnections();server.close();});

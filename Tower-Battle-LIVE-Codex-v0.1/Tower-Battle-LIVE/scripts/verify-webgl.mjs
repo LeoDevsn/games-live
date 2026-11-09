@@ -1,0 +1,21 @@
+// Local application QA in a fresh, disposable browser profile; never attaches to user tabs.
+import {spawn} from 'node:child_process';
+import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {desktopAppCommand} from '../../../shared/desktop-app.mjs';
+const root=path.resolve(import.meta.dirname,'..'),url='http://127.0.0.1:4196/?studio=1',folder=path.join(root,'.runtime','browser-qa','run-'+Date.now());mkdirSync(folder,{recursive:true});
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const executable=desktopAppCommand(url).executable;
+const child=spawn(executable,['--headless=new','--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--user-data-dir='+folder,'--no-first-run','--no-default-browser-check','--window-size=1080,1920','about:blank'],{windowsHide:true,stdio:'ignore'});
+let ws;const pending=new Map(),errors=[],httpFailures=[];let serial=0;
+function call(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{pending.delete(id);reject(Error(method+' timed out'));},12000);pending.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});ws.send(JSON.stringify({id,method,params}));});}
+try{
+ let port;for(let i=0;i<100;i++){try{port=Number(readFileSync(path.join(folder,'DevToolsActivePort'),'utf8').split('\n')[0]);if(port)break;}catch{}if(child.exitCode!==null)throw Error('Browser exited before QA');await wait(100);}if(!port)throw Error('Headless browser did not expose its test endpoint');
+ const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`)).json(),page=targets.find(p=>p.type==='page'&&p.url==='about:blank');assert.ok(page);const endpoint=new URL(page.webSocketDebuggerUrl);assert.ok(['127.0.0.1','localhost'].includes(endpoint.hostname));
+ ws=new WebSocket(endpoint);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});ws.onmessage=event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(m.error)p?.reject(Error(m.error.message));else p?.resolve(m.result);}else if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);else if(m.method==='Network.responseReceived'&&m.params.response.status>=400&&!m.params.response.url.endsWith('/favicon.ico'))httpFailures.push({url:new URL(m.params.response.url).pathname,status:m.params.response.status});};
+ await call('Runtime.enable');await call('Network.enable');await call('Page.enable');await call('Emulation.setDeviceMetricsOverride',{width:1080,height:1920,deviceScaleFactor:1,mobile:false});await call('Page.navigate',{url});
+ let observed;for(let i=0;i<70;i++){try{const r=await call('Runtime.evaluate',{expression:"Promise.all([import('/render.js'),import('/tower-theme.js')]).then(([r,t])=>({renderer:r.renderDiagnostics(),assets:Object.fromEntries(Object.entries(t.themeAssets()).map(([key,image])=>[key,{width:image.width,height:image.height}])),canvas:document.getElementById('arena')?{width:document.getElementById('arena').width,height:document.getElementById('arena').height}:null}))",awaitPromise:true,returnByValue:true});observed=r.result?.value;if(observed?.renderer.renderer==='WebGL 3D'&&Object.keys(observed.assets).length===3)break;}catch{}await wait(100);}
+ assert.equal(observed?.renderer.renderer,'WebGL 3D',JSON.stringify(observed));assert.equal(Object.keys(observed.assets).length,3);assert.deepEqual(observed.canvas,{width:1080,height:1920});await wait(700);const capture=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});const out=path.resolve(root,'../../previews/tower-sirigueijo-plankton-webgl.png');writeFileSync(out,Buffer.from(capture.data,'base64'));assert.deepEqual(errors,[]);assert.deepEqual(httpFailures,[]);
+ mkdirSync(path.join(root,'evidence'),{recursive:true});const report={status:'pass',checkedAt:new Date().toISOString(),...observed,errors,httpFailures,screenshot:out,scope:'Isolated headless Edge; preview database, LIVE input and speech disabled.'};writeFileSync(path.join(root,'evidence/theme-webgl.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+}finally{if(ws?.readyState===WebSocket.OPEN){await call('Browser.close').catch(()=>{});ws.close();}if(child.exitCode===null)child.kill();}

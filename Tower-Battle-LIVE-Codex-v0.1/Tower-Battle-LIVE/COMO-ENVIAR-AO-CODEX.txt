@@ -1,0 +1,11 @@
+TOWER BATTLE LIVE — INSTRUÇÕES PARA O CODEX
+
+1) Envie este ZIP ao Codex (ou extraia no repositório que ele abrirá).
+2) Abra CODEX_HANDOFF.md e README.md.
+3) Cole o texto abaixo no Codex:
+
+"Implemente a Fase P0 do CODEX_HANDOFF.md do Tower Battle LIVE. Comece executando npm test e rodando o protótipo existente. Não recrie o jogo do zero. Priorize a integração e diagnóstico da conexão TikFinity, replay técnico e testes de regressão. Preserve o jogo 9:16, o início automático no primeiro A/B e o loop de rodadas. Não invente novas regras nem manipule meu Faction Wars LIVE. Entregue os arquivos corrigidos e os resultados dos testes."
+
+4) Para testar sua LIVE, abra o TikFinity Desktop no mesmo Windows e envie A ou B no chat.
+
+Importante: WebSocket conectado não comprova recebimento de eventos LIVE.

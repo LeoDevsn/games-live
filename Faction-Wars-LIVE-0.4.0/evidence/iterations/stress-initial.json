@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "fixture": "synthetic no-death HP override; 2 independent 300s matches, 122 living actors",
+  "ticks": 12000,
+  "events": 60000,
+  "logicalDurationMs": 600000,
+  "eventsPerLogicalSecond": 100,
+  "wallMs": 401604.43386299995,
+  "p95TickMs": 36.28530200000387,
+  "p99TickMs": 46.099090999981854,
+  "maxTickMs": 307.84982200000377,
+  "memoryStart": {
+    "rss": 33030144,
+    "heapTotal": 8122368,
+    "heapUsed": 6384184,
+    "external": 2245663,
+    "arrayBuffers": 143647
+  },
+  "memoryEnd": {
+    "rss": 376766464,
+    "heapTotal": 286785536,
+    "heapUsed": 152116896,
+    "external": 2303797,
+    "arrayBuffers": 143611
+  },
+  "backlog": 0,
+  "hashes": [
+    {
+      "live": "0a41009e419a55b419344cfb2bd90a8bdbff0a3d3e835b2ec5af50e804332977",
+      "replay": "0a41009e419a55b419344cfb2bd90a8bdbff0a3d3e835b2ec5af50e804332977"
+    },
+    {
+      "live": "a97ad9e26abb4ffbc0f2c7983a1369c00cd3d99197330dfd34c7d12ccc110096",
+      "replay": "a97ad9e26abb4ffbc0f2c7983a1369c00cd3d99197330dfd34c7d12ccc110096"
+    }
+  ],
+  "hardware": {
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cores": 5,
+    "memory": 35743760384
+  },
+  "runtime": "v24.19.0",
+  "renderFps": "Measured separately in browser.json; stress itself is headless"
+}

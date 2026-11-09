@@ -1,0 +1,25 @@
+Resumo executivo da reauditoria
+Maturidade documental e decisões prioritárias
+Faction Wars LIVE | Reauditoria independente | 28 de outubro de 2026
+Parecer: a consolidação avança no fechamento das regras, mas permanecem bloqueadores de resultado, integração, recuperação e MVP. Não está pronta para liberação integral de implementação. Todas as recomendações aguardam avaliação do proprietário; nenhuma altera o GDD.
+Evidência: leitura integral do GDD consolidado de 28/10 e dos cinco relatórios de 24/10, comparação documental e conferência aritmética. Não houve implementação, execução do jogo, ensaio de carga, teste de integração ou publicação. A consulta a documentação pública não equivale a validação do ambiente real.
+O que avançou
+Três achados anteriores podem ser encerrados no nível documental: WORK-AUD-005, quantidade/expiração de reforços; 010, energia pessoal por 100 likes e resíduos; 026, resultado e prêmios transacionais/idempotentes. Outros 16 foram parcialmente resolvidos, 10 continuam abertos e 030 é opcional parcialmente atendido. Todos permanecem sem validação técnica executada.
+Regras atuais incluem 25 s de preparação, até 300 s de combate, 15 s de resultados, até 2 convocações sequenciais e XP 3 por voto até 50, mais 2 por energia pessoal. Domínio de 3 pontos por 15 s não encerra mais partida. Esses avanços não devem ser revertidos para os valores da auditoria anterior.
+O que ainda impede liberação integral
+Há 4 achados críticos atuais: 007 ordem do resultado; 011 contrato real do provedor; 025 recuperação completa; 031 contagem de posse contestada no timeout. Entre os 12 novos achados, os MVPs exigem fórmula final, normalização, elegibilidade, defesa causal e atribuição estatística. Os pesos fornecidos são provisórios.
+Indicador
+Situação
+Achados atuais
+42 IDs preservados/novos: 3 resoluções documentais; 4 críticos, 27 altos, 6 médios e 2 baixos opcionais.
+Bloqueadores
+B01–B07 reavaliados; B08 novo para MVP/estatísticas. Nenhum grupo integralmente encerrado.
+Cobertura
+43 grupos de requisitos, 84 testes futuros, 26 AT e 19 P históricos reconciliados.
+Matemática
+Curva correta; exemplo atual 1140 XP. Cerco: 90 gerados antes 300 s, sem mortes; mais 32 convencionais=122 entidades potenciais.
+Evidência
+Análise documental e aritmética; nenhum teste de jogo, integração, carga ou publicação executado.
+Decisão pedida ao proprietário
+Priorizar resultado/tick, captura contestada e contratos de MVP; depois fechar parsing, representação, conquistas e persistência. Solicitar consolidação somente das decisões expressamente aprovadas. Aceitar uma recomendação não autoriza automaticamente integração, implementação ou publicação.
+Os cinco documentos entregues mantêm IDs WORK-AUD, WT, R e B para revisão conjunta. Nenhum GDD original ou anexo foi modificado. A aprovação final continua exclusivamente com o proprietário.

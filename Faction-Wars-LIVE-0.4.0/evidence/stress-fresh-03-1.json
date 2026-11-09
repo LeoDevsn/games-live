@@ -1,0 +1,11 @@
+{
+  "tick": 6000,
+  "result": {
+    "id": "stress-medieval-03-1:result",
+    "winner": null,
+    "reason": "timeout",
+    "combatMs": 300000
+  },
+  "hash": "2497fdbefca563e4e0bc484f81adb692eaef52ee9779d1fb2aeafbc4b8b7b562",
+  "representatives": []
+}

@@ -1,0 +1,292 @@
+{
+  "sourceDigest": "89ba907e0357d3821ad6420653deb99f403d61b299926e828f6c4d4dc79d302d",
+  "paced": true,
+  "admissionWallMs": 600010.580005,
+  "queueSamples": [
+    {
+      "tick": 0,
+      "queued": 0
+    },
+    {
+      "tick": 200,
+      "queued": 0
+    },
+    {
+      "tick": 400,
+      "queued": 0
+    },
+    {
+      "tick": 600,
+      "queued": 0
+    },
+    {
+      "tick": 800,
+      "queued": 0
+    },
+    {
+      "tick": 1000,
+      "queued": 0
+    },
+    {
+      "tick": 1200,
+      "queued": 0
+    },
+    {
+      "tick": 1400,
+      "queued": 0
+    },
+    {
+      "tick": 1600,
+      "queued": 0
+    },
+    {
+      "tick": 1800,
+      "queued": 0
+    },
+    {
+      "tick": 2000,
+      "queued": 0
+    },
+    {
+      "tick": 2200,
+      "queued": 0
+    },
+    {
+      "tick": 2400,
+      "queued": 0
+    },
+    {
+      "tick": 2600,
+      "queued": 0
+    },
+    {
+      "tick": 2800,
+      "queued": 0
+    },
+    {
+      "tick": 3000,
+      "queued": 0
+    },
+    {
+      "tick": 3200,
+      "queued": 0
+    },
+    {
+      "tick": 3400,
+      "queued": 0
+    },
+    {
+      "tick": 3600,
+      "queued": 0
+    },
+    {
+      "tick": 3800,
+      "queued": 0
+    },
+    {
+      "tick": 4000,
+      "queued": 0
+    },
+    {
+      "tick": 4200,
+      "queued": 0
+    },
+    {
+      "tick": 4400,
+      "queued": 0
+    },
+    {
+      "tick": 4600,
+      "queued": 0
+    },
+    {
+      "tick": 4800,
+      "queued": 0
+    },
+    {
+      "tick": 5000,
+      "queued": 0
+    },
+    {
+      "tick": 5200,
+      "queued": 0
+    },
+    {
+      "tick": 5400,
+      "queued": 0
+    },
+    {
+      "tick": 5600,
+      "queued": 0
+    },
+    {
+      "tick": 5800,
+      "queued": 0
+    },
+    {
+      "tick": 6000,
+      "queued": 0
+    },
+    {
+      "tick": 6200,
+      "queued": 0
+    },
+    {
+      "tick": 6400,
+      "queued": 0
+    },
+    {
+      "tick": 6600,
+      "queued": 0
+    },
+    {
+      "tick": 6800,
+      "queued": 0
+    },
+    {
+      "tick": 7000,
+      "queued": 0
+    },
+    {
+      "tick": 7200,
+      "queued": 0
+    },
+    {
+      "tick": 7400,
+      "queued": 0
+    },
+    {
+      "tick": 7600,
+      "queued": 0
+    },
+    {
+      "tick": 7800,
+      "queued": 0
+    },
+    {
+      "tick": 8000,
+      "queued": 0
+    },
+    {
+      "tick": 8200,
+      "queued": 0
+    },
+    {
+      "tick": 8400,
+      "queued": 0
+    },
+    {
+      "tick": 8600,
+      "queued": 0
+    },
+    {
+      "tick": 8800,
+      "queued": 0
+    },
+    {
+      "tick": 9000,
+      "queued": 0
+    },
+    {
+      "tick": 9200,
+      "queued": 0
+    },
+    {
+      "tick": 9400,
+      "queued": 0
+    },
+    {
+      "tick": 9600,
+      "queued": 0
+    },
+    {
+      "tick": 9800,
+      "queued": 0
+    },
+    {
+      "tick": 10000,
+      "queued": 0
+    },
+    {
+      "tick": 10200,
+      "queued": 0
+    },
+    {
+      "tick": 10400,
+      "queued": 0
+    },
+    {
+      "tick": 10600,
+      "queued": 0
+    },
+    {
+      "tick": 10800,
+      "queued": 0
+    },
+    {
+      "tick": 11000,
+      "queued": 0
+    },
+    {
+      "tick": 11200,
+      "queued": 0
+    },
+    {
+      "tick": 11400,
+      "queued": 0
+    },
+    {
+      "tick": 11600,
+      "queued": 0
+    },
+    {
+      "tick": 11800,
+      "queued": 0
+    }
+  ],
+  "maxPendingEvents": 15,
+  "p95EventCommitLatencyMs": 38.07298599998467,
+  "p99EventCommitLatencyMs": 56.7084390000673,
+  "status": "pass",
+  "fixture": "synthetic no-death HP override; 2 independent 300s matches, 122 living actors",
+  "ticks": 12000,
+  "events": 60000,
+  "logicalDurationMs": 600000,
+  "eventsPerLogicalSecond": 100,
+  "wallMs": 813239.539707,
+  "p95TickMs": 37.696034999913536,
+  "p99TickMs": 48.420156999956816,
+  "maxTickMs": 178.65762999997241,
+  "memoryStart": {
+    "rss": 33554432,
+    "heapTotal": 8122368,
+    "heapUsed": 5864672,
+    "external": 2306377,
+    "arrayBuffers": 143647
+  },
+  "memoryEnd": {
+    "rss": 403550208,
+    "heapTotal": 327782400,
+    "heapUsed": 232217968,
+    "external": 2369333,
+    "arrayBuffers": 209147
+  },
+  "backlog": 0,
+  "hashes": [
+    {
+      "live": "903eb34fe74db9a9e5ebe101a018ee4d62b72daff8c89783042c4d696111be32",
+      "replay": "903eb34fe74db9a9e5ebe101a018ee4d62b72daff8c89783042c4d696111be32"
+    },
+    {
+      "live": "b993d138dab856eb4ffc7b0e5b34565197670609f52c897ac9570f9f55fd753e",
+      "replay": "b993d138dab856eb4ffc7b0e5b34565197670609f52c897ac9570f9f55fd753e"
+    }
+  ],
+  "hardware": {
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cores": 5,
+    "memory": 35743760384
+  },
+  "runtime": "v24.19.0",
+  "renderFps": "Measured separately in browser.json; stress itself is headless"
+}

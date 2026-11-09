@@ -1,0 +1,52 @@
+Lista de bloqueadores atualizada
+Escopo de impedimento decisões e evidências de encerramento
+Faction Wars LIVE | Reauditoria independente | 28 de outubro de 2026
+Parecer: a consolidação avança no fechamento das regras, mas permanecem bloqueadores de resultado, integração, recuperação e MVP. Não está pronta para liberação integral de implementação. Todas as recomendações aguardam avaliação do proprietário; nenhuma altera o GDD.
+O bloqueio limita a etapa indicada. A engenharia documental pode continuar. Testes de produto ficam para depois de implementação expressamente autorizada; não são exigidos como tarefa imediata desta reauditoria. Nenhuma aprovação foi inferida do envio dos arquivos.
+B01 Motor e resultado
+Situação. Parcialmente resolvido | WORK-AUD 007,008,009,031,042
+Condição documental de encerramento. Aprovar ordem do tick, dono×contestação no timeout, bordas de captura e admissão por estado.
+Evidência e etapa. WT-012 a 018,023,065,066,079; oráculos aprovados antes do módulo; execução após implementação autorizada.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+B02 Integração econômica
+Situação. Parcialmente resolvido | WORK-AUD 010,011,017,024
+Condição documental de encerramento. Unidade pessoal fechada. Faltam payloads e contrato real de identidade/delta/dedupe/origem; manter diagnóstico sem efeito para eventos não verificáveis.
+Evidência e etapa. WT-024,025,037,045,047,083; fixtures versionadas. Integração não homologada; documentação pública não substitui evidência.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+
+B03 Comandos e reforços
+Situação. Parcialmente resolvido | WORK-AUD 005,006,012,013,019,037
+Condição documental de encerramento. Quantidade/sem fila/ordem fechadas; aprovar ciclo classe→rota, excesso de 3 ações, marcadores e commit de compra/representação.
+Evidência e etapa. WT-003 a 005,019 a 023,053,061 a 064,072,082; tabelas de transição antes da implementação.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+B04 Progressão persistente
+Situação. Parcialmente resolvido | WORK-AUD 019,021,022,023,039
+Condição documental de encerramento. XP eparticipação fechados emnúcleo; decidir entradas, bordas, anuladas, season_id eescopo deconquistas.
+Evidência e etapa. WT-035 a 041,058,059,079,084; tabela de efeitos por resultado aprovada.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+
+B05 Recuperação eoperação
+Situação. Parcialmente resolvido | WORK-AUD 025,026,027
+Condição documental de encerramento. Resultado/recompensas resolvido como requisito; fechar estado completo, fronteira delog, admissão e falha de escrita para MVP/representação.
+Evidência e etapa. WT-042 a 046,050,053,081,082; contrato documental antes do módulo; falhas injetadas antes de operar.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+B06 Combate e economia coletiva
+Situação. Parcialmente resolvido | WORK-AUD 001,002,003,004,014,015,016,032,040,042
+Condição documental de encerramento. Fechar geometria, cadência, Muralha, recuo, excedentes, autocast, zero ativos e efeitos em Cerco/Nexus.
+Evidência e etapa. WT-006 a 013,027 a 033,055,060,065,066,077,078; matriz de efeitos e unidades aprovada.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+
+B07 Homologação e publicação
+Situação. Aberto e não verificado | WORK-AUD 018,024,028,029,032,038
+Condição documental de encerramento. Aprovar ambiente/tolerâncias, validar HUD/dados/saídachat, executar carga e recuperação, revisar políticas e contaantes depublicar.
+Evidência e etapa. WT-048 a 052,076,077,080,083; execução futura. Não impede análise documental nem exige testes de produto inexistente agora.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+B08 MVP e estatísticas
+Situação. Novo | WORK-AUD 033,034,035,036,037
+Condição documental de encerramento. Aprovar candidato, agregação, normalização, pesos finais, defesa causal, território, precisão, kill e snapshots.
+Evidência e etapa. WT-067 a 075,081; exemplos numéricos e invariantes antes do módulo; simulações/testes apenas em etapa autorizada.
+Status. Aguardando avaliação do proprietário; execuções técnicas não verificadas.
+O que não bloqueia por si só
+Não obrigar mudança da curva de XP, novo cap individual, reserva para Chama, portal, 6/7 s por tela ou aprovação de pesos provisórios. Alto volume válido não é fraude demonstrada.030/041 são opcionais. Risco de oscilação territorial 035 exige avaliar expectativa e métrica, sem estorno decrédito aprovado.
+Ordem recomendada de decisão
+1. Resultado/tick e métricas de captura.2. Geometria, cadência, Cerco e efeitos.3. Parsing, bordas, representantes e admissões.4. MVP, conquistas e temporada.5. Contratos de integração, recuperação e aceitação operacional. Após consolidar decisões, reauditar; o proprietário decide separadamente sobre implementação e depois sobre publicação.

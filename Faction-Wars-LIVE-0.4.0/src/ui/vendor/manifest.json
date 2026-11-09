@@ -1,0 +1,8 @@
+{
+  "name": "phaser",
+  "version": "3.90.0",
+  "license": "MIT",
+  "npmIntegrity": "sha512-/cziz/5ZIn02uDkC9RzN8VF9x3Gs3XdFFf9nkiMEQT3p7hQlWuyjy4QWosU802qqno2YSLn2BfqwOKLv/sSVfQ==",
+  "sha256": "e92ddef111ba42e92d316979c732311757093688ea1810591cb7aa2858eba7a7",
+  "source": "node_modules/phaser/dist/phaser.min.js"
+}

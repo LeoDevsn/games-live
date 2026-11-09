@@ -1,0 +1,8 @@
+{
+  "name":"games-live-platform",
+  "version":"0.1.0",
+  "private":true,
+  "type":"module",
+  "engines":{"node":">=24.0.0 <25"},
+  "scripts":{"start":"node platform/launch.mjs","serve":"node platform/server.mjs","test":"node --test platform/tests/*.test.mjs"}
+}

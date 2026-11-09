@@ -1,0 +1,52 @@
+{
+  "name": "faction-wars-offline",
+  "version": "0.4.5",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "start": "node src/adapters/local/server.js",
+    "test": "node tests/acceptance.js",
+    "scenario": "node scripts/scenario.js",
+    "replay": "node scripts/replay.js",
+    "stress": "node scripts/stress.js --paced",
+    "test:ui": "node tests/browser.js",
+    "build": "node scripts/build.js",
+    "stress:fast": "node scripts/stress.js",
+    "test:render": "node tests/render-load.js",
+    "assets": "node scripts/generate-art.js",
+    "vendor": "node scripts/prepare-vendor.js",
+    "test:movement": "node tests/movement.js",
+    "test:medieval": "node tests/medieval.js",
+    "assets:medieval": "blender -b --factory-startup --python scripts/render-medieval.py && python scripts/assemble-medieval.py",
+    "test:medieval-ui": "node tests/medieval-browser.js",
+    "mobile": "node scripts/mobile.js",
+    "test:mobile": "node tests/mobile.js",
+    "test:mobile-ui": "node tests/mobile-browser.js",
+    "build:preview": "node scripts/build-preview.js",
+    "preview": "node scripts/serve-preview.js",
+    "test:preview": "node tests/preview.js",
+    "integration:check": "node tests/integration.js",
+    "integration:shadow": "node scripts/tikfinity-shadow.js",
+    "studio": "node scripts/studio.js",
+    "test:studio": "node tests/studio.js",
+    "test:rules": "node tests/acceptance.js --rules-only",
+    "test:live": "node tests/live-runtime.js",
+    "test:live:http": "node tests/live-http.js",
+    "test:sprites": "node tests/sprite-frames.js",
+    "test:formation": "node tests/formation-siege.js",
+    "test:layout": "node tests/figma-layout.js",
+    "test:layout-render": "node tests/figma-render.js",
+    "live": "node scripts/launch-live.mjs",
+    "test:audience": "node tests/audience.js && node tests/audience-http.js && node tests/audience-ui.js"
+  },
+  "dependencies": {
+    "phaser": "3.90.0",
+    "ws": "8.22.1"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "1.1.0"
+  }
+}

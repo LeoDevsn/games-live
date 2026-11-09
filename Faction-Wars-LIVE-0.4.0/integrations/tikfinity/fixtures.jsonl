@@ -1,0 +1,7 @@
+{"event":"chat","data":{"msgId":"fixture-join-r","userId":"1001","nickname":"Rubi de teste","comment":"!vermelho"}}
+{"event":"chat","data":{"msgId":"fixture-join-s","userId":"1002","nickname":"Azul de teste","comment":"!azul"}}
+{"event":"like","data":{"msgId":"fixture-like-1","userId":"1001","nickname":"Rubi de teste","likeCount":400,"totalLikeCount":999999}}
+{"event":"like","data":{"msgId":"fixture-like-1","userId":"1001","nickname":"Rubi de teste","likeCount":400,"totalLikeCount":999999}}
+{"event":"chat","data":{"msgId":"fixture-vote","userId":"1001","nickname":"Rubi de teste","comment":"!arqueiro !esquerda"}}
+{"event":"gift","data":{"msgId":"fixture-gift","userId":"1001","giftId":5655,"repeatCount":99}}
+{"event":"like","data":{"msgId":"fixture-no-delta","userId":"1001","totalLikeCount":1000000}}

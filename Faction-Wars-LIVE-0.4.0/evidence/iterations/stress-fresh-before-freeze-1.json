@@ -1,0 +1,11 @@
+{
+  "tick": 6000,
+  "result": {
+    "id": "stress-paced-1:result",
+    "winner": "S",
+    "reason": "timeout",
+    "combatMs": 300000
+  },
+  "hash": "b993d138dab856eb4ffc7b0e5b34565197670609f52c897ac9570f9f55fd753e",
+  "representatives": []
+}

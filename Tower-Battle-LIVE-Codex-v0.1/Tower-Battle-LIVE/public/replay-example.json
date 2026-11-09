@@ -1,0 +1,80 @@
+[
+  {
+    "at": 0,
+    "message": {
+      "event": "chat",
+      "data": {
+        "user": {
+          "id": "anon-a",
+          "nickname": "Construtor A"
+        },
+        "comment": "A",
+        "msgId": "a-1"
+      }
+    }
+  },
+  {
+    "at": 100,
+    "message": {
+      "event": "chat",
+      "data": {
+        "user": {
+          "id": "anon-b",
+          "nickname": "Construtor B"
+        },
+        "comment": "B",
+        "msgId": "b-1"
+      }
+    }
+  },
+  {
+    "at": 1000,
+    "message": {
+      "event": "like",
+      "data": {
+        "user": {
+          "id": "anon-a"
+        },
+        "likeCount": 25,
+        "msgId": "like-1"
+      }
+    }
+  },
+  {
+    "at": 2000,
+    "message": {
+      "event": "gift",
+      "data": {
+        "user": {
+          "id": "anon-b"
+        },
+        "giftType": 1,
+        "groupId": "gift-1",
+        "repeatCount": 3,
+        "repeatEnd": false
+      }
+    }
+  },
+  {
+    "at": 2100,
+    "message": {
+      "event": "gift",
+      "data": {
+        "user": {
+          "id": "anon-b"
+        },
+        "giftType": 1,
+        "groupId": "gift-1",
+        "repeatCount": 3,
+        "repeatEnd": true
+      }
+    }
+  },
+  {
+    "at": 125000,
+    "message": {
+      "event": "share",
+      "data": {}
+    }
+  }
+]

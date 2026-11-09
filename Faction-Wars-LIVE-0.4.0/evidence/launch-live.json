@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "checks": [
+    "one initializer starts backend and capture",
+    "reopen preserves the armed match",
+    "clock holds without audience",
+    "likes/class commands cannot open the match",
+    "capture receives waiting state",
+    "first faction comment opens 25s preparation once",
+    "local synthetic ingress blocked in LIVE",
+    "combat starts with the army",
+    "complete match automatically returns to waiting without audience",
+    "disconnect pauses"
+  ],
+  "scope": "Local launcher/HTTP/SSE/WebSocket fixture; no actual browser UI or broadcast."
+}

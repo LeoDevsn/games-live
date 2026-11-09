@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-03",
+  "sourceArenaVersion": 6,
+  "shape": "square to circle",
+  "floorArea": 0.2,
+  "bands": [
+    {
+      "alive": 100,
+      "area": 1
+    },
+    {
+      "alive": 90,
+      "area": 1
+    },
+    {
+      "alive": 80,
+      "area": 0.8
+    },
+    {
+      "alive": 70,
+      "area": 0.8
+    },
+    {
+      "alive": 60,
+      "area": 0.6
+    },
+    {
+      "alive": 50,
+      "area": 0.6
+    },
+    {
+      "alive": 40,
+      "area": 0.4
+    },
+    {
+      "alive": 30,
+      "area": 0.4
+    },
+    {
+      "alive": 20,
+      "area": 0.2
+    },
+    {
+      "alive": 10,
+      "area": 0.2
+    },
+    {
+      "alive": 0,
+      "area": 0.2
+    }
+  ],
+  "geometry": [
+    {
+      "area": 1,
+      "left": 28,
+      "right": 1052,
+      "top": 420,
+      "bottom": 1300,
+      "cx": 540,
+      "cy": 860,
+      "radius": 440,
+      "halfWidth": 512,
+      "halfHeight": 440,
+      "cornerRadius": 0,
+      "morph": 0
+    },
+    {
+      "area": 0.8,
+      "left": 82.05327820804308,
+      "right": 997.9467217919569,
+      "top": 466.45203596003705,
+      "bottom": 1253.547964039963,
+      "cx": 540,
+      "cy": 860,
+      "radius": 393.54796403996295,
+      "halfWidth": 457.9467217919569,
+      "halfHeight": 393.54796403996295,
+      "cornerRadius": 0,
+      "morph": 0
+    },
+    {
+      "area": 0.6,
+      "left": 141.6644813951823,
+      "right": 938.3355186048177,
+      "top": 493.8638602711793,
+      "bottom": 1226.1361397288206,
+      "cx": 540,
+      "cy": 860,
+      "radius": 366.1361397288207,
+      "halfWidth": 398.3355186048177,
+      "halfHeight": 366.1361397288207,
+      "cornerRadius": 223.0532194115043,
+      "morph": 0.6092084206074523
+    },
+    {
+      "area": 0.4,
+      "left": 201.27568458232145,
+      "right": 878.7243154176786,
+      "top": 521.2756845823214,
+      "bottom": 1198.7243154176786,
+      "cx": 540,
+      "cy": 860,
+      "radius": 338.72431541767855,
+      "halfWidth": 338.72431541767855,
+      "halfHeight": 338.72431541767855,
+      "cornerRadius": 338.72431541767855,
+      "morph": 1
+    },
+    {
+      "area": 0.2,
+      "left": 300.48573961538847,
+      "right": 779.5142603846116,
+      "top": 620.4857396153884,
+      "bottom": 1099.5142603846116,
+      "cx": 540,
+      "cy": 860,
+      "radius": 239.51426038461153,
+      "halfWidth": 239.51426038461153,
+      "halfHeight": 239.51426038461153,
+      "cornerRadius": 239.51426038461153,
+      "morph": 1
+    }
+  ],
+  "tests": {
+    "arenaSuite": 47,
+    "lobbySpecific": 5,
+    "sharedEntry": 2,
+    "httpRealClockLobby": "pass: notice, full 15s countdown, late signup queued, locked match roster",
+    "stressUsers": 200,
+    "stressLogicalMinutes": 30,
+    "pacingScenarios": 40,
+    "audienceTemplates": "pass",
+    "voicePlaybackRetry": 2
+  },
+  "pacing": [
+    {
+      "traffic": "none",
+      "meanSeconds": 177.8,
+      "minSeconds": 98,
+      "maxSeconds": 256,
+      "allFinished": true
+    },
+    {
+      "traffic": "moderate",
+      "meanSeconds": 222.8,
+      "minSeconds": 155.5,
+      "maxSeconds": 286.5,
+      "allFinished": true
+    }
+  ],
+  "voice": {
+    "provider": "Fish Audio",
+    "configured": true,
+    "teams": {
+      "A": true,
+      "B": true
+    },
+    "lastError": null,
+    "realProviderSampleBytes": 130402,
+    "sample": ".runtime/voice-check/convite-arena.mp3",
+    "privateConfigReused": true
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4191/",
+    "isolated": true,
+    "liveInputDisabled": true,
+    "liveChatDisabled": true
+  },
+  "production": {
+    "version": 5,
+    "narrator": true,
+    "mode": "simulation"
+  },
+  "sharedChatGatewayHttp": 404,
+  "restartPending": true,
+  "limitations": [
+    "Native Canvas previews and Audio API doubles, not an actual browser/FPS/live audio test.",
+    "Actual Fish Audio generated one saved sample successfully.",
+    "Chat delivery tested against a local WebSocket fixture, not TikTok.",
+    "Production automatic restart was previously rejected by automatic review; no production process was stopped in this work."
+  ],
+  "registration": {
+    "announcementSeconds": 5,
+    "preparationSeconds": 15,
+    "entryUntil": "countdown reaches zero",
+    "lateSignups": "next round only",
+    "presenceConfirmation": "new like per round; silent users not auto-enrolled",
+    "timersAndQueuePersist": true
+  },
+  "initialWidth": 1024,
+  "initialHeight": 880,
+  "previousWidth": 880
+}

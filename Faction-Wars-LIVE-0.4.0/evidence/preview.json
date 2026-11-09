@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "timestamp": "2026-10-29T16:50:30.412Z",
+  "sourceDigest": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "runtime": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "basePath": "/faction-wars-live/",
+  "checks": [
+    "static-only hosting under non-root prefix",
+    "real Phaser assets and mobile width390",
+    "touch resumes per-device battle",
+    "durable committed tick recovered after reload",
+    "stale IndexedDB writer rejected atomically",
+    "complete battle/results/next cycle",
+    "all journal commits replayed in fresh Node process"
+  ],
+  "atomicRecovery": {
+    "staleRejected": true,
+    "tick": 1,
+    "hash": "2edd310dd7f22f9821ca3e3a377249470c9ce6f61ad629281290f87dca435490"
+  },
+  "battle": {
+    "result": {
+      "id": "web-008f2c3d-a5ab-4749-8386-3008c056bf5c:result",
+      "winner": "S",
+      "reason": "nexus",
+      "combatMs": 260450
+    },
+    "ticks": 6009,
+    "hash": "b4ba569bba9eddeec2757d34f5cf37d7aa78ad61456d6853e21714d112f7f919",
+    "wallMs": 143091.40000000224
+  },
+  "errors": [],
+  "limitation": "No deployed public URL or physical phone; browser storage may be removed by browser/OS. No live integration."
+}

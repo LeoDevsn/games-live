@@ -1,0 +1,617 @@
+FACTION WARS LIVE
+GDD MESTRE — EDIÇÃO CONSOLIDADA PARA REAUDITORIA | 28 de outubro de 2026
+Base documental: GDD Mestre v0.9 / AUD-021 (23/10/2026). Atualizações posteriores explicitamente aprovadas pelo proprietário do projeto.
+STATUS: versão documental independente para reauditoria. Original v0.9 / AUD-021 preservado. NÃO AUTORIZA implementação, publicação ou modificação das regras sem aprovação do proprietário.
+PARTE ZERO — FECHAMENTO PARA WORK → CODEX | 29/10/2026
+STATUS: DOCUMENTO DE HANDOFF, consolidação de decisões expressas posteriores à edição de 28/10. Mantém íntegro o conteúdo herdado, inclusive o texto histórico v0.9/AUD-021. Aprova o encaminhamento para auditoria do Work e preparação de implementação pelo Codex, não afirma testes executados. As regras mais recentes nesta Parte Zero prevalecem sobre conflitos no corpo histórico.
+0.1 — PRINCÍPIO DE PRECEDÊNCIA E CONTROLE DE MUDANÇA
+Ordem: (1) decisões explícitas mais recentes do proprietário nesta Parte Zero; (2) decisões expressamente aprovadas da edição de 28/10; (3) demais decisões aprovadas da consolidação anterior; (4) GDD v0.9/AUD-021 como histórico. Valores ou alternativas marcados PROPOSTA/PENDENTE não substituem mecânicas aprovadas. O Work deve identificar conflito material sem inventar regras, registrar observação e encaminhar implementação somente das partes suficientemente especificadas.
+0.2 — VITÓRIA / CONTROLE TERRITORIAL (APROVADO; SUBSTITUI MAIORIA ABSOLUTA)
+A partida termina imediatamente após o fechamento do ciclo lógico em que apenas um Nexus inimigo for destruído. Se ambos os Nexus forem destruídos no mesmo ciclo lógico, EMPATE TÉCNICO, conforme decisão histórica preservada.
+Se nenhum Nexus tiver sido destruído ao expirar 300 s de combate, vence a facção com MAIOR QUANTIDADE de pontos de controle possuídos, inclusive 1 × 0. NÃO é necessário controlar dois pontos, nem maioria absoluta. 1×0 = vitória de quem possui 1; 2×1 = vitória de quem possui 2; 1×1 ou 0×0 = empate.
+Ponto contestado permanece de posse de seu proprietário e CONTABILIZA para a vitória até ser efetivamente capturado pelo adversário. Contestação congela o progresso, não apaga a posse. Pontos neutros não contam para nenhuma facção.
+A ordem base aprovada do instante lógico: admitir eventos válidos; resolver movimentação/ataques/habilidades/dano sob precedência aprovada; confirmar mortes e posse territorial; verificar Nexus e timeout; confirmar um único resultado imutável. Conflitos exatos de precedência ficam para auditoria, não para redefinição unilateral.
+0.3 — CERCO: TRÊS DECISÕES NOVAS (APROVADAS)
+Sem teto artificial de unidades de Cerco simultâneas nesta etapa. Continuam independentes do teto de 32 tropas convencionais; dimensionar o protótipo para o pior caso possível, sem inventar nova limitação. Geração automática mantém 1 Cerco por facção/corredor a cada 20 segundos enquanto houver combate; comportamento exatamente na fronteira t=300 exige contrato de timer consistente com fim da partida.
+Captura inicial de ponto NEUTRO exige 10 segundos de progresso válido, mesmo com Cerco. Aceleração por Cerco aplica-se apenas à reversão de ponto inimigo: 20 segundos normalmente, 10 segundos com Cerco elegível, sem empilhamento por múltiplos Cercos.
+Cerco recebe, quando elegível segundo seus contratos já aprovados, bônus gerais de postura, Discurso e Chama. Preservar valores base próprios, durações, limites e precedência. Isto não autoriza bônus novos nem alteração automática da proteção estrutural do Nexus.
+0.4 — COMBATE, CAMPEÕES E REFORÇOS: NÃO REABRIR MECÂNICAS
+Atributos básicos das classes, bônus de Campeões, habilidades aprovadas, formações iniciais e custos de reforços estão FECHADOS pelo proprietário. O Work/Codex deve extrair os valores aprovados da edição consolidada de 28/10, sem apresentar nova votação ao proprietário. Lacunas puramente operacionais devem ser propostas e testadas; contradição de jogabilidade realmente impeditiva deve ser sinalizada sem alterar os números.
+Combate técnico aceito como BASE PARA REAUDITORIA, não como nova mecânica: atualização lógica determinística, acumuladores precisos de cadência, desempate estável, resolução do ciclo, independência do render, colisão consistente e recuo irreversível do Arqueiro. Raio da Muralha, coordenadas de spawn, trajetória exata de projéteis e escala espacial ainda não tiveram números novos aprovados; usar parâmetros claramente documentados/configuráveis e não alegar aprovação do proprietário.
+Comandos técnicos aceitos como BASE PARA REAUDITORIA: classe/corredor juntos ou separados na janela; troca de voto substitui voto anterior; até três ações válidas por mensagem na ordem textual; controle de identidade/facção; janelas independentes de 10 s por facção; duas convocações sequenciais, reavaliando créditos/vagas/Campeão/representante antes de cada operação atômica. Rever conflitos com as regras aprovadas de 28/10 antes da implementação.
+Persistência aceita como BASE PARA REAUDITORIA: checkpoints a cada 10 s, journal ordenado e durável, estado suficiente para replay determinístico, e operações idempotentes por evento, compra, resultado e recompensa. Integração real deve impedir efeitos econômicos de eventos não verificáveis.
+0.5 — ESCOPO DO PRIMEIRO MVP OFFLINE (HANDOFF DE ENGENHARIA)
+Implementar a arena vertical 9:16 com três corredores segregados; facções Rubra/Safira; prep 25 s; combate até 300 s; resultados 3×5 s; Nexus; unidades/IA/combate; Cerco; zonas; e regra oficial de vitória.
+Implementar entrada local de eventos simulados e reproduzíveis (facção, likes, votos, reforços) e identificação fictícia de espectadores, com registro de Campeões. As simulações NÃO comprovam integração real TikFinity.
+Dividir arquitetura em motor puro testável, regras de combate, território, economia/reforços, entrada de eventos, persistência e UI. Render 60 FPS é meta visual, não velocidade do motor. Objetivo do motor 20 Hz preservado onde aprovado.
+Sistemas LIVE externos, postagem automática no chat, rankings persistentes, concessão de XP real, temporadas e homologação TikTok NÃO são requisitos para executar a primeira batalha offline; manter contratos e pontos de extensão e NÃO simular como produção.
+MVPs de Campeões: registrar as seis estatísticas aprovadas e contribuições causais quando computáveis. Pesos provisórios são apenas parâmetros experimentais para simulação, nunca declarar fórmula definitiva. Não conceder recompensas competitivas adicionais por protótipo.
+0.6 — TESTES OBRIGATÓRIOS DE ACEITAÇÃO LOCAL
+T01: ponto Rubra 1 / Safira 0 / dois neutros em t=300 => vitória Rubra; repetir invertendo facções. T02: 1×1 e 0×0 => empate. T03: dois pontos de Rubra contestados em t=300 => vitória Rubra.
+T04: Nexus destruído antes do timeout => vitória correspondente; ambos no mesmo ciclo => empate técnico; nunca publicar duas vitórias nem duas recompensas.
+T05: 24 convencionais + 6 Cercos iniciais; 32 convencionais máximo global, com limites por facção/corredor aprovados; Cerco não conta nesse teto. T06: Cerco novo a cada 20 s enquanto combate ativo sem impor teto simultâneo.
+T07: neutro leva 10 s com ou sem Cerco; reversão leva 20 s sem Cerco ou 10 s com Cerco; contestação congela progresso e mantém dono. T08: um e vários Cercos não acumulam aceleração.
+T09: janela 10 s disparada pelo primeiro comando válido; até duas convocações sequenciais; com 31/32 vagas a primeira pode ocupar a 32ª e segunda cancela sem débito. T10: sem créditos para Campeão, tentar comum se custo couber.
+T11: reexecutar mesma seed/estado/eventos produz mesmo resultado; interrupção e replay não duplicam créditos, tropas, XP ou resultado. T12: eventos sem semântica/ID verificáveis não alteram economia real.
+T13: atributos e habilidades dos Campeões devem corresponder exatamente ao registro aprovado, sem supressão arbitrária. T14: metas TikFinity e carga só podem ser declaradas aprovadas após testes efetivamente executados.
+0.7 — INSTRUÇÕES AO WORK E AO CODEX
+WORK: executar revisão de PRONTIDÃO PARA CODIFICAÇÃO, não outra rodada de redesign. Conferir esta Parte Zero contra o restante do GDD e os cinco relatórios de reauditoria de 28/10; produzir matriz mínima de divergências impeditivas, mapa de módulos, plano de testes e pacote explícito para Codex. Corrigir somente no novo pacote de implementação as referências antigas de vitória por maioria absoluta e a organização editorial do cabeçalho PARTE I-B, preservando arquivos-fonte imutáveis. Não declarar pendência funcional de Campeões apenas por falta de especificação técnica de motor.
+CODEX, APÓS O WORK: construir PRIMEIRO protótipo local offline, isolado e testável, seguindo precedência documental; sem conexão real TikTok, sem publicar LIVE, sem mexer no GDD Mestre original. Documentar escolhas técnicas configuráveis e bloqueios reais; entregar instruções de execução, logs de teste e evidências, sem alterar mecânicas aprovadas. Exigir a confirmação final do proprietário para ações externas, publicação, conectores reais ou alterações de gameplay.
+0.8 — NOTA DE RASTREABILIDADE
+Esta Parte Zero registra as decisões posteriores de 29/10/2026 discutidas nesta conversa. Os cinco relatórios de reauditoria de 28/10 permanecem anexos de referência independentes; nenhuma execução de teste, aprovação do Work ou implementação pelo Codex é aqui alegada. Fonte da seção histórica preservada: FACTION_WARS_LIVE_GDD_MESTRE_CONSOLIDADO_2026-10-28_REVISAO_WORK.docx.
+
+COMO LER ESTA CONSOLIDAÇÃO
+PARTE I — consolidação aprovada até 25/10. PARTE I-B — decisões aprovadas até 28/10 e pendências atualizadas (prevalece quando posterior). PARTE II — reprodução integral da fonte histórica v0.9/AUD-021, sem reinterpretação. As afirmações antigas marcadas PENDENTE na Parte I podem ter sido resolvidas na Parte I-B.
+PENDENTE significa regra ainda não autorizada. VALIDAR significa exigência técnica ou empírica ainda não testada. A matriz de aceitação antiga também requer revisão antes de qualquer implementação.
+PARTE I — ADENDO CONSOLIDADO DAS DECISÕES APROVADAS
+A. Partida, vitória e interface de estados
+Tema
+Regra consolidada
+Estados
+Preparação 25s; combate até 300s; resultados 15s. Ciclo máximo 340s.
+Vitória por Nexus
+Destruir o Nexus adversário encerra imediatamente o combate e inicia 15s de resultados.
+Vitória territorial
+Ao término do tempo de combate, vence a facção com maioria dos 3 pontos de controle; não há vitória territorial antecipada nem exigência de dominar os três por 15s.
+Empate territorial
+Ao final do tempo, empate se todos os 3 pontos estiverem contestados ou se cada facção controlar um e o terceiro estiver contestado; demais casos limítrofes demandam especificação.
+Indicadores
+Preparação e resultados: arena escurecida e contador central destacado. Combate: arena normal, contador no topo.
+Estrutura
+Três corredores independentes com zona central a 16 tiles do Nexus, 32 tiles de extensão por rota; Nexus de cada facção compartilhado pela defesa da base.
+
+B. Tropas, Cerco e Nexus
+Unidade
+HP
+Dano
+Alcance
+Movimento
+Ataques/s
+Proteção passiva
+Guerreiro
+120
+10
+1 tile
+4
+1.0
+0%
+Defensor/Guardião
+200
+7
+1 tile
+3
+0.7
+10%
+Arqueiro
+75
+12
+3 tiles
+5
+1.2
+0%
+Arma de Cerco
+90
+6 tropas / 35 Nexus
+2 tiles
+2
+0.5
+0%
+Nexus
+2000
+20
+4 tiles
+0
+1.0
+Não definida
+
+Início de combate: por facção e corredor, 1 Guerreiro, 1 Defensor, 2 Arqueiros e 1 Arma de Cerco; total de 24 tropas convencionais + 6 Cercos = 30 entidades iniciais.
+Armas de Cerco surgem automaticamente a cada 20s por facção/corredor durante o combate, sem votação, sem gasto de créditos, sem limite de um único Cerco vivo. Não entram no limite convencional de 32 tropas. Capacidade máxima própria de Cercos ainda não definida.
+Cerco alcança a zona central, pode capturar sozinho, e segue para o Nexus adversário depois da captura. Não persegue inimigos; ataca com 6 de dano apenas bloqueadores que impeçam avanço ou captura, dentro de 2 tiles. Durante a disputa permanece na zona; no alcance do Nexus, foca exclusivamente a estrutura, com 35 por ataque.
+Quando houver tropas inimigas na região do Nexus, tropas convencionais aliadas priorizam o enfrentamento dos defensores, enquanto o Cerco ataca o Nexus; sem inimigos válidos ali, tropas convencionais também podem atacar o Nexus. Avanço é condicionado aos confrontos e bloqueios reais; nenhuma retirada/teletransporte automático devido à perda de posse territorial.
+Tropas inimigas no corredor tratam Cerco com ameaça convencional; perto de seu Nexus, Cerco e Defensor inimigos são alvos de maior ameaça para as tropas defensoras. Desempates finos nessa categoria permanecem pendentes.
+Nexus ataca um alvo por disparo, reavaliando antes de cada ataque, prioridade de classe: Defensor → Guerreiro → Cerco → Arqueiro; Campeões seguem a respectiva classe. Dentro de uma classe escolhe menor distância ao Nexus e, em igualdade exata, ID estável. Só alvos vivos e válidos dentro de 4 tiles, sem antecipar/reiniciar cadência por troca de alvo.
+C. Captura e velocidade dinâmica
+Situação
+Regra
+Ponto neutro
+Captura inicial completa em 10s sem contestação.
+Reversão entre extremos sem Cerco
+20s sem contestação.
+Reversão com ≥ 1 Cerco aliado válido
+10s para reversão completa, taxa acelerada não acumulativa.
+Cerco entra na zona durante reversão
+Preserva progresso e acelera imediatamente quando não há contestação.
+Último Cerco sai ou morre
+Preserva progresso, retorna imediatamente à taxa normal se ainda houver presença aliada válida.
+Presença de ambas facções
+Captura pausada; não apagar progresso.
+Zona vazia
+Progresso congelado.
+Mudança de dono
+Apenas ao atingir o extremo oposto da escala −100 a +100.
+
+As mudanças de taxa afetam apenas o progresso futuro. O sistema não deve reiniciar nem conceder avanço retroativo. Interação entre Cerco, escalas e eventos simultâneos depende de testes.
+D. Campeão Defensor — Muralha Defensiva
+Aplica +20 pontos percentuais de proteção por 5s ao próprio Campeão Defensor e até 3 aliados próximos; cooldown de 20s; teto de 40% de proteção; Muralhas não acumulam.
+Distribuição prioritária das três vagas: até 2 Armas de Cerco elegíveis e 1 tropa convencional ou Campeão. Se houver mais de dois Cercos candidatos, escolher os mais avançados rumo ao Nexus inimigo. Alcance, demais limites e duração continuam válidos.
+Cerco tem 0% de proteção passiva, mas pode receber Muralha e outros efeitos defensivos aliados aplicáveis, respeitando requisitos e teto. Critérios de seleção na falta de alguma categoria e critérios finais de empate entre candidatos permanecem a detalhar.
+E. Votação de reforços e até duas convocações
+PRESERVADO: apenas UMA janela de reforços por facção; não existem três janelas independentes por corredor. A janela dura 10s e abre a partir do primeiro comando válido de reforço da facção. Janela da facção oposta é independente.
+APROVADO EM 25/10: cada janela pode produzir até DUAS unidades, respeitando votação, créditos, vagas, Campeões e regras de fallback.
+Distribuição APROVADA: se duas ou mais classes receberem votos válidos, considerar a classe mais votada e a segunda classe mais votada, com uma convocação de cada. Se somente uma classe tiver votos válidos, tentar duas convocações da mesma classe. Se houver três classes votadas, a terceira não recebe vaga nessa janela.
+A escolha de corredor continua sendo apurada na janela única por facção, sem multiplicação automática de janelas. O vínculo das duas classes aos corredores, tratamento de votos parciais e desempates ainda precisa de fechamento (WORK-AUD-012).
+Regras preservadas de Campeões: usuário escolhe classe/corredor, nunca decide status Campeão; sem Campeão vivo da classe no destino, tentar Campeão se houver créditos; caso contrário, tentar comum se possível. Se Campeão já existe ali, tentar comum. Checar créditos e vagas por convocação, nunca gerar saldo negativo.
+CUSTOS preservados: Arqueiro comum 1/Campeão 2; Guerreiro comum 2/Campeão 3; Defensor comum 3/Campeão 4 créditos. Créditos iniciais 0; +1 por 200 likes coletivos válidos; saldo máx. 20, sem geração passiva.
+PENDENTE: ordem de tentativa quando houver crédito/vaga para somente uma das duas unidades; empate de classes; destino de cada vaga; cadência mínima entre janelas; limites simultâneos quando 24 tropas iniciais excedem o teto convencional histórico de 32 após poucos reforços; distinção de votação de rota estratégica e reforço.
+F. Participação, XP e validação de eventos
+Preparação de 25s: entrada válida de facção nesse período concede 30 XP de participação; entradas após a janela entram na fila da próxima partida e não recebem participação da atual.
+Resultado: +100 XP por vitória, +20 por empate e +0 por derrota aos participantes elegíveis. Partida anulada rende SOMENTE +30 XP de participação válida.
+Votos: +3 XP por voto final válido efetivamente contabilizado por categoria/janela; teto de 50 votos remunerados por partida = 150 XP. Categorias: postura, corredor estratégico, classe de reforço e corredor de reforço.
+Energia individual: +2 XP por unidade pessoal validada, gerada a cada 100 likes pessoais válidos, sem teto individual por janela de 10s; resíduos pessoais mantidos dentro da partida. XP individual continua independentemente do teto de energia coletiva, sob validação anti-duplicidade.
+Eventos do provedor sem identidade, unicidade e semântica verificadas: somente diagnóstico, nenhum efeito econômico/competitivo. Eventos tardios verificáveis devem respeitar janelas e resultados oficiais já confirmados.
+G. Integridade, recuperação e resultado oficial
+Checkpoint a cada 10s + registro durável ordenado de operações, com commits únicos. Recuperação reconstrói estado confirmado: timers, votos, tropas, créditos, resíduos e resultados.
+Parada do motor pausa o tempo lógico; retoma apenas se estado verificável, senão anula, exceto quando o resultado oficial já estava confirmado. Desconexão isolada do TikFinity não suspende o motor autônomo.
+Confirmar resultado oficial, elegibilidade e evidências antes de distribuir prêmios. XP/recompensas são transacionais e idempotentes por partida/jogador/motivo; após falha retomar somente entregas não confirmadas.
+H. PENDÊNCIAS E CONTROLES DE MUDANÇA
+WORK-AUD-012 permanece ABERTO: semântica dos comandos parciais, separação de voto de rota estratégica versus rota de reforço, empate, janelas e duas unidades na mesma votação.
+O novo número inicial de entidades (30) não deve ser confundido com o teto histórico de tropas convencionais (32); colisões, movimentação, capacidade de Cercos e desempenho precisam de ensaio.
+Cercos por 20s: definir o disparo exato no limite dos 300s e nas transições de estado, sem criar spawn fora do combate.
+IA de tropa junto ao Nexus: especificar alcance da região, prioridades finas de ameaça e limites de linha de ataque.
+Nexus: ainda pendente proteção estrutural, cálculo geométrico dos 4 tiles entre rotas e desempates de simultaneidade.
+Qualquer teste real de TikFinity, render, estabilidade 24h ou publicação permanece NÃO EXECUTADO.
+A Parte II abaixo é reproduzida integralmente como base histórica; seus valores de XP, formação inicial, Muralha, tempo, vitória e número de spawns que divergem desta Parte I estão SUBSTITUÍDOS, não aprovados novamente.
+
+Corte documental: 28/10/2026. Esta edição de trabalho incorpora decisões expressas do proprietário, sem modificar a fonte histórica do GDD Mestre v0.9/AUD-021 nem autorizar implementação. Em conflito, a decisão posterior expressamente aprovada prevalece. Valores em PROPOSTA/PENDENTE não são requisitos aprovados.
+1. Retificações de regras já aprovadas (prevalecem sobre redação anterior)
+Tropas convencionais: Guerreiro 120 HP, dano 10, alcance 1 tile, velocidade 4, ataques 1/s, proteção 0%; Defensor 200 HP, dano 7, alcance 1 tile, velocidade 3, ataques 0,7/s, proteção 10%; Arqueiro 75 HP, dano 12, alcance 3 tiles, velocidade 5, ataques 1,2/s, proteção 0%. Recalcular derivados de Campeões, DPS e referências de IA com base nesses números; nunca manter valores históricos incompatíveis.
+Arma de Cerco: 90 HP, dano 6 contra unidades, dano 35 contra Nexus, alcance 2 tiles, velocidade 2, 0,5 ataque/s, proteção passiva 0%. Desova automática a cada 20 s, por facção e corredor, durante combate; não conta no teto convencional de 32. Capacidade simultânea própria e fronteira de spawn em timeout ainda pendentes.
+Combate/resultado: preparação 25 s, combate até 300 s e resultados 15 s; vitórias somente por destruição do Nexus ou maioria dos 3 pontos de controle na expiração do combate. Dominação territorial não encerra a partida antecipadamente. Empate se nenhuma facção tem maioria ao timeout. Nexus tem 2.000 HP; ataca 20 de dano uma vez por segundo até 4 tiles, reavalia alvo por disparo com prioridade Defensor → Guerreiro → Cerco → Arqueiro; proximidade e ID estável desempatarão por classe. Geometria e ordem de resolução simultânea permanecem para especificação/auditoria.
+Captura: neutro até posse em 10 s de progresso válido; reversão de posse inimiga até posse própria em 20 s, ou 10 s com pelo menos um Cerco aliado elegível; Cercos extras não acumulam aceleração. Presença inimiga contestante interrompe progresso; ausência de unidades congela progresso. Alteração de aceleração afeta apenas progresso futuro, sem retroatividade.
+XP atual: participação válida na preparação +30; vitória +100; empate +20; derrota +0; anulação somente +30 de participação válida. Votos finais validados contabilizados +3 XP por voto elegível, teto 50 votos remunerados por partida (=150 XP). Energia pessoal +2 XP por unidade gerada a cada 100 likes pessoais válidos, sem teto antigo de 10 unidades por janela, sujeito a validação/antispam. O texto de auditoria externa de 24/10 pode conter números anteriores: NÃO restaurá-los.
+2. Reforços: regras aprovadas após 25/10
+Janela única por facção, 10 s desde PRIMEIRO comando de reforço válido; duas facções com janelas independentes. Intervalo início inclusivo/fim exclusivo. Somente comando NOVO após fechar a anterior abre outra; nenhuma janela automática. Um comando no instante final pertence somente à nova janela se válido.
+Até duas convocações por janela: duas classes mais votadas, pela ordem decrescente; se uma única classe recebeu voto, tentar duas unidades dessa classe. Empates de classe por rodízio determinístico. Cada espectador possui até um último voto válido por categoria/janela. Comandos PT/EN: Guerreiro !guerreiro/!warrior/!G/!W; Defensor !defensor/!guardian/!D/!GD; Arqueiro !arqueiro/!archer/!A. Corredores !esquerda/!left, !centro/!mid, !direita/!right.
+Comandos classe/corredor em uma mensagem ou separados dentro da mesma janela, em qualquer ordem lógica permitida. Voto de classe isolado vale para classe. Corredor isolado sem classe pendente vale apenas para janela de votação estratégica aberta, caso contrário ignorar e não armazenar. Corredor após classe pendente associa-se exclusivamente a reforço, não à votação estratégica. Corredor de cada classe vencedora apurado somente entre votos relacionados àquela classe. Sem votos de corredor, escolher maior déficit de tropas convencionais; empate de corredor: maior déficit, então rodízio determinístico.
+Processar convocação 1 e depois 2, verificando saldo e vagas atualizados. Corredor cheio: tentar outro com maior déficit, desempate por rodízio; reavaliar elegibilidade de Campeão e custo. Se não houver Campeão vivo da classe naquele corredor, tentar Campeão se saldo suficiente; senão tentar comum se couber. Se já houver Campeão da classe vivo, somente comum. Custo convencional A1/G2/D3; Campeão A2/G3/D4; se nenhuma tentativa couber, cancelar sem débito e sem fila. Tetos convencionais: 32 global, 16/facção e 8/corredor/facção; Cerco fora da contagem. Caso-limite primeira convocação consome última vaga global e segunda falha: formalizar oráculo de teste; fluxo sequencial atual indica cancelamento da segunda.
+3. Representação do espectador em Campeões
+Cada novo Campeão elegível vincula-se automaticamente a um espectador válido da mesma facção: foto/avatar e username na unidade. Espectador não controla o Campeão nem altera atributos, habilidade ou preço. Máximo 1 Campeão VIVO por espectador. Quem nunca representou na partida tem precedência sobre quem já representou; dentro do grupo, ordenar contribuição de representação P=5×E+10×V, sendo E energia pessoal válida e V votos válidos contabilizados; empates resolvidos por rodízio determinístico com identificadores estáveis. Falecendo seu Campeão, o usuário volta a ser elegível atrás dos nunca representados. Sem espectador elegível, Campeão genérico da facção sem bloquear spawn. Payload real/avatar/identidade: validação externa pendente.
+4. Seis estatísticas por Campeão, totais por espectador e comando
+Registrar por nascimento individual de Campeão: (1) eliminações inimigas, (2) dano efetivo a tropas/Campeões, (3) dano efetivo recebido (HP perdido após proteções), (4) tempo integral dentro da zona de ponto de controle, (5) dano efetivo ao Nexus inimigo (separado), (6) tempo vivo/em campo. Cada aparição mantém registro separado, associado a partida, Campeão e espectador; apresentar também total consolidado por espectador na partida. Estatísticas de Campeão não compõem ranking permanente. Possíveis conquistas persistentes ainda NÃO aprovadas.
+Comandos aprovados conceitualmente: !meustatus (PT) e !mystatus (EN), para o autor consultar seu próprio relatório consolidado, pontuação/XP pertinentes e indicadores pessoais. A resposta proposta é pública no chat; sua capacidade de postagem automatizada e limites/payload de TikFinity/TikTok dependem de validação real. Adotar identificação confiável do emissor, controle de frequência e prevenção de spam antes de implementar. Portal pessoal/site somente possibilidade futura condicionada ao sucesso; não faz parte da entrega inicial.
+5. Apresentação de resultados — três telas de 5 s
+Tipo de resultado
+Tela 1 — 0–5s
+Tela 2 — 5–10s
+Tela 3 — 10–15s
+Vitória
+Resultado da partida e vencedor
+MVPs da facção vencedora
+MVPs da facção perdedora
+Empate
+Resultado: empate
+MVPs Aliança Rubra
+MVPs Coalizão Safira
+Anulada
+Aviso de anulação e +30 XP a participantes válidos
+Sem MVP; aviso de anulação
+Sem MVP; aviso de anulação
+Cada tela de MVP exibe até 3 representantes — um Guerreiro, um Defensor e um Arqueiro — por facção; se não houver representante elegível, não inventar MVP. Resultados duram 15 s, com possibilidade de avaliar 6 ou 7 s por tela em decisão futura, não aprovada agora. Replay, ficha individual privada na transmissão e rodízio da terceira tela foram SUBSTITUÍDOS. Detalhamento visual de tela anulada permanece pendente.
+6. MVPs — critérios aprovados e pesos de referência NÃO definitivos
+Um MVP por classe POR FACÇÃO; até 6 destaques por partida. Fórmula composta de dano a inimigos, eliminações, progresso territorial, defesa/proteção e dano ao Nexus. Pesos DIFERENTES por classe; normalização por referências específicas de cada classe calibradas em simulações futuras. Desempate: maior indicador normalizado correspondente ao peso mais alto da classe; persistindo, rodízio determinístico por ID estável.
+Indicador / referência de simulação
+Guerreiro
+Defensor
+Arqueiro
+Dano contra tropas e Campeões
+25%
+10%
+35%
+Eliminações
+30%
+10%
+30%
+Progresso territorial
+20%
+20%
+10%
+Defesa/proteção
+10%
+45%
+5%
+Dano ao Nexus
+15%
+15%
+20%
+TOTAL (referência, não fórmula final)
+100%
+100%
+100%
+Percentuais acima são EXCLUSIVAMENTE referências iniciais para simulação, não valores finais autorizados. Não somar diretamente estatísticas de unidades heterogêneas; falta definir normalização quantitativa, escalas, limites e testes de sensibilidade. Empates no maior peso depois de revisão de pesos também requerem critério definido.
+7. MVP defensivo — elegibilidade, dano e atribuição
+Registrar TODO dano efetivamente recebido por Campeão em sua ficha. Para MVP, só pontuar o dano recebido relacionado à proteção COMPROVADA de Nexus, ponto de controle ou aliados (incluindo Cerco) sob ameaça efetivamente identificada; proximidade isolada não basta. Contar também dano comprovadamente evitado EM ALIADOS por habilidades defensivas. Exemplos aprovados de intervenção: interceptar ataques, atrair ataques que ameaçavam aliados/objetivos, aplicar habilidades de redução de dano em aliados. O dano evitado no próprio Campeão não é automaticamente contabilizado como dano evitado em aliados.
+Ameaça é dinâmica: inicia com perigo identificado e cessa quando deixa de existir, sem janela artificial fixa. Múltiplos Campeões protegendo o mesmo alvo recebem somente a contribuição comprovada da própria ação. Para proteções simultâneas no mesmo ataque, quantificar redução EFETIVA conforme precedência oficial do motor, respeitando limites e nunca creditando mais que o dano total efetivamente evitado nem duplicando parcelas. Se a precedência oficial omitir casos, submeter as lacunas à auditoria ANTES de implementar, sem inventar uma nova ordem. Parâmetros de rastreio/atribuição ainda pendentes.
+8. MVP territorial — elegibilidade, divisão e persistência do crédito
+Tempo integral na zona de controle permanece registrado na ficha; para MVP pontuar apenas contribuição efetiva em progresso territorial válido de captura neutra ou recuperação de ponto inimigo. Mesmo valor por unidade de progresso efetivo nas duas operações, não confundir tempo de presença com progresso. Sem progresso (contestações ou congelamentos) não há crédito incremental.
+Em cada intervalo com progresso válido, dividir o progresso efetivo IGUALMENTE somente entre Campeões elegíveis presentes nesse intervalo; recalcular ao entrarem/saírem. Tropas comuns e unidades de Cerco podem capturar normalmente, mas NÃO entram na divisão de crédito de MVP; na ausência de Campeões, não existe crédito de MVP naquele intervalo. A soma dos créditos distribuídos em cada intervalo não excede o progresso efetivo; nenhuma alteração na velocidade de captura.
+DECISÃO DE 28/10, APROVADA: preservar permanentemente NO REGISTRO DA PARTIDA a contribuição territorial efetivamente produzida por um Campeão, mesmo que a tentativa de captura fracasse depois, o ponto seja retomado pelo inimigo ou o progresso seja revertido. Não estornar retroativamente crédito já validamente produzido. Isso não implica estatística histórica/ranking permanente entre partidas.
+9. Pendências para fechar antes da reauditoria / antes de implementação
+Prioridade
+Pendência
+Estado e encaminhamento
+P0
+Fórmula quantitativa final de MVP
+Normalização de cada indicador, pesos definitivos, valores de referência, arredondamentos/limites; simulações e aprovação do proprietário.
+P0
+Defesa — ameaça e causalidade
+Definir detecção de inimigo/objetivo ameaçado, interceptação, atração, atribuição de dano e ordem de efeitos; auditar precedência ausente.
+P0
+Controle territorial — métrica de progresso
+Definir unidade/escala de progresso, elegibilidade exata por intervalo, precisão e arredondamento de frações, evitando dupla contagem.
+P0
+TikTok/TikFinity real
+Comprovar IDs estáveis, deduplicação, likes pessoais, votos, avatar, publicação de !meustatus e limites/antispam com payloads/testes reais.
+P0
+Comando de status
+Fechar quais campos e qual partida consultar, formato curto/fragmentação e rate-limit global/individual.
+P0
+Resultados e elegibilidade MVP
+Precisar condição de elegibilidade de representante, desempates com pesos iguais, faltas de classe e resultado confirmado/anulado.
+P1
+Conquistas
+Nenhuma definição final; se persistirem, definir elegibilidade/temporada/antiabuso/armazenamento e correlação com estatísticas.
+P1
+Limites de simulação
+Capacidade de Cercos, colisões, geometria, alcance dos tiros do Nexus, transições de tick e spawn aos 300 s.
+P1
+Reforços extremos
+Caso global 31/32; fallback de corredor e saldo; votos parciais e fechamento no mesmo instante — formalizar cenários e oráculos.
+P1
+Auditoria anterior
+Reconciliar achados WORK-AUD 001–030 e bloqueadores B01–B07 com decisões posteriores e provas técnicas ainda não executadas.
+ESCOPO DO PRÓXIMO ENVIO AO WORK: reauditoria documental independente desta versão de trabalho, mapeando APROVADO/PROVISÓRIO/PENDENTE/SUBSTITUÍDO e confrontando os cinco arquivos de auditoria de 24/10. Solicitar contradições, cálculos, dependências, riscos e testes de aceitação; não autorizar alteração do GDD, implementação, integração ou publicação sem aprovação expressa do proprietário.
+PARTE II — GDD MESTRE v0.9 / AUD-021 — TEXTO ORIGINAL PRESERVADO
+TRANSCRIÇÃO INTEGRAL DA FONTE ORIGINAL. Não aplicar instruções históricas contraditórias sem consultar a Parte I. Esta parte não foi alterada no conteúdo textual.
+FACTION WARS LIVE
+GAME DESIGN DOCUMENT • GDD MESTRE • VERSÃO DE TRABALHO v0.9 / AUD-021
+Consolidado em 23 de outubro de 2026 | Preparado para auditoria externa pelo próprio responsável do projeto.
+STATUS: cinco sistemas consolidados no nível conceitual; auditoria interna ainda aberta. Este documento não autoriza Work, Codex ou terceiros a alterar mecânicas aprovadas ou iniciar implementação.
+Como ler este documento
+APROVADO: decisão explicitamente confirmada pelo responsável, inclusive substituições posteriores.
+SUBSTITUÍDO: decisão histórica revogada por uma decisão posterior; incluída no registro de mudanças para evitar implementação incorreta.
+PENDENTE/PROPOSTO: ambiguidade, recomendação ou critério de auditoria ainda sem aprovação.
+VALIDAÇÃO EXTERNA: requisito dependente de eventos reais, documentação de integração, ambiente da LIVE ou políticas da plataforma.
+Fonte: decisões documentadas no histórico das auditorias AUD-001 a AUD-021. Onde a conversa não fechou uma regra, o documento preserva essa condição em vez de inventar um comportamento.
+SUMÁRIO DOS SISTEMAS
+Sistema | Escopo | Status
+S1 | Tropas, Campeões, IA, combate, reforços | Consolidado, com lacunas técnicas
+S2 | Mapa, captura, fortalezas e vitória | Consolidado
+S3 | TikTok LIVE, comandos, likes, presentes, votos | Consolidado, validação real pendente
+S4 | XP, patentes, temporadas, rankings, conquistas | Consolidado; curva XP a revisar
+S5 | Interface, efeitos, áudio, persistência, 24h | Consolidado; testes pendentes
+1. VISÃO GERAL E OBJETIVO
+Jogo 2D estratégico, automático e competitivo para uma única LIVE do TikTok, com duas facções fictícias (Aliança Rubra, vermelha; Coalizão Safira, azul).
+Os espectadores atuam como comandantes coletivos: não controlam individualmente as 32 unidades; votam em posturas, corredores e reforços.
+Primeiro tema: sátira/cartoon de disputa eleitoral fictícia, Praça do Parlamento. Posteriormente, após a eleição de 2026, migrar para fantasia medieval APENAS mediante aprovação do responsável.
+Migração troca apresentação, nomenclatura e assets, preservando XP, nível, patente equivalente, conquistas, estatísticas e históricos por identificadores estáveis.
+Interações e instruções na tela simultaneamente em PT-BR e inglês; narração predominantemente em português com frases ocasionais em inglês.
+Presentes permanecem cosméticos no MVP. Nunca prometem vitória, XP ou poder adicional.
+2. CICLO DA PARTIDA E ESTADOS
+Estado | Duração nominal | Regra
+Preparação | 30 segundos | Facções, orientações e preparação da próxima rodada
+Combate | até 240 segundos | Simulação automática, reforços, domínios e habilidades
+Resultados/espera | 30 segundos nominais + combate não utilizado | Congela o jogo ao vencer cedo; apresenta resultados até completar 300s
+Novo ciclo | após 300 segundos | Nova partida com ID único e estado independente
+Ciclo FIXO de 300 segundos, mesmo se ocorrer vitória antecipada. Exemplo: 30s de preparação + 90s de combate + 180s de tela de resultados/espera.
+Ao confirmar resultado, novos danos, capturas, votos e recompensas daquela partida não continuam a alterar o resultado.
+Cada partida recebe ID único; resultado oficial único e imutável após confirmação.
+Empate técnico se ambas as facções cumprirem condição de vitória no mesmo ciclo lógico de simulação.
+Prazo de 240s refere-se ao combate, não à duração de 300s da rodada.
+3. SISTEMA 1 — COMBATE E TROPAS
+3.1 Atributos aprovados
+Atributo | Guerreiro (G) | Arqueiro (A) | Guardião (D)
+HP | 120 | 75 | 200
+Dano base | 12 | 10 | 7
+Ataques/segundo | 1,0 | 1,2 | 0,7
+Alcance lógico | 2 | 16 | 2
+Velocidade | 7 | 6 | 5
+Proteção passiva | 0% | 0% | 10%
+Atenção: alcance do Arqueiro = 16 (valor antigo 18 substituído). “Defensor” e “Guardião” referem-se à mesma classe D.
+3.2 Limites e formação inicial
+Teto total simultâneo: 32 tropas vivas, 16 por facção, 8 por corredor e por facção.
+Três corredores: esquerda, centro e direita. Cada facção começa com 4 tropas NORMAIS por corredor: 1 Guerreiro, 1 Guardião e 2 Arqueiros.
+Total inicial: 12 por facção; 24 global. Restam 4 vagas por facção (8 globais).
+Nenhum Campeão aparece na formação inicial: Campeões surgem apenas através de reforços.
+A composição-alvo por postura é uma diretriz de reforços; jamais elimina ou transforma tropas já vivas.
+3.3 Posturas
+Postura | Formação-alvo / corredor | Dano | Proteção
+Equilibrada (padrão) | G1 / D1 / A2 | 100% | Normal
+Ofensiva | G2 / D0 / A2 | +10% para todas classes | Guardião: −10 pontos percentuais de proteção; G e A sem penalidade
+Defensiva | G0 / D2 / A2 | −10% | +15 pontos percentuais para todas classes
+Proteção defensiva total limitada a 0–40%. Como G e A possuem 0% de proteção passiva, NÃO recebem penalidade defensiva pela postura ofensiva. O Guardião perde 10 pontos percentuais de sua proteção disponível em postura ofensiva, respeitando piso 0%.
+Dano efetivo aprovado: máximo entre 1 e o arredondamento para cima de [dano base × multiplicadores ofensivos × (1 − redução defensiva total)]. Aplicar multiplicadores e proteção ANTES de um único arredondamento final. Não arredondar resultados intermediários.
+3.4 Campeões — exclusividade, bônus e atributos
+No máximo 1 Campeão de CADA classe por corredor E por facção; Campeões contam nas mesmas vagas, sem criar tropas extras.
+Campeões: +15% HP máximo, +10% dano-base, +5 pontos percentuais de proteção; velocidade e alcance originais.
+HP máximo arredondado para cima: Campeão Guerreiro HP 138; Arqueiro HP 87; Guardião HP 230.
+Dano base após multiplicador: G 13,2; A 11; D 7,7; dano do golpe arredondado somente no fim.
+Proteção passiva: Campeão G 5%, A 5%, D 15%; teto final 40%.
+Somente Campeões usam habilidades de classe. Tropas comuns não usam habilidades especiais. Passivas não exibem cooldown; habilidades ativáveis exibem indicador de prontidão.
+Campeão derrotado pode ser novamente elegível em reforço posterior; não ressuscita sozinho. Não pode coexistir com outro Campeão da mesma classe, corredor e facção.
+3.5 Habilidades exclusivas de Campeões
+Campeão | Habilidade | Efeito | Cooldown
+Guerreiro | Golpe Poderoso | Próximo ataque válido com 150% do dano-base | 12s
+Arqueiro | Disparo Preciso | Próximo ataque válido com 125% do dano-base | 15s
+Guardião | Muralha Defensiva | +20 pp de redução ao próprio Guardião e até 2 aliados próximos; 5s | 20s
+Cooldown começa após UTILIZAÇÃO efetiva da habilidade. O novo Campeão não herda o cooldown do derrotado.
+Muralhas de múltiplos Guardiões NÃO se acumulam; proteção total limitada a 40%.
+A Muralha continua até completar 5s mesmo que a facção mude de postura; a proteção é recalculada com o novo modificador, respeitando teto.
+Indicadores visuais de prontidão e cooldown para as habilidades que ativam; efeitos passivos ficam sem contador visível.
+3.6 IA, movimentação e alvo
+Motor tático automático determinístico, sem IA generativa. Tropas nunca cruzam corredores.
+Guerreiros avançam e combatem inimigo válido mais próximo no corredor; Guardiões lideram, interceptam e protegem aliados próximos.
+Arqueiros mantêm distância preferencial de 10–16 unidades quando protegidos, recuando quando necessário.
+Aliados NÃO bloqueiam fisicamente uns aos outros, embora tentem evitar sobreposição visual; oponentes corpo a corpo bloqueiam avanço.
+Quando NÃO existir Guerreiro nem Guardião aliado vivo no corredor, Arqueiro fixa um destino de recuo: se já passou do ponto central, retorna à zona de captura; senão, à entrada de sua fortaleza.
+Durante o recuo Arqueiro para para UM disparo válido, respeitando cadência, e continua recuando. Ao alcançar destino defende até morrer/terminar partida. Se reforços protetores chegarem, NÃO cancela o destino defensivo.
+Arqueiros podem disparar através de formações aliadas quando houver linha de ataque válida.
+4. REFORÇOS, VOTOS E CRÉDITOS
+4.1 Custos atuais (substituem todos os antigos)
+Unidade | Comum | Campeão
+Arqueiro (A) | 1 crédito | 2 créditos
+Guerreiro (G) | 2 créditos | 3 créditos
+Guardião (D) | 3 créditos | 4 créditos
+Créditos iniciais por facção = 0; NÃO existe geração automática/passiva de créditos.
+200 likes válidos coletivos atribuíveis à facção = 1 crédito; teto de saldo 20 créditos por facção.
+Créditos não persistem entre partidas.
+Limites de vagas continuam soberanos; gastos de créditos somente após confirmação da convocação.
+Quando chegar a 20 créditos, entrar em decaimento por inatividade: −1 crédito a cada 10s sem GASTO válido, até gastar ou zerar. Likes/novos créditos não suspendem o temporizador; um gasto válido encerra o estado, que só recomeça ao alcançar 20 novamente.
+Likes continuam a gerar créditos e contar nos rankings durante decaimento, respeitando teto.
+4.2 Votação e seleção de reforços
+Jogador escolhe somente CLASSE e CORREDOR, não o status Campeão. Exemplo: !guerreiro !esquerda.
+Uma janela de reforços por facção começa com o PRIMEIRO comando válido de pedido de reforço; dura 10s. Demais votos da mesma facção nessa janela são apurados; não é necessária janela independente por corredor.
+Maioria dos votos válidos decide classe e corredor. Cada usuário tem um voto contabilizável por categoria na janela; voto mais recente substitui anterior quando aplicável; não se criam unidades proporcionalmente ao número de mensagens.
+Sem votos de classe, o mecanismo automático prioriza déficit da composição-alvo da postura atual. Voto explícito da facção supera esse equilíbrio.
+Corredor desejado sem vaga: tentar corredor alternativo com déficit de unidades, usando rodízio determinístico entre alternativas empatadas. Sempre reavaliar o Campeão no corredor de destino.
+Se NÃO há Campeão vivo da classe naquele corredor: se saldo paga o Campeão, gerar Campeão; senão, se paga a unidade comum, gerar comum; senão, não convocar.
+Se JÁ há Campeão vivo da classe naquele corredor: tentar gerar tropa comum, respeitando créditos e vagas.
+Nunca ultrapassar 32 globais, 16 por equipe ou 8 por corredor/facção. Nunca gastar saldo negativo.
+Nova votação pode substituir uma preferência pendente anterior. A lógica de tratamento/expiração exata de pedidos pendentes ainda requer especificação.
+4.3 Distinguir votações
+Votações de postura e de prioridade de corredor foram concebidas em janelas periódicas de 10s; a votação de REFORÇO foi explicitamente alterada para janela de 10s acionada pelo primeiro comando válido da facção. É obrigatório auditar compatibilidade e conflito entre voto de corredor estratégico e corredor de convocação.
+5. SISTEMA 2 — MAPA E VITÓRIA
+Campo vertical 9:16, facção vermelha na base inferior e azul na superior. Praça do Parlamento é o primeiro cenário.
+Três corredores independentes, cada um com zona central de captura de 10 unidades lógicas. Sem cruzar corredores.
+Progresso territorial de −100 a +100 (sinais associados às facções), inicial 0; captura a 10 pontos/s fixos, independentemente do número de tropas na zona.
+Somente tropas vivas presentes na zona contam para disputa. Se ambos presentes, captura PAUSA; se nenhum presente, progresso fica CONGELADO.
+Posse do setor muda somente ao alcançar o EXTREMO oposto, nunca na passagem pelo zero. 0→100 =10s; extremo oposto→extremo =20s sem contestação.
+Fortalezas têm 2.000 HP cada, sem cura. Tropas podem atacar diretamente fortaleza adversária em alcance, observando bloqueios inimigos.
+Vitória por destruir a fortaleza adversária OU possuir simultaneamente os três setores por 15 segundos VÁLIDOS.
+REGRA REVISADA E APROVADA: se qualquer setor estiver contestado, contador de 15s PAUSA preservando acumulado. Retoma quando contestação termina e a facção mantém posse dos três. Se perder oficialmente um setor, contador ZERA.
+No tempo limite: comparar número de setores, depois percentual de HP das fortalezas e, se persistir igualdade, empate.
+Vitórias simultâneas exatas no mesmo ciclo de simulação: EMPATE TÉCNICO oficial.
+Uma vez resultado confirmado, é imutável.
+6. SISTEMA 3 — COMANDOS E INTERAÇÕES
+6.1 Comandos bilíngues
+Função | Português | Inglês
+Entrar vermelho | !vermelho | !red
+Entrar azul | !azul | !blue
+Postura ofensiva | !atacar | !attack
+Postura defensiva | !defender | !defend
+Postura equilibrada | !equilibrar | !balance
+Rota esquerda | !esquerda | !left
+Rota centro | !centro | !mid
+Rota direita | !direita | !right
+Reforço Guerreiro | !guerreiro | !warrior
+Reforço Arqueiro | !arqueiro | !archer
+Reforço Guardião | !defensor | !guardian
+Ajuda | !ajuda | !help
+Estado | !status | !status
+Atalhos !A / !G / !D foram propostos, mas não explicitamente ratificados como comandos oficiais. Algumas mensagens anteriores contêm grafias erradas de exemplo, como !guerrero; não presumir alias sem confirmação.
+6.2 Regras de comando, facção e anti-spam
+Usuário pode aderir à facção durante combate; não troca de facção dentro da mesma partida; pode trocar entre partidas.
+Máximo de 3 AÇÕES processadas por mensagem; mensagem com escolha de facção, postura, rota e classe (4 categorias) exige mensagens adicionais.
+Comandos PT e EN equivalentes nunca duplicam voto. Duas opções contraditórias na mesma categoria não podem criar múltiplos votos.
+Uma preferência válida por usuário, categoria, facção e janela; voto recente substitui anterior na mesma janela.
+Empates de postura mantêm postura anterior; empates de outras categorias preservam escolha anterior quando aplicável, com desempates determinísticos previamente definidos.
+!ajuda/!help exibem instruções bilíngues completas; !status tem limite por usuário de 30s.
+Mensagens de outra facção não interferem na votação da equipe alheia; eventos atrasados não reabrem partida encerrada.
+Identificar participante por ID estável quando fornecido; deduplicar eventos; tratar payload como não confiável; limitar spam e frequência.
+6.3 Likes coletivos e contribuição individual
+Mesma curtida VÁLIDA alimenta paralelamente duas contabilidades coletivas da facção: 200 likes/crédito e 100 likes/energia.
+Contadores residuais independentes são mantidos DENTRO da partida, inclusive entre lotes de eventos. Não inventar likes, timestamps nem identidade ausente.
+NÃO existe mais teto anterior de 10 pontos de energia por usuário a cada 10s. Permanecem validação, deduplicação e anti-spam.
+Likes individuais validados também alimentam rankings de contribuição por partida, semanal e histórico, independentemente de teto coletivo.
+Facção sem participante ativo identificado não pode ativar nova habilidade coletiva, embora continue existindo na partida.
+Uma pessoa conta no máximo uma vez na população de sua equipe. Participante ativo: integrante identificado que realizou interação válida nos últimos 60s.
+População amostrada a cada 30s; mudança de faixa exige duas medições consecutivas. Energia absoluta preservada até novo teto; buffs já ativos não são cancelados.
+6.4 Presentes e efeitos cosméticos
+Presentes produzem APENAS efeitos estéticos no MVP: confete nas cores da facção (~3s), discurso teatral de líder fictício (~5s), destaque de apoiador com apelido/avatar se permitido (~6s).
+Presentes não produzem dano, energia, crédito, XP nem vantagem competitiva.
+Fila visual limitada: efeitos cosméticos podem atrasar/agregar/expirar, sem apagar eventos financeiros ou registros reais nem bloquear simulação.
+Qualquer habilidade por presentes foi aventada para versão posterior, não aprovada.
+7. ECONOMIA DE ENERGIA E HABILIDADES COLETIVAS
+7.1 Taxas, faixas e tetos aprovados
+Membros ativos | Discurso: custo E | Chama: custo E | Teto E = 2× Discurso
+1–30 | 15 | 25 | 30
+31–50 | 25 | 35 | 50
+51–100 | 50 | 85 | 100
+101–200 | 60 | 105 | 120
+201–300 | 70 | 125 | 140
+301–400 | 80 | 145 | 160
+401–500 | 90 | 165 | 180
+501–600 | 100 | 185 | 200
+601+ | 110 | 205 | 220
+Taxa fixa de obtenção: 100 likes válidos = 1 ponto de energia. A tabela escala o CUSTO das habilidades com a população da facção (não a taxa fixa de conversão). Energia e créditos são independentes. Não existe produção automática de energia.
+7.2 Habilidades coletivas oficiais
+Habilidade | Efeito | Duração | Recarga
+Discurso Inspirador / Inspiring Speech | +10% velocidade de movimento das tropas da facção | 6s | 20s
+Chama da Batalha / Battle Flame | +5% dano das tropas, multiplicativo e dependente da postura | 8s | 30s
+Ambas são AUTOCONJURADAS: não exigem comando. São efeitos temporários com cooldown, não passivas permanentes.
+Ambas compartilham um saldo de energia por facção e possuem cooldowns próprios.
+Flexibilidade TOTAL por disponibilidade: não há reserva protegida de energia para a próxima habilidade.
+Se ambas disponíveis concorrem por energia, prioridade usa rodízio determinístico por facção; marcador avança após CADA ativação efetiva.
+Se somente uma está disponível e pode ser paga, ela pode ativar mesmo fora da alternância rígida.
+Saldo nunca fica negativo; energia é descontada exatamente uma vez no uso confirmado; cooldown contado da ativação efetiva.
+No cooldown de uma habilidade, a outra pode ser usada se estiver pronta e houver energia suficiente.
+Energia não zera por troca de faixa; limita-se ao novo teto ao confirmar mudança. Nenhum buff já ativo é interrompido por troca de faixa.
+8. SISTEMA 4 — PROGRESSÃO, PATENTES E RANKINGS
+8.1 Recompensas de XP — valores mais recentes
+Evento | XP | Regra
+Participação válida | +30 | Uma vez por partida; elegibilidade real
+Vitória | +100 | Somente partida válida e jogador elegível
+Empate válido | +20 | Empate normal ou técnico, aos elegíveis
+Voto estratégico validado e CONTABILIZADO | +2 por voto | Máximo 25 votos remunerados = 50 XP por partida
+Contribuição para energia individual | +3 por ponto de energia individual válida | Sem cap antigo individual; anti-farm, dados verificáveis e deduplicação
+Partida anulada | Somente +30 participação | Sem votos, contribuição de energia ou bônus de resultado (interpretação expressamente confirmada)
+EXEMPLOS: Usuário que gerou 35 unidades individuais válidas de energia recebe 105 XP por essa contribuição; 43 geram 129 XP. Exemplo completo: participação 30 + vitória 100 + 25 votos × 2 = 50 + 430 energias × 3 = 1.290; TOTAL = 1.470 XP. A antiga hipótese de 610 XP e o multiplicador +1 foram SUBSTITUÍDOS.
+ALERTA DE AUDITORIA: confirmar com dados reais como atribuir a produção individual de energia em lotes de likes, sobretudo com vários participantes e resíduos, e como evitar farm desproporcional. Nunca conceder a todos os membros da equipe o total da energia coletiva.
+8.2 Níveis e curva de XP
+Fórmula de XP acumulado aprovada anteriormente e ainda vigente, sujeita a REBALANCEAMENTO AUTORIZADO após mudança de recompensas: XP_total(n) = 25×(n−1)² + 75×(n−1). Ex.: nível 2=100; nível 5=700; nível 10=2.700; nível 20=10.450; nível 35=31.450; nível 50=63.700; nível 100=252.450; nível 101=257.500. Progressão continua após 100.
+Uma partida de 1.470 XP equivale a atingir o requisito total de nível 10 em 2 partidas sob a hipótese extrema de mesma recompensa repetida; isso indica que a curva pode estar rápida demais. NÃO modificar a fórmula sem aprovação.
+8.3 Patentes e migração de tema
+Nível | Tema sátira eleitoral | Tema medieval/militar fictício
+1–4 | Panfleteiro | Recruta
+5–9 | Cabo Eleitoral | Cabo
+10–14 | Fiscal de Comício | 3º Sargento
+15–19 | Coordenador de Palanque | 2º Sargento
+20–29 | Mestre dos Discursos | 1º Sargento
+30–39 | Assessor de Campanha | 3º Capitão
+40–49 | Chefe de Gabinete | 2º Capitão
+50–59 | Ministro do Palanque | 1º Capitão
+60–69 | Governador da Praça | Major
+70–79 | Senador da República Fictícia | Coronel
+80–89 | Presidente do Conselho | 3º General
+90–94 | Alto Chanceler | 2º General
+95–100 | Supremo Líder do Parlamento | 1º General
+101+ | Comandante Supremo | Comandante
+Os postos numerados de Capitão/General são convenções FICTÍCIAS deste jogo, não reprodução de postos oficiais brasileiros. A hierarquia numerada e o Comandante após nível 100 foram aprovados. A migração para o medieval depende de autorização humana e preserva dados históricos.
+8.4 Temporadas, rankings e destaques
+Temporadas competitivas de 7 dias; reiniciar placares sazonais, sem apagar XP/nível/patentes/conquistas permanentes.
+Quatro rankings principais anteriormente aprovados: XP sazonal, vitórias de facção na temporada, participação na partida atual, conquistas históricas.
+Três rankings próprios de likes aprovados: apoiadores da partida, apoiadores semanais, contribuidores históricos. Exigem atribuição individual verificável.
+Quatro destaques na LIVE: Estrategista (janelas com votos válidos), Mobilizador (contribuição verificável para energia), Veterano (nível mais alto elegível), Comandante da Partida (XP válido obtido).
+Empates e privacidade dos participantes devem ser especificados; não priorizar presentes para determinar vencedores de ranking.
+8.5 Conquistas permanentes
+Conquista | Critério | Prêmio cosmético
+Primeira Batalha | Primeira participação efetiva | Medalha bronze
+Veterano de Guerra | 50 batalhas com participação válida | Moldura prateada
+Lenda do Parlamento | Participar de 100 vitórias da facção | Título especial
+Voz da Multidão | Contribuir validamente para 25 ativações de energia em partidas distintas | Efeito de perfil
+Conquistas não alteram atributos. Nomes/visuais podem mudar no tema medieval, mas identificadores e histórico permanecem. Falta rever o significado de “contribuir para ativação” com duas habilidades coletivas.
+9. SISTEMA 5 — INTERFACE, ÁUDIO E EFEITOS
+Arte aprovada: Cartoon 2D satírico; futura adaptação medieval após autorização.
+HUD vertical em 1080×1920 de referência (9:16), com batalha central e indicadores compactos: título, cronômetro, HP das fortalezas, controle de três setores, energia, comandos e destaques.
+Reservar zonas seguras para overlays do TikTok; informações essenciais não dependem somente de cores.
+Instruções PT-BR/EN simultâneas; áudio e locução principais em português, frases ocasionais em inglês; volumes independentes por categoria.
+Quatro camadas de efeitos: combate normal; conquista de território; habilidades/celebrações; vitória. Prioridades crítica > alta > média > baixa e fila cosmética limitada.
+Efeitos normais: impactos, flechas, bloqueios. Setores: bandeiras e brilhos. Habilidades: discurso, aura flamejante. Vitória: troféus, confetes, apresentação de comandantes.
+Uma falha visual/sonora não deve impedir a simulação lógica. Logos, fotos ou personagens reais exigem revisão apropriada de direitos e políticas antes de publicar.
+10. ARQUITETURA, SEGURANÇA E OPERAÇÃO
+10.1 Plataforma prevista (proposta técnica, não implementação aprovada)
+Motor autoritativo e integrador: TypeScript/Node.js (proposta); visual 2D Phaser (proposta); persistência SQLite (proposta).
+Origem de eventos: TikTok LIVE via TikFinity Desktop/WebSocket quando disponível. Renderização como fonte de navegador no TikTok LIVE Studio (a validar em ambiente real).
+Sistemas independentes para simulação, parsing de eventos, filas, persistência, controle operacional e renderização.
+A capacidade de funcionar 24 horas é meta de engenharia e testes, não garantia de LIVE ininterrupta ou de autorização da plataforma.
+10.2 Conexão e recuperação
+TikFinity desconecta: combate AUTÔNOMO continua usando estratégias válidas anteriores; indicador visível de integração indisponível; não inventar eventos.
+Checkpoint da simulação a cada 10 segundos, mais registro de eventos confirmados. Recuperação segura não deve repetir golpes, buffs, compras, XP, contribuições ou resultados.
+Se a partida for irrecuperável com consistência: ANULAR, preservando apenas 30 XP de participação válida para elegíveis; nenhuma vitória/empate/conquista dependente do resultado.
+Se resultado oficial já confirmado, falha de renderização ou reinício não o anula: recuperar exibição/recompensas pendentes, sem duplicar.
+Fila lógica/motor, fila de interações e fila visual separadas. Eventos duplicados/atrasados validados; no máximo um processamento efetivo por identidade de evento.
+Registrar erros, logs, métricas, integridade do banco, FPS, filas, uso de memória e estado de integração.
+10.3 Metas aprovadas de testes (não executados)
+Requisito | Meta
+Resolução-base | 1080×1920
+Renderização | alvo de 60 FPS
+Motor de combate | 20 atualizações lógicas/s (meta)
+Unidades simultâneas | máx. 32
+Carga sintética | 100 eventos/s + cenários de pico
+Checkpoints | intervalo 10s
+Estabilidade | mínimo 24h de teste prolongado
+Integridade | sem XP, crédito, energia ou recompensas duplicados
+11. HISTÓRICO DE REGRAS SUBSTITUÍDAS
+Tema | Regra antiga | Regra vigente
+Formação inicial | G2/D1/A1 | G1/D1/A2 (normais)
+Arqueiro alcance | 18 unidades | 16 unidades
+Habilidades de classe | Todas as tropas | Apenas Campeões
+Geração de créditos | 2 créditos/10s; depois hipótese 1/30s | Somente likes; sem geração automática
+Teto créditos | 8; depois 10 | 20
+Decaimento | 15s em teto 10 | 10s após teto 20, até gasto/zerar
+Custos comuns | G1/A1/D2 | A1/G2/D3
+Custos Campeão | G2/A2/D3 | A2/G3/D4
+Energia likes | 15 likes por 1 energia; hipóteses B | 100 likes por 1 energia
+Crédito likes | Vários modelos exploratórios | 200 likes por 1 crédito
+Discurso Inspirador | Custo 100, duração 8s, CD30s | Custo por faixa, duração 6s, CD20s
+Domínio completo | Contador de 15s corria mesmo contestado | Pausa com contestação; zera se perde posse
+Alternância de habilidades | Reserva e ordem obrigatória | Flexibilidade total, prioridade por rodízio efetivo
+XP participação | 10 | 30
+XP vitória | 20 | 100
+XP empate | 10 | 20
+XP por votos | 2/voto máximo 20 XP | 2/voto máximo 25 votos = 50 XP
+XP por contribuição energia | 5 por partida, depois 1 por energia | 3 XP por energia válida individual
+Teto por usuário energia | 10 pontos a cada 10s | Removido, com validação/anti-spam
+Votação reforços | Ciclo periódico 10s | Janela iniciada pelo 1º comando válido por facção
+Campeão sem créditos | Aguardar Campeão | Tentar tropa comum; se não pagar, sem spawn
+12. ACHADOS ABERTOS E QUESTÕES PARA WORK
+Esta seção é deliberadamente separada das regras aprovadas. Nenhum item abaixo deve ser resolvido pelo auditor implementando uma nova regra por conta própria.
+ID | Prioridade | Pendência / pergunta
+P-01 | Crítica | Novo XP +3 por energia e ausência de cap: avaliar farm, justiça, dados por usuário e necessidade de nova curva XP
+P-02 | Alta | Precisar atribuição individual de pontos de energia a partir de likes agregados/resíduos sem duplicidade
+P-03 | Alta | Votação de reforços por facção acionada por 1º comando: janela ociosa, próximas janelas, ties entre classe/rota e comando parcial
+P-04 | Alta | Conciliar votação de corredor estratégica com corredor de pedido de reforço; desempate e fallback
+P-05 | Alta | Reforço se não houver crédito para comum, prazo da preferência pendente e limitação de taxas de spawn
+P-06 | Alta | Como a habilidade coletiva recebe prioridade quando duas podem ativar no mesmo tick e há saldo para ambas; não disparar repetidamente em um tick
+P-07 | Alta | Critério de elegibilidade do XP +30 em partida anulada, especialmente validação depois de uma falha
+P-08 | Alta | Validação real do TikFinity: campos de identidade, contagem incremental/acumulada de likes, sequências e disponibilidade em desconexão
+P-09 | Alta | Revisão de conformidade TikTok para likes que geram poder estratégico, sátira política e requisitos LIVE
+P-10 | Média | Fechamento semanal: horário de Brasília, partidas atravessando rollover, empate sazonal
+P-11 | Média | Ranking da temporada e destaque do Mobilizador após introdução de segunda habilidade
+P-12 | Média | Tratamento preciso de evento na borda de janela, timestamps do provedor e horário de aceitação
+P-13 | Média | Danos simultâneos versus domínio, ordem do ciclo lógico, tie técnico e prioridade do time limit
+P-14 | Média | Zonas físicas, spawn points, colisões, alvos e regras de seleção de até dois aliados para Muralha
+P-15 | Média | Detalhes de consumo, persistência e reinício de contadores residuais de likes e da energia ao finalizar partida
+P-16 | Média | Calibrar meta 11–15 reforços e ~2 ativações por facção com 2, 20, 50, 100 e 500 participantes
+P-17 | Média | Habilidade: prioridade e efeitos sobre unidades que nascem durante buff; visibilidade dos cooldowns
+P-18 | Baixa | Atalhos !A/!G/!D e alias de comandos não ratificados; nomenclatura bilíngue e UI safe areas
+P-19 | Baixa | Escopo exato do MVP e futuro retema medieval, assets e direitos
+13. MATRIZ DE ACEITAÇÃO PARA IMPLEMENTAÇÃO FUTURA
+ID | Critério verificável (teste ainda NÃO realizado)
+AT-01 | 24 tropas iniciais normais; G1/D1/A2 em cada corredor/facção
+AT-02 | Jamais superar 32 globais, 16 por facção, 8 por corredor/facção
+AT-03 | Campeão só por reforço e no máximo 1 por classe/corredor/facção
+AT-04 | Custos atuais corretos: A1/G2/D3 e A2/G3/D4
+AT-05 | Sem Campeão e saldo insuficiente para Campeão: gerar comum quando possível
+AT-06 | Primeiro comando de reforço válido abre uma janela de 10s apenas da facção
+AT-07 | Votos/likes duplicados nunca criam unidades nem crédito/energia/XP adicionais
+AT-08 | 200 likes coletivos =1 crédito; 100 likes=1 energia; resíduos preservados na partida
+AT-09 | Créditos máximos 20; decaimento de 1 por 10s após teto, interrompido só por gasto
+AT-10 | Nove faixas dinâmicas, verificadas a cada 30s com 2 medições consecutivas
+AT-11 | Duas habilidades coletivas autocast com custos, duração e cooldown específicos
+AT-12 | Rodízio de prioridade após cada ativação, sem reserva obrigatória de energia
+AT-13 | Facção com 0 ativos não inicia buff novo; buff anterior continua
+AT-14 | Capture progress 10/s, pausa com contestação, mudança de posse apenas no extremo
+AT-15 | Vitória territorial requer 15s sem contestação; pausa/retoma/zera como especificado
+AT-16 | Empate técnico se ambas condições completarem no mesmo ciclo
+AT-17 | Ciclo de 300s com resultados prolongados em vitória antecipada
+AT-18 | XP: 30 participação + 100 vitória +20 empate +2 por até 25 votos +3 por energia individual
+AT-19 | Partida anulada preserva somente 30 XP de participação válida
+AT-20 | Resultado oficial imutável, recompensas transacionais e idempotentes
+AT-21 | Checkpoint a cada 10s + eventos confirmados; não repetir ações
+AT-22 | Desconexão TikFinity não inventa eventos; combate continua
+AT-23 | Fila visual não bloqueia motor/eventos; eventos cosméticos limitados
+AT-24 | 24h de teste sintético, 100 eventos/s base, meta FPS 60 e 20Hz lógico
+AT-25 | Rankings de likes/XP e conquistas usam identidade estável e dados verificáveis
+AT-26 | Migração de tema exige autorização explícita e preserva progressão
+14. GOVERNANÇA E INSTRUÇÕES AO AUDITOR
+Este GDD é uma BASE DE AUDITORIA, não uma ordem de implementação. O responsável decidiu encaminhá-lo pessoalmente ao Work.
+Separar em relatório: (A) requisitos aprovados; (B) regras substituídas; (C) lacunas e riscos; (D) recomendações opcionais; (E) critérios de testes.
+Não alterar atributos, percentuais, cooldowns, fórmulas, lógica de recompensa, temas ou controles sem autorização explícita do responsável.
+Distinguir avaliações puramente documentais de integração verificada e de testes realmente executados.
+Após revisão independente, devolver relatório para aprovação humana. Codex somente poderá receber pacote técnico se o responsável autorizar separadamente.
+Não tratar proibições ou permissões do TikTok como definitivas sem conferência atual da política aplicável e dados reais do ambiente de transmissão.
+15. CONCLUSÃO EXECUTIVA
+O Faction Wars LIVE possui cinco sistemas de design consolidados e inúmeras decisões refinadas por auditoria incremental. A economia atual é inteiramente baseada em curtidas válidas para créditos/energia, os espectadores votam em classe e corredor, e o motor gera Campeões automaticamente quando elegíveis. O jogo prevê duas habilidades coletivas automáticas, progressão persistente até nível 101+, rankings/conquistas e recuperação consistente para transmissões prolongadas.
+O principal risco ainda aberto é a nova progressão de XP por energia individual sem teto, além da atribuição robusta de likes por usuário, dos comportamentos precisos de votação e da validação de integração/compliance. Estas pendências NÃO invalidam as decisões aprovadas, mas devem ser resolvidas antes do handoff de implementação.
+FIM DO GDD MESTRE — elaborado para auditoria documental. Nenhum código incluído.
+PARTE I-B — ADENDO APROVADO APÓS A EDIÇÃO DE 25/10/2026

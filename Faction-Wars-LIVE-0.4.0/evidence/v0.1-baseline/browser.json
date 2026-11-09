@@ -1,0 +1,44 @@
+{
+  "sourceDigest": "cbc205a6e8b0340615aed20242f2873ff249638fe9cebe3c2a799397daedb6a2",
+  "status": "pass",
+  "runtime": "v24.19.0",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "aspect": 0.5625,
+  "dimensions": {
+    "w": 540,
+    "h": 960,
+    "css": {
+      "x": 20,
+      "y": 156,
+      "width": 540,
+      "height": 960,
+      "top": 156,
+      "right": 560,
+      "bottom": 1116,
+      "left": 20
+    }
+  },
+  "tickAdvancedWhileRenderStopped": true,
+  "tickBefore": 11,
+  "tickAfter": 35,
+  "measuredFps": 60,
+  "errors": [],
+  "nextCycleVerified": true,
+  "pause20sVerified": true,
+  "checks": [
+    "20s pause and rejection",
+    "render failure isolation",
+    "literal names",
+    "mobile width",
+    "combat HUD",
+    "three result screens",
+    "no MVP election"
+  ]
+}

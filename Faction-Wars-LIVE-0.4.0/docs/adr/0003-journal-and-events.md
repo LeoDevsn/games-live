@@ -1,0 +1,13 @@
+# ADR-0003 — Eventos, transações e recuperação
+
+Um escritor. `step` copia entrada e devolve candidato; somente `Store.commit` publica ao adaptador, após transação SQLite (`journal_mode=WAL`, `synchronous=FULL`). Journal possui ticks contíguos, eventos normalizados originais, efeitos derivados e SHA256 do estado canônico. Checkpoint a cada200ticks=10s de relógio lógico; estado inicial é preservado. O hash SHA256 cobre estado, versão, perfil, seed, dedupe e resultado. O manifesto usa também fingerprints FNV32 para identificar regras/perfil; integridade de estado usa SHA256, não FNV.
+
+`matchId/eventId` identifica entrada; IDs de nascimento, onda, compra `(match,facção,janela,ordinal)` e resultado são estáveis. Compra inteira (débito/unidade/representante) cabe no candidato e no mesmo commit do tick; replay repete somente entradas, nunca reaplica efeitos. A tabela separada de resultados tem chave única e preserva resultado confirmado em recuperação irrecuperável. Não há entrega de recompensa.
+
+Ordem por tick:expirar/separar janelas antigas; fechar estratégia; admitir eventos do instante por tempo/sequence/eventId; manter economia/decaimento; confirmar compras expiradas sequenciais; autocast; onda; movimento; Muralhas e intenções simultâneas; dano ordenado por ID apenas para contabilidade; mortes; captura; Nexus; timeout. Janela exatamente em300s não compra; último dano/captura de299950..300000ainda conta. Maior dono contestado vence no timeout.
+
+A API local envia ID, identidade fictícia, delta inteiro explícito, schemaVersion, matchId, origem local e tick atual. Eventos com campos inválidos são diagnósticos; sem inferência de payload real. Pausa rejeita novas ações competitivas com409. O relógio do motor não usa Date.now:parada não produz catch-up; velocidade local executa mais passos completos por intervalo, nunca salta ticks.
+
+Recuperação:checkpoint válido mais recente associado a commit; tentar anterior/genesis se corrompido; repetir todos os commits posteriores e comparar cada hash. Sem caminho verificável:parar e anular se não há resultado oficial; com resultado confirmado, preservá-lo. Erro de escrita impede publicação do candidato e pausa servidor; botão Recuperar recarrega somente estado confirmado. Falhas antes/dentro/depois do commit e snapshot/journal corrompido têm testes. Arquivos SQLite devem ser copiados com processo parado ou API de backup SQLite, não copiar só o arquivo principal enquanto WAL está ativo.
+
+Segurança/limites:servidor loopback, conteúdo local, CSP sem inline scripts, nomes por textContent/Canvas; sem execução de HTML de usuário. O simulador não é homologação de autenticação/antiabuso externa. IDs e filas são locais. Logs de stress e snapshots podem crescer; não é ensaio24h.

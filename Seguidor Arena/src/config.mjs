@@ -1,0 +1,10 @@
+export const RULES=Object.freeze({initialHp:20,damage:2,hitHeal:1,likesPerAbility:50,regenMs:5000,regenPerSecond:1,regenHitHeal:2,damageMs:10000,damageMultiplier:2});
+export const DEFAULT_SETTINGS={speed:115,attackCooldownMs:900,intermissionSeconds:10,maxPlayers:300,boostMultiplier:2,participationXp:10,victoryXp:50,giftMappings:[],ranks:[{xp:0,name:'Recruta'},{xp:100,name:'Bronze'},{xp:300,name:'Prata'},{xp:700,name:'Ouro'},{xp:1500,name:'Diamante'},{xp:3000,name:'Lenda'}]};
+export function validateSettings(input={}){
+ const s=structuredClone(DEFAULT_SETTINGS),ranges={speed:[40,300],attackCooldownMs:[300,3000],intermissionSeconds:[3,60],maxPlayers:[2,500],boostMultiplier:[1.1,3],participationXp:[0,1000],victoryXp:[0,5000]};
+ for(const [key,range] of Object.entries(ranges))if(key in input){if(!Number.isFinite(input[key])||input[key]<range[0]||input[key]>range[1]||(!['speed','boostMultiplier'].includes(key)&&!Number.isInteger(input[key])))throw Error('Valor inválido: '+key);s[key]=input[key];}
+ if('giftMappings'in input){if(!Array.isArray(input.giftMappings)||input.giftMappings.length>100)throw Error('Até 100 presentes');const ids=new Set();s.giftMappings=input.giftMappings.map(g=>{if(typeof g.id!=='string'||!g.id.trim()||g.id.length>80||ids.has(g.id)||!Number.isInteger(g.seconds)||g.seconds<1||g.seconds>5||!['fire','laser','smoke'].includes(g.trail))throw Error('Presente: ID único, duração 1–5s e rastro válido');ids.add(g.id);return {id:g.id,name:String(g.name||g.id).slice(0,60),seconds:g.seconds,trail:g.trail};});}
+ if('ranks'in input){if(!Array.isArray(input.ranks)||input.ranks.length<1||input.ranks.length>20)throw Error('Patentes inválidas');let previous=-1;s.ranks=input.ranks.map(r=>{if(!Number.isInteger(r.xp)||r.xp<=previous||r.xp>10000000||typeof r.name!=='string'||!r.name.trim()||r.name.length>30)throw Error('Patentes precisam de XP crescente e nome');previous=r.xp;return {xp:r.xp,name:r.name.trim()};});if(s.ranks[0].xp!==0)throw Error('Primeira patente precisa começar em 0 XP');}
+ return s;
+}
+export const rankFor=(xp,ranks)=>[...ranks].reverse().find(r=>xp>=r.xp)?.name||ranks[0].name;

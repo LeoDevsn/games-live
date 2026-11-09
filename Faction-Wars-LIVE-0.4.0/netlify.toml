@@ -1,0 +1,5 @@
+[build]
+  command = "node scripts/build-preview.js"
+  publish = "web-preview"
+[build.environment]
+  NODE_VERSION = "24"

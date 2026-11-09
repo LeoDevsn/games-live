@@ -1,0 +1,7 @@
+import {validateLocalSocket} from './normalize.js';
+export class TikFinityBridge{
+ constructor({mode='off',url='ws://127.0.0.1:21213/',intake,onResult=()=>{},socketFactory=url=>new WebSocket(url)}={}){if(!['off','shadow'].includes(mode))throw Error('Somente off/shadow: aplicação de eventos reais não está habilitada');this.mode=mode;this.url=validateLocalSocket(url);this.intake=intake;this.onResult=onResult;this.socketFactory=socketFactory;this.attempt=0;this.closed=true;}
+ start(){if(this.mode==='off')return {status:'disabled'};if(!this.intake)throw Error('Inbox durável obrigatória');this.closed=false;this.connect();return {status:'shadow'};}
+ connect(){if(this.closed)return;const socket=this.socketFactory(this.url);this.socket=socket;socket.addEventListener('open',()=>{this.attempt=0;this.onResult({status:'connected-shadow',appliesToGame:false});});socket.addEventListener('message',message=>{try{if(typeof message.data!=='string'||message.data.length>65536)throw Error('Frame inválido ou excessivo');const result=this.intake.ingest(JSON.parse(message.data));this.onResult({...result,appliesToGame:false});}catch(e){this.onResult({status:'quarantine',reason:e.message,appliesToGame:false});}});socket.addEventListener('error',()=>{});socket.addEventListener('close',()=>{if(!this.closed)this.timer=setTimeout(()=>this.connect(),Math.min(15000,1000*2**Math.min(4,this.attempt++)));});}
+ stop(){this.closed=true;clearTimeout(this.timer);this.socket?.close();}
+}

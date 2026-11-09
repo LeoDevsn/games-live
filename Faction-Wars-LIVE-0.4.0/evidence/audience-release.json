@@ -1,0 +1,23 @@
+{
+  "version": "0.4.5",
+  "checkedAt": "2026-11-02T15:01:03.078Z",
+  "checks": [
+    "audience unit scenarios passed",
+    "local HTTP/SSE/WebSocket relay scenario passed",
+    "voice/UI adapter doubles passed",
+    "launcher regression passed",
+    "operator panel and ArenaScene regressions passed",
+    "37 rule checks passed, 3 external checks skipped",
+    "deployed source/capture module and offline bundle parity"
+  ],
+  "runtime": {
+    "eventSocket": "connected",
+    "liveEnabled": false,
+    "chatRelayConnected": false
+  },
+  "limitations": [
+    "Native TikFinity chatbot delivery awaits operator setup and a real LIVE check",
+    "Browser/Studio image and audio could not be exercised: Computer Use native pipe and browser host unavailable",
+    "Fish API tested with a stub; no paid generation performed"
+  ]
+}

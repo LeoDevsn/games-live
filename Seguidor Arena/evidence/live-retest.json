@@ -1,0 +1,138 @@
+{
+  "startedAt": "2026-11-05T13:46:51.348Z",
+  "events": [
+    {
+      "at": "2026-11-05T13:47:00.594Z",
+      "event": "share",
+      "name": "Razor Games",
+      "role": 0,
+      "status": 0,
+      "following": null,
+      "round": 36,
+      "phase": "running",
+      "inArena": false,
+      "queued": false,
+      "pending": false
+    },
+    {
+      "at": "2026-11-05T13:48:26.994Z",
+      "event": "member",
+      "name": "e_carvalhooooo",
+      "role": 0,
+      "status": 0,
+      "following": null,
+      "round": 37,
+      "phase": "waiting",
+      "inArena": false,
+      "queued": false,
+      "pending": false
+    },
+    {
+      "at": "2026-11-05T13:48:29.994Z",
+      "event": "chat",
+      "name": "Razor Games",
+      "role": 0,
+      "status": 0,
+      "following": null,
+      "round": 37,
+      "phase": "waiting",
+      "inArena": false,
+      "queued": false,
+      "pending": false
+    }
+  ],
+  "states": [
+    {
+      "at": "2026-11-05T13:46:51.416Z",
+      "round": 36,
+      "phase": "running",
+      "received": 5,
+      "connection": "receiving",
+      "players": [
+        "Eduarda Maria",
+        "crusherfighter"
+      ],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:47:00.443Z",
+      "round": 36,
+      "phase": "running",
+      "received": 6,
+      "connection": "receiving",
+      "players": [
+        "Eduarda Maria",
+        "crusherfighter"
+      ],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:48:00.647Z",
+      "round": 36,
+      "phase": "running",
+      "received": 6,
+      "connection": "inactive",
+      "players": [
+        "Eduarda Maria",
+        "crusherfighter"
+      ],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:48:12.692Z",
+      "round": 36,
+      "phase": "intermission",
+      "received": 6,
+      "connection": "inactive",
+      "players": [
+        "crusherfighter"
+      ],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:48:21.720Z",
+      "round": 37,
+      "phase": "waiting",
+      "received": 6,
+      "connection": "inactive",
+      "players": [],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:48:27.728Z",
+      "round": 37,
+      "phase": "waiting",
+      "received": 7,
+      "connection": "receiving",
+      "players": [],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:48:30.746Z",
+      "round": 37,
+      "phase": "waiting",
+      "received": 8,
+      "connection": "receiving",
+      "players": [],
+      "queued": [],
+      "pending": []
+    },
+    {
+      "at": "2026-11-05T13:49:30.896Z",
+      "round": 37,
+      "phase": "waiting",
+      "received": 8,
+      "connection": "inactive",
+      "players": [],
+      "queued": [],
+      "pending": []
+    }
+  ],
+  "finishedAt": "2026-11-05T13:49:51.441Z"
+}

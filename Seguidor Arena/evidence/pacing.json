@@ -1,0 +1,305 @@
+{
+  "status": "pass",
+  "initialHp": 20,
+  "healingSeconds": 5,
+  "scenarios": 40,
+  "groups": [
+    {
+      "traffic": "none",
+      "meanSeconds": 177.8,
+      "minSeconds": 98,
+      "maxSeconds": 256,
+      "allFinished": true
+    },
+    {
+      "traffic": "moderate",
+      "meanSeconds": 222.8,
+      "minSeconds": 155.5,
+      "maxSeconds": 286.5,
+      "allFinished": true
+    }
+  ],
+  "results": [
+    {
+      "traffic": "none",
+      "users": 2,
+      "variation": 0,
+      "seconds": 224.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 2,
+      "variation": 1,
+      "seconds": 247.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 2,
+      "variation": 2,
+      "seconds": 256,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 2,
+      "variation": 3,
+      "seconds": 229.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 8,
+      "variation": 0,
+      "seconds": 212.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 8,
+      "variation": 1,
+      "seconds": 241,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 8,
+      "variation": 2,
+      "seconds": 225,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 8,
+      "variation": 3,
+      "seconds": 217,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 30,
+      "variation": 0,
+      "seconds": 152.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 30,
+      "variation": 1,
+      "seconds": 155.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 30,
+      "variation": 2,
+      "seconds": 162,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 30,
+      "variation": 3,
+      "seconds": 158,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 100,
+      "variation": 0,
+      "seconds": 103.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 100,
+      "variation": 1,
+      "seconds": 169,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 100,
+      "variation": 2,
+      "seconds": 138.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 100,
+      "variation": 3,
+      "seconds": 98,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 200,
+      "variation": 0,
+      "seconds": 184,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 200,
+      "variation": 1,
+      "seconds": 108.5,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 200,
+      "variation": 2,
+      "seconds": 128,
+      "finished": true
+    },
+    {
+      "traffic": "none",
+      "users": 200,
+      "variation": 3,
+      "seconds": 146,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 2,
+      "variation": 0,
+      "seconds": 265,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 2,
+      "variation": 1,
+      "seconds": 214.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 2,
+      "variation": 2,
+      "seconds": 226,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 2,
+      "variation": 3,
+      "seconds": 277.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 8,
+      "variation": 0,
+      "seconds": 276,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 8,
+      "variation": 1,
+      "seconds": 270.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 8,
+      "variation": 2,
+      "seconds": 237,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 8,
+      "variation": 3,
+      "seconds": 286.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 30,
+      "variation": 0,
+      "seconds": 165,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 30,
+      "variation": 1,
+      "seconds": 178,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 30,
+      "variation": 2,
+      "seconds": 208,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 30,
+      "variation": 3,
+      "seconds": 175,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 100,
+      "variation": 0,
+      "seconds": 201,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 100,
+      "variation": 1,
+      "seconds": 251,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 100,
+      "variation": 2,
+      "seconds": 201.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 100,
+      "variation": 3,
+      "seconds": 217,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 200,
+      "variation": 0,
+      "seconds": 229,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 200,
+      "variation": 1,
+      "seconds": 171.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 200,
+      "variation": 2,
+      "seconds": 155.5,
+      "finished": true
+    },
+    {
+      "traffic": "moderate",
+      "users": 200,
+      "variation": 3,
+      "seconds": 250,
+      "finished": true
+    }
+  ],
+  "limitation": "Simulação determinística com até 2 likes/s por sobrevivente; não garante duração para todo fluxo de likes/presentes nem para entradas contínuas."
+}

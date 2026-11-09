@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-11-04T17:10:01.112Z",
+  "arenaVersion": 13,
+  "title": "Arena Royale do Plankton",
+  "rules": {
+    "intervalMs": 10000,
+    "radius": 18,
+    "shieldMs": 3000,
+    "fireDamage": 2,
+    "projectileSpeed": 420,
+    "projectileRadius": 7,
+    "projectileMs": 3000
+  },
+  "checks": {
+    "arenaTests": 71,
+    "platformTests": 14,
+    "logicalStress": {
+      "users": 200,
+      "minutes": 30,
+      "status": "pass"
+    },
+    "preview": "../previews/arena-royale-itens.png"
+  },
+  "deployment": {
+    "libraryTitleApplied": true,
+    "arenaRestartRequired": true
+  },
+  "chat": {
+    "arenaWelcomeUpdated": true,
+    "tikFinityAction": "Arena Royale do Plankton - Convite",
+    "trigger": "Join",
+    "fixedWelcome": "Bem-vindo à Arena Royale do Plankton! Siga o canal e dê 1 like para entrar. Já segue? Basta 1 like! Se a batalha começou, você entra na próxima rodada.",
+    "savedAndObservedAt": "2026-11-04T14:32:59.358Z",
+    "liveDeliveryVerified": false
+  },
+  "deathMatch": {
+    "survivors": 2,
+    "startAreaPercent": 20,
+    "minAreaPercent": 5,
+    "stepPercentagePoints": 1,
+    "intervalMs": 3000,
+    "clockStartsAfterReachingTwentyPercent": true,
+    "announcements": [
+      "screen",
+      "chat",
+      "voice"
+    ],
+    "preview": "../previews/arena-royale-deathmatch.png",
+    "status": "pass"
+  },
+  "lowCountClosing": {
+    "survivors": [
+      3,
+      9
+    ],
+    "stepPercentagePoints": 1,
+    "intervalMs": 5000,
+    "minAreaPercent": 30,
+    "eliminationsCanReduceToPercent": 20
+  }
+}

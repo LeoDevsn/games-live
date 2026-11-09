@@ -1,0 +1,186 @@
+{
+  "status": "pass",
+  "active": {
+    "durationMs": 10014.400000001118,
+    "frames": 550,
+    "meanFps": 54.81964337330183,
+    "renderer": {
+      "engine": "Phaser",
+      "version": "3.90.0",
+      "ready": true,
+      "assetsReady": true,
+      "canvasWidth": 1080,
+      "canvasHeight": 1920,
+      "art": "Blender prerendered 3D",
+      "objectiveStates": [
+        {
+          "owner": null,
+          "status": "Em contestação",
+          "label": "Em contestação · Proprietário: Neutro",
+          "progress": 0,
+          "contested": true
+        },
+        {
+          "owner": null,
+          "status": "Neutro",
+          "label": "Neutro",
+          "progress": 0,
+          "contested": false
+        },
+        {
+          "owner": null,
+          "status": "Neutro",
+          "label": "Neutro",
+          "progress": 0,
+          "contested": false
+        }
+      ],
+      "nexusLabels": [
+        "ALIANÇA RUBRA",
+        "COALIZÃO SAFIRA"
+      ],
+      "nexusBars": {
+        "S": 480,
+        "R": 480
+      },
+      "objectiveSidebar": [
+        {
+          "state": "Em\ncontestação",
+          "owner": "Dono:\nNeutro"
+        },
+        {
+          "state": "Neutro",
+          "owner": ""
+        },
+        {
+          "state": "Neutro",
+          "owner": ""
+        }
+      ],
+      "units": 122,
+      "activeFx": 12,
+      "phase": "combat",
+      "paused": false,
+      "frames": 1224,
+      "framesReceived": 202,
+      "interpolatedFrames": 549,
+      "damageEffects": 38,
+      "abilityEffects": 0,
+      "birthEffects": 0,
+      "deathEffects": 0,
+      "droppedCosmetics": 0,
+      "abilities": {},
+      "animationFrames": {
+        "walk": [
+          2,
+          3,
+          4,
+          1
+        ],
+        "attack": [
+          2,
+          3,
+          4
+        ],
+        "hurt": [
+          2,
+          3,
+          4
+        ],
+        "death": []
+      },
+      "hurtEffects": 38
+    }
+  },
+  "sourceDigest": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "renderer": {
+    "engine": "Phaser",
+    "version": "3.90.0",
+    "ready": true,
+    "assetsReady": true,
+    "canvasWidth": 1080,
+    "canvasHeight": 1920,
+    "art": "Blender prerendered 3D",
+    "objectiveStates": [
+      {
+        "owner": null,
+        "status": "Neutro",
+        "label": "Neutro",
+        "progress": 0,
+        "contested": false
+      },
+      {
+        "owner": null,
+        "status": "Neutro",
+        "label": "Neutro",
+        "progress": 0,
+        "contested": false
+      },
+      {
+        "owner": null,
+        "status": "Neutro",
+        "label": "Neutro",
+        "progress": 0,
+        "contested": false
+      }
+    ],
+    "nexusLabels": [
+      "ALIANÇA RUBRA",
+      "COALIZÃO SAFIRA"
+    ],
+    "nexusBars": {
+      "S": 480,
+      "R": 480
+    },
+    "objectiveSidebar": [
+      {
+        "state": "Neutro",
+        "owner": ""
+      },
+      {
+        "state": "Neutro",
+        "owner": ""
+      },
+      {
+        "state": "Neutro",
+        "owner": ""
+      }
+    ],
+    "units": 122,
+    "activeFx": 0,
+    "phase": "combat",
+    "paused": true,
+    "frames": 671,
+    "framesReceived": 1,
+    "interpolatedFrames": 0,
+    "damageEffects": 0,
+    "abilityEffects": 0,
+    "birthEffects": 0,
+    "deathEffects": 0,
+    "droppedCosmetics": 0,
+    "abilities": {},
+    "animationFrames": {
+      "walk": [],
+      "attack": [],
+      "hurt": [],
+      "death": []
+    }
+  },
+  "fixture": "render only / 90 siege +32 conventional / simulation paused",
+  "entities": 122,
+  "durationMs": 10008.3,
+  "frames": 575,
+  "meanFps": 57.40642752313736,
+  "p95FrameMs": 16.800000000000182,
+  "p99FrameMs": 33.399999999999636,
+  "maxFrameMs": 33.40000000000009,
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "runtime": "v24.19.0"
+}

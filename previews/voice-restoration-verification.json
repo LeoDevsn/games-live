@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-11-02T15:57:42.320Z",
+  "jellyReady": {
+    "A": true,
+    "B": true
+  },
+  "factionSharedVoiceReady": true,
+  "privateRecoverySaved": true,
+  "legacyInvitationWidgetRestored": true,
+  "publicAssetsScanned": 18,
+  "secretInPublicAssets": false,
+  "realFishTests": {
+    "A": true,
+    "B": true
+  },
+  "tests": {
+    "jelly": 30,
+    "voiceAndIngressAdapters": "passed",
+    "privateRecovery": "passed"
+  },
+  "ui": {
+    "countdownCopyCentered": true,
+    "jellyCopy": "A caça já vai começar!"
+  },
+  "limitations": "Actual LIVE Studio audio and real viewer events still require a live check; browser audio unlocking is explicit if autoplay is blocked."
+}

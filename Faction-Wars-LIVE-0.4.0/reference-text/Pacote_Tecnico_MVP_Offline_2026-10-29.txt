@@ -1,0 +1,403 @@
+Faction Wars LIVE
+Pacote técnico para o primeiro protótipo offline
+29 de outubro de 2026 • Revisão 2 com DEC-01 aprovada • Revisão de prontidão e especificação de engenharia • Destinatário Codex
+Parecer e limite de autorização
+Pode começar a implementação dos módulos definidos neste pacote. A solicitação atual do proprietário autoriza preparar o desenvolvimento offline e supera as proibições históricas de iniciar qualquer código. Não autoriza publicação, conexão TikTok/TikFinity, operação de LIVE, pagamentos ou alterações de jogabilidade. Este pacote é documentação de encaminhamento; nenhum código do jogo ou teste de produto foi executado pelo Work.
+DEC-01 encerrada por decisão expressa do proprietário em 29/10/2026: Nexus sem defesa, com 2000 HP; HP igual a zero significa destruição. Não resta bloqueador de decisão do proprietário identificado para iniciar e completar o escopo offline deste pacote. Implementação e testes ainda precisam ser executados; este parecer não homologa o produto.
+Fontes prioritárias: instrução atual do proprietário; Parte Zero do GDD de fechamento de 29/10; decisões I-B de 28/10; Parte I; Parte II histórica somente onde não substituída. Os cinco relatórios de 28/10 são evidência de auditoria, não regras acima do GDD. A etiqueta antiga “não autoriza implementação” e o cabeçalho de 28/10 não anulam a autorização posterior e específica para o offline.
+AP = regra aprovada. ENG = contrato de engenharia deste pacote, versionado e testável, sem alegar aprovação funcional. EXP = parâmetro espacial/visual de prototipagem permitido pela Parte Zero 0.4, documentado separadamente. DEC = decisão de gameplay que o implementador não pode preencher. FUT = extensão fora do primeiro protótipo. Um teste futuro não é evidência de execução.
+Decisão aprovada do Nexus
+DEC-01 • APROVADA E ENCERRADA • Fonte: confirmação expressa do proprietário nesta conversa em 29/10/2026, posterior ao GDD de fechamento e à primeira edição deste pacote. Texto da decisão: “o Nexus não possui defesa. Ele só possui 2k de HP, HP = 0 significa destruição”. Esta revisão incorpora essa confirmação e substitui os avisos de pendência da edição anterior.
+Nexus: 2000 HP, proteção estrutural 0%, sem redução de dano e sem proteção de postura, Muralha ou buffs destinados às tropas. HP após dano = max(0, HP anterior − dano calculado); ao atingir 0, confirmar destruição no fechamento do ciclo. Ambos destruídos no mesmo ciclo geram empate técnico. Preservar ataque 20, cadência 1/s, alcance 4 tiles e prioridades já aprovadas; a decisão trata da defesa recebida, não remove o ataque existente.
+O dano ao Nexus conserva os multiplicadores aprovados do atacante e um único arredondamento final. Cerco equilibrado sem Chama causa 35; Cerco ofensivo com Chama causa ceil(35×1,10×1,05)=41. Dano efetivo registrado é limitado ao HP removido. Não há autorização para cura ou proteção estrutural adicional.
+Replay técnico
+Replay significa reconstrução determinística do estado a partir de estado inicial ou checkpoint, versão de regras, perfil, seed e eventos ordenados. Serve a testes, diagnóstico e recuperação; não é gravação em vídeo, reprise para espectadores nem tela adicional de resultados. O painel operacional pode reproduzir cenários localmente, preservando o resultado oficial já confirmado.
+Conteúdo e escopo
+Implementar arena 9:16, três corredores independentes, Aliança Rubra embaixo e Coalizão Safira em cima, unidades comuns e Campeões, Cerco, Nexus compartilhado por facção, pontos centrais, combate automático, créditos, energia e habilidades coletivas, votos/reforços locais, resultado, estatísticas da partida e replay. Identidades e avatares são fictícios e locais. O tema não deve migrar silenciosamente para outro universo.
+Fora do caminho crítico: integração real, postagem de chat, temporadas, rankings permanentes, concessão de XP real, conquistas e fórmula definitiva de MVP. MVP neste pacote significa protótipo mínimo; “destaque MVP” significa o prêmio de Campeão. Registrar estatísticas e mostrar indisponibilidade da apuração definitiva sem inventar vencedores. Pesos provisórios só podem aparecer em ferramenta experimental explicitamente rotulada.
+Reconciliação objetiva da auditoria anterior
+Não há contradição entre duas decisões atuais aprovadas que exija reabrir atributos, Campeões, custos, quantidade de reforços ou vitória. Há substituições explícitas, trabalho de engenharia e DEC-01 agora encerrada. A tabela cobre todos os 42 achados; encerramento documental não significa teste técnico aprovado.
+WORK-AUD
+Destino no offline
+Tratamento
+001–004
+ENG e EXP
+Geometria, cadência, Muralha e recuo recebem contratos e testes; números aprovados preservados.
+005,010,026
+Resolvidos documentalmente
+Até duas tentativas sem fila; energia pessoal por 100 likes; resultado e efeitos idempotentes.
+006,007,008,009
+ENG
+Commit de compra, fases do ciclo, captura e relógio local; não precisam nova votação funcional.
+011,017
+Local agora e FUT real
+Entrada sintética com identidade/delta/IDs explícitos; nenhuma homologação de provedor inferida.
+012,013,014,015,016
+ENG
+Parser, resíduos, rodízios, timers e atividade versionados; presentes sem efeito competitivo.
+018
+FUT
+Publicação não autorizada; não bloqueia execução local.
+019,020,021,022,023
+FUT para progressão
+XP/temporadas/conquistas reais fora; votos e energia necessários à representação continuam locais.
+024
+Local agora e FUT real
+IDs fictícios, texto literal, avatar local; privacidade e migração reais depois.
+025,027,028,029
+ENG
+Journal, recuperação, admissão, carga e interface são entregas de implementação, não decisões do proprietário.
+030,041
+Organização do pacote
+Precedência e nomes corrigidos aqui; nenhum arquivo-fonte editado.
+031
+Resolvido por 0.2 e mensagem atual
+Maior número vence, inclusive 1×0; posse contestada conta; sem desempate por HP.
+032
+Resolvido em regra por 0.3
+Sem cap artificial de Cerco; timer terminal definido abaixo; desempenho ainda a medir.
+033,034,035
+FUT em premiação e ENG em registro
+Não eleger MVP definitivo; guardar métricas e evidências causais computáveis sem estornar crédito válido.
+036,037
+ENG local
+Estatísticas por nascimento e representação sequencial, sem recompensas permanentes.
+038,039
+FUT
+Chat externo e conquistas não são requisitos de execução da primeira batalha.
+040
+Resolvido documentalmente
+Cerco recebe bônus gerais por 0.3; DEC-01 aprovada: Nexus com proteção 0%.
+042
+Resolvido por 0.3
+Neutro 10 s com ou sem Cerco; aceleração somente na reversão inimiga.
+
+B01 motor/resultado passa a implementação e testes, com regra de posse encerrada. B02 integração econômica e B07 homologação externa não bloqueiam offline. B03 comandos e B05 recuperação tornam-se contratos de engenharia. B04 progressão é extensão. B06 combate segue para implementação e testes, com DEC-01 encerrada. B08 não bloqueia a batalha: fórmula final de destaques fica fora, registros permanecem. Não declarar B02/B04/B07/B08 homologados ou eliminados do projeto completo.
+Corrigir oráculos antigos: WT-016 passa a vitória em 1×0 e conta proprietários contestados; WT-066 neutro com Cerco leva 10 s; WT-077 não impõe cap de Cerco e usa fronteira terminal deste pacote; WT-078 aplica buffs ao Cerco e proteção 0% ao Nexus conforme DEC-01 aprovada. WT-014 continua sem vitória territorial antecipada. Não copiar “maioria de três”, empate obrigatório em contestação, HP no desempate ou domínio por 15 s para o código.
+Registro das regras imutáveis
+Fonte AP: I-B §1, Parte I B/D, Parte II §§3.3–3.5 e Parte Zero 0.3. Velocidades conservam os números atuais; sua unidade espacial deve constar do perfil técnico, sem aplicar os antigos valores 7/6/5.
+Entidade
+HP
+Dano base
+Alcance tiles
+Movimento
+Ataques por s
+Proteção passiva
+Guerreiro
+120
+10
+1
+4
+1
+0%
+Defensor
+200
+7
+1
+3
+0,7
+10%
+Arqueiro
+75
+12
+3
+5
+1,2
+0%
+Cerco
+90
+6 tropas ou 35 Nexus
+2
+2
+0,5
+0%
+Nexus
+2000
+20
+4
+0
+1
+0%
+
+Campeões: HP ×1,15 com teto inteiro; dano-base ×1,10 sem arredondar antes do golpe; proteção +5 pontos percentuais; alcance, velocidade e cadência da classe. Derivados G/D/A: HP 138/230/87; dano 11/7,7/13,2; proteção 5/15/5%. Não usar dano histórico G13,2/A11.
+Golpe Poderoso do Guerreiro: próximo ataque válido ×1,50, CD 12 s. Disparo Preciso do Arqueiro: próximo ataque válido ×1,25, CD 15 s. Muralha do Defensor: +20 pp no próprio e até três aliados, 5 s, CD 20 s, preferência até dois Cercos e uma tropa comum/Campeão. Somente Campeões usam habilidades de classe. Cooldown começa no uso efetivo; novo nascimento não herda cooldown anterior. Muralhas não somam e proteção de tropas limita-se a 0–40%.
+Posturas: equilibrada ×1 dano; ofensiva ×1,10 e −10 pp apenas no Defensor; defensiva ×0,90 e +15 pp nas tropas. Composição-alvo G1/D1/A2, G2/D0/A2, G0/D2/A2, respectivamente, sem remover ou transformar sobreviventes. Cerco recebe bônus gerais de postura, Discurso e Chama por 0.3; não recebe habilidade exclusiva de Campeão.
+Dano do golpe = max(1, ceil(base × multiplicadores ofensivos × (1 − proteção total))). Uma única operação de arredondamento final. Dano efetivo para estatística = HP realmente removido; não confundir dano calculado e overkill.
+Formação inicial: seis pares facção/corredor × (G1+D1+A2+Cerco1). Total 24 convencionais e 6 Cercos, sem Campeões. Limites convencionais 32 global, 16/facção, 8/corredor/facção; Campeões incluídos. Cerco não ocupa essas vagas e não tem cap artificial simultâneo.
+Custos A/G/D: comuns 1/2/3; Campeões 2/3/4. Saldo inicial 0, teto 20, um crédito por 200 likes coletivos válidos, sem geração passiva. Estes números não são parâmetros de ajuste do protótipo.
+Motor determinístico e fechamento da partida
+ENG: motor puro com passos fixos de 50 ms (20 Hz), renderização desacoplada. Estado e eventos têm versões; tempo de parede serve somente ao agendamento. Não pular ticks para acompanhar render. Pausa do processo não cria tempo de combate retroativo. Cada passo recebe estado, entradas ordenadas e configuração congelada; devolve novo estado e efeitos identificados.
+Usar inteiros para tempo, saldos e HP; aritmética racional ou ponto fixo documentado para posições, cadência e contribuições. Nenhum Math.random, relógio de parede ou ordem de mapa/objeto decide gameplay. Seed e estado de PRNG ficam no replay, se houver aleatoriedade técnica. Desempates usam ordenação estável e marcadores de rodízio persistidos.
+Contrato de passo ENG: para intervalo [t,t+50 ms), fechar janelas vencidas em t antes de admitir novas ações em t; admitir eventos elegíveis por (tempo lógico, sequência); aplicar manutenção econômica e convocações confirmadas; gerar onda elegível em t; atualizar buffs e movimento; construir intenções de ataque de todos os atores vivos; resolver habilidades defensivas e danos do ciclo; confirmar mortes; integrar captura com os sobreviventes elegíveis; verificar ambos os Nexus e depois timeout no fim do intervalo; confirmar no máximo um resultado. Persistir o estado antes de publicá-lo ao render. A ordem base segue 0.2; o detalhamento é engenharia, não uma nova condição de vitória.
+Ataques já válidos no mesmo ciclo não são cancelados pela morte posterior de seu emissor dentro desse ciclo. Nenhuma vitória é confirmada entre dois ataques. Se ambos Nexus atingem zero no ciclo, empate técnico; se um atinge zero, adversário vence, mesmo no ciclo que alcança 300 s. Só com ambos vivos comparar posse no timeout. Alvos mortos antes da construção das intenções são inválidos.
+Preparação [0,25 s); combate [0,300 s) em relógio próprio; resultados [0,15 s). A última integração cobre [299,95;300). Eventos/ondas de nascimento em 300 s não são admitidos como combate; o fechamento final ainda inclui dano e captura do último intervalo. Janela de reforços que terminaria exatamente em 300 não compra depois do resultado. Isso evita tropas que nascem já fora da batalha e é contrato de timer, não novo cap.
+Cerco: seis iniciais, depois seis por onda em 20,40,…,280 s, enquanto ativo; nenhuma onda em 300. Sem mortes são 90 Cercos e até 32 convencionais, 122 entidades potenciais. É dimensionamento, não limite imposto. Vitória antes encerra a agenda; replay não duplica ondas.
+Preparação tem 500 passos, combate no máximo 6000 e resultados 300. Vitória aos 90 s de combate: ciclo 25+90+15=130 s. Nunca prolongar resultados para completar o ciclo histórico de 300 s.
+Combate espacial e habilidades
+ENG e EXP autorizados por 0.4: Codex define um perfil espacial explícito antes do primeiro cenário, incluindo unidade da velocidade, escala tile/pixel/unidade histórica, hitboxes, zona, spawns, raio da Muralha, região de defesa e apresentação de projéteis. Não há novos valores numéricos de gameplay aprovados neste pacote. Não esconder esses valores dentro de sprites ou constantes dispersas. Registrar perfil, justificativa, limites e hash no replay; parâmetros experimentais não alteram os atributos fechados.
+Preservar 32 tiles por rota, centro a 16 tiles de cada extremo e três corredores segregados. A zona histórica de 10 unidades exige conversão explícita para tiles no perfil; não tratar 10 unidades como 10 tiles sem declarar a convenção técnica. O antigo intervalo preferido de Arqueiro 10–16 unidades não restaura alcance 16: o alcance atual é 3 tiles e o comportamento usa a escala técnica compatível com esse alcance. Mudança de escala não pode aumentar alcance efetivo ou modificar tempos de captura aprovados.
+ENG: usar distância de caminho no corredor para combate e acesso ao Nexus compartilhado; registrar entradas dos três caminhos no mesmo Nexus. Não criar três Nexus por facção nem ataques triplos. Aliados não bloqueiam fisicamente; inimigos bloqueiam avanço, sem atravessamento entre passos. Separar deslocamento visual para evitar sobreposição da posição autoritativa. Cercos nascem sem ser descartados por ocupação aliada e aguardam avanço se houver bloqueio inimigo.
+Alvo convencional mais próximo no corredor, com ID estável no empate. Defensor avança para a linha de proteção e combate; não inventar taunt, cura, escudo de HP ou interceptação mágica. Na região do próprio Nexus priorizar ameaças Cerco/Defensor e desempatar por distância e ID. Cerco não persegue: ataca bloqueador válido a até 2 tiles; disputa zona; após captura avança; no alcance do Nexus foca estrutura. Convencionais enfrentam defensores presentes antes de atacar Nexus. Nexus: Defensor→Guerreiro→Cerco→Arqueiro, distância e ID, um alvo por disparo, reavaliado sem reiniciar cadência.
+ENG: acumulador de ataque preserva frações de 0,7 e 1,2 por segundo; começa vazio no nascimento, satura em um ataque pronto sem alvo e não armazena rajada. Com alvo contínuo, uma janela de 60 s após nascimento produz G60/D42/A72/Cerco30/Nexus60 ataques, incluído o fechamento do sexagésimo segundo. Troca de alvo não reseta acumulador. Habilidades de ataque começam prontas; usam o próximo golpe válido; projétil visual não adiciona dano ou atraso lógico. Qualquer proposta futura de dano em voo exige contrato separado.
+ENG para Muralha: autocast quando pronta e há inimigo válido na região de combate do emissor; selecionar dentro do raio do perfil, emissor mais até 2 Cercos e até 1 convencional/Campeão. Não preencher lacunas de categoria por conta própria. Cercos mais avançados primeiro; demais por distância, depois ID. Cada aplicação tem término próprio de 5 s; coexistência usa somente +20 pp, não soma. Morte/afastamento do emissor não cancela a duração já aplicada; postura recalcula proteção. Registrar esse detalhamento no ADR e cobrir sobreposição/expiração.
+Recuo ENG por leitura literal: sem G/D aliado vivo na rota, fixar destino uma única vez — centro se ultrapassado, entrada da própria fortaleza se não. Permitir um disparo válido durante todo esse deslocamento, sem reiniciar o marcador por troca de alvo; ao chegar, defender normalmente. Reforço posterior não cancela destino. O ponto exato é do perfil espacial. Não inventar kite infinito ou retorno ofensivo automático.
+Território e resultado
+AP: estado por ponto separa proprietário (neutro/Rubra/Safira), progresso de −100 a +100 e presença/contestação. Rubra pode usar sinal positivo como convenção técnica. Mudança de proprietário só no extremo; passar por zero não neutraliza ponto possuído. Neutros não contam. Contestação e zona vazia congelam progresso sem apagar dono.
+Taxa: neutro 10 pontos/s independentemente de Cerco; reversão de ponto inimigo 10/s sem Cerco, 20/s com pelo menos um Cerco elegível. Cercos adicionais não acumulam. ENG: restaurar progresso de ponto ainda próprio usa taxa normal, pois a aceleração foi autorizada somente para reversão inimiga. Marcar essa restauração separadamente da métrica de MVP; não inventar pontuação para ela.
+Mudança de presença altera apenas o próximo intervalo elegível, sem reiniciar ou aplicar taxa retroativa. Usar precisão que represente 0,5/1 ponto por passo a 20 Hz. Se a ocupação atravessa a borda dentro do passo, o perfil deve usar uma política única de amostragem: neste contrato, posição após movimento e vivos após dano determinam o intervalo; erro temporal máximo de uma etapa lógica de 50 ms, sem alterar taxa. Não usar presença de sprite.
+No fechamento de 300 s: contar proprietários após mortes/captura do ciclo. Maior número vence, não exige maioria absoluta. 1×0 vence; 2×1 vence; 1×1 e 0×0 empatam. Três pontos contestados com proprietário Rubra contam três para Rubra. Sem desempate por HP, energia, likes ou MVP. Captura de três pontos antes do timeout não termina a partida.
+ENG para estatísticas: registrar por nascimento eliminações, dano efetivo a unidades, dano efetivo recebido, tempo na zona, dano efetivo ao Nexus e tempo vivo. Campos de tempo acumulam intervalos de 50 ms segundo a mesma amostragem do motor. Totais por usuário são soma das suas aparições, sem ranking permanente.
+Para danos simultâneos, preservar todas as intenções válidas e ordenar a atribuição contábil por ID de ataque. Consumir HP restante para estatística; somente o ataque que esgota HP recebe eliminação. Nenhuma soma de dano efetivo ultrapassa HP removido; ordem de iteração de coleções não altera esse ID. Essa política de contabilidade não cancela golpes simultâneos nem decide o vencedor por primeiro processamento.
+Progresso de captura neutra/reversão inimiga: dividir igualmente entre Campeões elegíveis presentes, com frações exatas e sem comuns/Cercos no denominador. Crédito válido permanece no registro mesmo após reversão/fracasso. Ausência de Campeão não impede captura. Não premiar tempo sem progresso.
+Defesa: registrar dano marginal evitado em aliado quando causalidade é demonstrável, limitado ao dano total evitado; autoproteção não é proteção de aliado. Registrar fontes sobrepostas sem duplicar parcelas. Não usar proximidade como prova de interceptação. Casos não computáveis ficam “não apurados”, nunca estimados. Sem fórmula final, não eleger destaque MVP oficial.
+Economia coletiva e eventos locais
+ENG: entrada normalizada contém schemaVersion, matchId, eventId, actorId, source=local-simulator, logicalTimeMs, sequence, kind e payload. Kind: joinFaction, likesDelta, command, cosmeticGift ou comando operacional de pausa/replay fora do gameplay. Likes são delta inteiro não negativo; IDs fictícios são explícitos. Recusar evento econômico sem identidade, unicidade ou semântica; não inferir dados ausentes. Normalização não é contrato TikFinity.
+Dedupe por (matchId,eventId), persistido. Evento repetido gera diagnóstico, não saldo/tropa/voto adicional. Payload inválido não muta estado; nomes são texto, avatares locais. UI operacional envia eventos ao motor, nunca escreve saldos/HP em uma partida normal. Fixtures podem preparar estado para testes e devem ser rotuladas.
+AP: cada like válido da facção alimenta créditos por 200, energia coletiva por 100 e energia pessoal por 100 likes do autor. ENG: dividir lote+resíduo por divisor, guardar somente resto inferior ao divisor; aplicar unidades geradas até o teto, sem guardar excedente como reserva oculta. Contagem pessoal não é truncada pelo teto coletivo. Reset de saldos e resíduos coletivos/pessoais na nova partida; registros de partidas anteriores permanecem separados.
+Crédito chega a 20: armar decaimento −1/10 s até gasto confirmado ou zero. Likes não cancelam. ENG no mesmo instante: eventos admitidos, depois decaimento vencido, depois compra; gasto confirmado encerra decaimento. Novo estado só rearma ao alcançar 20 novamente. Teste deve fixar essa ordem e não depender da fila visual.
+Ativos
+Discurso
+Chama
+Teto energia
+1–30
+15
+25
+30
+31–50
+25
+35
+50
+51–100
+50
+85
+100
+101–200
+60
+105
+120
+201–300
+70
+125
+140
+301–400
+80
+145
+160
+401–500
+90
+165
+180
+501–600
+100
+185
+200
+601+
+110
+205
+220
+
+Discurso: movimento ×1,10, duração 6 s, CD20. Chama: dano ×1,05 multiplicativo, duração 8 s, CD30. Autocast, saldo compartilhado, sem reserva; rodízio avança só em ativação efetiva. ENG: marcador inicial Discurso, mesma convenção nas duas facções; avaliar no máximo uma vez cada habilidade por passo, reavaliando saldo. Só uma disponível e pagável pode ativar independentemente da vez. Buff de facção afeta também nascimentos durante sua duração; Nexus não se torna tropa.
+Atividade: participante identificado uma vez; interação válida nos últimos 60 s; medir a cada 30 s, exigir duas medições consecutivas para mudar faixa. ENG offline: join/like positivo/voto válido renovam atividade; presente/consulta inválida não renovam. Começar na menor faixa; com zero ativos bloquear novos autocasts e conservar última faixa/teto até medição válida. Buff já ativo permanece. Nenhuma mudança cria energia; reduzir teto trunca saldo ao novo teto. Essas escolhas operacionais não autorizam antiabuso ou engajamento artificial em LIVE.
+Comandos reforços e representação
+AP: preparação de 25 s admite facção; entrada posterior fica para próxima partida. ENG: registrar fila explicitamente e admiti-la na preparação seguinte, sem reutilizar likes/votos antigos. Não trocar facção durante partida. Likes/votos sem vínculo vigente não geram efeitos retroativos. Eventos de resultado não reabrem combate. Durante pausa não admitir ações competitivas novas; rejeição visível, sem atribuir timestamp inventado.
+Parser ENG: tokens completos, case-insensitive, aliases oficiais normalizados; processar até três ações válidas na ordem textual. A quarta e seguintes ficam sem efeito e com diagnóstico. Uma preferência por categoria/janela/usuário; substituição não soma votos. !red !blue mantém a primeira facção válida; segunda tentativa é rejeitada. Aliases repetidos não multiplicam contagem. PT/EN e atalhos de I-B §2 são oficiais.
+Postura e corredor estratégico: janelas periódicas [0,10),[10,20)… durante combate; postura empatada mantém anterior. Corredor estratégico fica registrado; não desloca unidades entre rotas nem altera o destino de reforço definido por votos de classe. Sem regra aprovada de efeito adicional, não inventar bônus ou redirecionamento.
+Reforço: primeiro token válido de classe abre janela da facção por 10 s. Classe isolada conta. Uma classe atual por usuário persiste até fechamento; rota seguinte vincula-se só a ela. Troca de classe remove vínculo de rota anterior, exigindo novo voto de rota; fechamento limpa ambos. Rota sem classe atual vale apenas para estratégia aberta, sem memória para reforço. Portanto !left !warrior na ordem textual dá rota estratégica e classe de reforço; !warrior !left dá classe e rota de reforço. Nenhum token de rota conta nas duas categorias.
+Ao fechar janela, contabilizar últimas preferências finais válidas, inclusive classes que não ficaram entre as duas vencedoras; isso não obriga convocá-las. ENG: E e V da representação são totais locais desta partida; V é número de votos finais contabilizados, não número de mensagens nem votos pagos até 50. Snapshot após apuração e antes de cada convocação. O limite remunerado de XP não é limite de V.
+Ordenar classes por votos; empates por rodízio determinístico. Duas classes vencedoras geram uma tentativa cada; uma única classe gera duas tentativas; terceira classe não substitui tentativa sem saldo. ENG: ciclo de empate de classes A→G→D, corredores esquerda→centro→direita, marcador inicial no primeiro, avançando somente quando utilizado para selecionar empatado; salvar marcadores. Corredor apurado entre eleitores da classe; empate/ausência usa maior déficit convencional, depois rodízio. Déficit é vaga até 8 naquele corredor/facção, não inclui Cerco.
+Processar tentativa 1 e depois 2. Verificar limites globais/facção/corredor, fallback de corredor cheio para maior déficit, Campeão vivo da classe no destino, créditos e representante. Sem Campeão, tentar Campeão se pode pagar; senão comum; com Campeão, somente comum. Falha sem débito e sem fila. Crédito que chega depois não reabre janela; apenas novo comando válido. Evento no fim exclusivo pertence à nova janela, se puder abri-la.
+Representante: primeiro grupo nunca representado, depois quem já representou e não tem Campeão vivo; dentro de cada grupo P=5E+10V decrescente, empate por rodízio de IDs estáveis. Só mesma facção e elegível na partida. Máximo um Campeão vivo por espectador; sem elegível usar genérico. Compra confirma débito, unidade e vínculo em uma transação; segunda tentativa vê a primeira. Falha não consome representante.
+Arquitetura e persistência
+Escolha de engenharia recomendada: TypeScript para motor e aplicação local, render 2D de navegador, persistência SQLite local com transações. Phaser é opção técnica, não regra de jogo. Codex pode usar Canvas se preservar requisitos; escolher uma abordagem, registrar ADR e versões fixadas no lockfile. Sem servidor público ou dependência de rede em runtime. Seleção/instalação de dependências é trabalho de implementação, não realizada neste pacote.
+Diretório proposto
+Responsabilidade e contrato
+src/core
+Estado, relógio fixo, IDs, scheduler, step determinístico. Sem DOM, rede ou acesso direto a banco.
+src/rules
+Dados imutáveis com fonte e versão; perfis técnicos separados; DEC-01 incorporada como regra aprovada.
+src/combat
+Movimento, alvo, ataques, habilidades, dano e mortes.
+src/territory
+Presença, progresso, proprietário e contribuição por intervalo.
+src/economy
+Likes, resíduos, créditos, energia, atividade, autocast e compras.
+src/commands
+Parser, janelas, apuração e intents de reforço.
+src/participants
+Facção, representação, aparições e seis estatísticas.
+src/match
+Preparação, combate, resultado único e resultados visuais.
+src/adapters/local
+Simulador, fixtures, admissão e replay; nenhum conector real.
+src/persistence
+Journal, checkpoints, commits e recuperação.
+src/ui
+Arena, HUD, controles locais e apresentação; somente lê snapshots.
+tests e scenarios
+Unitários, propriedades, integração local, falhas e fixtures com seed.
+
+ENG: apenas um escritor autoritativo altera a partida. UI envia intents. Cada ciclo calcula candidato a partir do último estado confirmado; grava lote de eventos/efeitos e marcador de commit em transação; só então publica novo snapshot. Efeitos derivados não são aplicados novamente como entradas no replay. IDs de compra (partida,janela,ordinal), nascimento, onda, resultado e evento são estáveis.
+Checkpoint a cada 10 s de tempo lógico, associado ao último commit confirmado. Incluir: fase/tempo, IDs/sequências, entidades/HP/posições, cadências, CDs/buffs, estados de recuo, agendas de Cerco, donos/progresso, votos/janelas, saldos/resíduos, atividade/faixa/histerese, rodízios, E/V, representantes, estatísticas, contribuições fracionárias, dedupe, resultado, seed, versão e hash de regras/perfil.
+Recuperar snapshot válido e repetir journal confirmado posterior. Validar hash de estado e versão; não reexecutar entrada já coberta pelo checkpoint. Registro parcial sem commit não é confirmação. Snapshot corrompido: tentar anterior mais journal íntegro; sem reconstrução verificável, anular, exceto resultado já confirmado, que permanece. Disco indisponível pausa confirmação e sinaliza erro; não continuar produzindo estado “oficial” só na memória.
+XP real não existe no protótipo; não simular crédito em conta de produção. Se houver preview, isolá-lo como cálculo local: 30 participação, 100 vitória, 20 empate, 0 derrota, 3 por voto até 50, 2 por energia pessoal; anulada somente 30. Curva 25(n−1)²+75(n−1) inalterada. Chaves futuras de recompensa por partida/usuário/motivo, sem implementar temporadas/conquistas para passar o MVP.
+Interface e ordem de implementação
+Arena de referência 1080×1920, escalável mantendo 9:16. Mostrar título, facções por nome/ícone/cor, tempo, HP de Nexus, três donos/progressos/contestações, créditos, energia, postura e janelas. Preparação e resultados escurecem arena com contador central; combate usa contador no topo. Distinguir comuns/Campeões/Cerco e mostrar cooldowns ativos; sprites provisórios locais são permitidos, sem pessoas reais ou mudança de tema.
+Painel local fora da arena: criar identidades fictícias, enviar comandos PT/EN, likes delta e executar cenários; pausar/avançar/reproduzir sem alterar o resultado oficial. Exibir modo offline e versão do perfil. Resultados duram três telas de 5 s: resultado; facção vencedora; facção perdedora. Empate: resultado, Rubra, Safira. Anulada: avisos sem MVP. Nas telas de facção sem apuração definitiva, mostrar “MVP não apurado no protótipo” e ficha estatística sem eleger substituto. Não forçar 6 ou 7 s.
+Etapa
+Entrega verificável
+Dependência
+E0
+Ler pacote/fontes; registrar DEC-01, regras e ADRs; criar projeto isolado e lockfile.
+Nenhuma aprovação extra para organização interna.
+E1
+Motor headless, estados, relógio, IDs, replay e validadores.
+E0.
+E2
+Perfil espacial documentado, mapa, unidades, IA, habilidades e captura.
+E1; dano ao Nexus conforme DEC-01 aprovada.
+E3
+Entrada local, economia, votos, reforços, representação e estatísticas.
+E1 e contratos de E2.
+E4
+Journal/checkpoints, transações e testes de falha.
+E1–E3.
+E5
+Regra definitiva de dano ao Nexus e batalha completa.
+E2–E4; DEC-01 já encerrada.
+E6
+Arena/HUD/resultados e controles locais; render separado.
+Pode avançar com snapshots/fixtures antes de E5.
+E7
+Integração local, replay, smoke de carga, documentação e executável.
+E5/E6 e matriz de aceitação.
+
+Entregar README com comandos reais para instalar, executar local, testar, reproduzir cenário, recuperar partida e gerar build; não inventar comandos que não existam. Entregar fontes, lockfile, perfis, fixtures, manifesto de regras, ADRs, lista de limitações e relatório de testes com contagens de pass/fail/skip e logs. Não marcar skip como pass. Código deve rodar no computador do proprietário sem TikTok/TikFinity.
+Aceitação do primeiro protótipo: uma batalha completa com DEC-01 incorporada, todas as habilidades preservadas, duas facções operáveis com eventos locais, determinismo e recuperação demonstrados, UI funcional e testes abaixo. Teste 24 h permanece meta posterior, não precondição para começar a programar. Não prometer 60 FPS ou estabilidade 24 h sem medição.
+Testes locais de resultado e combate
+Todos os casos abaixo são especificação para execução futura. AP indica oráculo de gameplay; ENG indica contrato operacional deste pacote; DEC indica bloqueio pontual. Preparar estado por fixture só no ambiente de teste. Cada resultado deve incluir versões, seed, estado inicial, entradas ordenadas, hash final e evidência da execução.
+ID
+Entrada e resultado esperado
+Rastreio
+L01
+Timeout com donos 1×0 e dois neutros: vence dono de 1; espelhar.
+T01; WT-016; AP
+L02
+Timeout 1×1 e 0×0: empate mesmo com HP diferentes.
+T02; WT-016; AP
+L03
+Dois pontos Rubra contestados e um Safira: Rubra vence 2×1.
+T03; WT-016; AP
+L04
+Um Nexus destruído: adversário vence; ambos no mesmo ciclo: um empate técnico. Repetir no último ciclo.
+T04; WT-015; AP/ENG
+L05
+Ter três pontos por 15 s antes do timeout não encerra; evento após resultado não muda vencedor.
+WT-014/042; AP
+L06
+Vitória aos 90 s: próximo ciclo em 130 s totais; sem vitória, máximo 340 s.
+WT-017; AP
+L07
+Início: 24 comuns+6 Cercos, G1/D1/A2 por par, nenhum Campeão.
+T05; WT-001; AP
+L08
+Sem mortes: seis Cercos em cada onda 20..280; total 90; zero spawn em 300 ou após vitória.
+T06; WT-077; AP/ENG
+L09
+Neutro 10 s com zero/um/vários Cercos; reversão 20 s sem e 10 s com Cerco; posse não muda no zero.
+T07/T08; WT-012/066; AP
+L10
+Reversão 5 s normal+3 s acelerada+9 s normal = 200 pontos/17 s; contestação/vazio congelam.
+WT-013/065; AP
+L11
+Tabelas de atributos e derivados exatos; nenhum comum usa habilidade.
+T13; WT-055; AP
+L12
+G Campeão ofensivo+Golpe+Chama contra 40%: ceil(10×1,1×1,1×1,5×1,05×0,6)=12.
+WT-006; AP
+L13
+D Campeão defensivo+Muralha 40%; muda ofensivo, fica 25% até expirar; sobreposição não soma.
+WT-007/008; AP/ENG
+L14
+60 s de alvo contínuo: G60/D42/A72/Cerco30/Nexus60; troca de alvo preserva acumulador.
+WT-009; ENG
+L15
+Perda do último protetor fixa recuo; reforço não cancela; um tiro no deslocamento; defesa ao chegar.
+WT-010/060; AP/ENG
+L16
+Nexus escolhe D antes G/Cerco/A; distância/ID desempata; um ataque por cadência mesmo com três rotas.
+WT-055/060; AP/ENG
+L17
+Nexus sem defesa: Cerco base causa 35; ofensivo+Chama causa 41. Nexus HP35 recebe35: HP0 e destruição; HP34 recebe35: HP0 e dano efetivo34. Postura/Muralha/buffs de tropas não protegem o Nexus.
+WT-078; DEC-01 aprovada; AP
+
+Testes locais de economia reforços e integridade
+ID
+Entrada e resultado esperado
+Rastreio
+L18
+Likes 150+50: C1/E2, resíduos zero; repetir ID não acrescenta. A60+B40: E pessoal 0/0; A+40 dá E pessoal A1.
+WT-024/025/037; AP
+L19
+C20 em t0 sem gasto: 19/18/17 em 10/20/30; likes não desarmam; gasto desarma; nunca banco oculto acima do teto.
+WT-026/027/028; AP/ENG
+L20
+Todas as nove faixas; muda só após duas amostras de 30 s; zero ativos impede autocast sem cortar buff já ativo.
+WT-029/030; AP/ENG
+L21
+Discurso ×1,1 por 6/CD20; Chama ×1,05 por 8/CD30; débito único, rodízio e novo Cerco recebem efeito elegível.
+WT-031/032/033/078; AP/ENG
+L22
+Janela Rubra abre em 3, fecha 13; Safira abre 7, fecha17; evento em fim exclusivo não entra na antiga.
+WT-019/023; AP/ENG
+L23
+A esquerda→G direita substitui vínculo; fechamento limpa; rota sem classe vai só à estratégia; máximo três ações textuais.
+WT-020/021/022/064; ENG
+L24
+A saldo0/1/2; G1/2/3; D2/3/4 sem Campeão: nenhum/comum/Campeão, custo exato; com Campeão só comum.
+T10; WT-003/004; AP
+L25
+Uma classe A, saldo4, duas vagas mesmo destino: Campeão2 e comum1, sobra1.
+WT-061; AP
+L26
+G10/D8/A2 votos e saldo5: G Campeão3, D falha, não promover A; saldo7 permite G3+D4.
+WT-062; AP
+L27
+31 globais, Rubra15/Safira16: primeira ocupa32ª, segunda sem débito; lane cheia faz fallback e reavalia Campeão.
+T09; WT-005/053; AP
+L28
+Sem saldo ao fechar: cancela; likes depois não compram nem abrem janela; novo comando abre.
+WT-063; AP
+L29
+Nunca representado P10 precede já representado P1000; segunda compra exclui representante vivo; sem elegível gera genérico.
+WT-072/073/082; AP/ENG
+L30
+Alvo HP5 recebe dois golpes10: dano efetivo somado5 e uma eliminação; totais usuário=soma aparições; 1 ponto/3 Campeões conserva fração.
+WT-067/071/081; ENG
+L31
+Reverter território não estorna crédito; contestação não adiciona; dano evitado aliado 75→60 dá no máximo15, nunca20 ou duplicado.
+WT-068/069/070; AP/ENG
+L32
+Mesmos estado/perfil/seed/eventos, três replays e coleções em ordem inversa: hashes autoritativos iguais em cada commit.
+T11; WT-043/082; ENG
+L33
+Queda antes/depois de compra, onda, resultado e checkpoint: mesmo estado confirmado, zero duplicações; snapshot ruim recupera anterior ou anula.
+WT-042/043/044/050; ENG
+L34
+Evento sem ID/identidade/delta verificável: só diagnóstico; presente não altera economia/atividade/resultado; nomes nunca executam marcação.
+T12; WT-034/047/083; AP/ENG
+L35
+Início tardio enfila próxima; sem efeitos retroativos; parada de20 s não avança relógio lógico; resultado confirmado nunca é anulado por falha visual.
+WT-018/079; AP/ENG
+L36
+UI 9:16, donos contestados legíveis, resultados 0–5/5–10/10–15; nenhuma eleição definitiva de MVP; queda do render não altera motor.
+WT-046/051/076; AP/ENG
+
+Evidências de entrega e pendências futuras
+L37 desempenho local ENG: cenário sem mortes com 90 Cercos+32 convencionais, 100 eventos sintéticos/s por 10 minutos, persistência ativa. Perfil de stress não impõe limite ao gameplay; manter IDs/contadores e 12000 passos lógicos no intervalo. Comparar hash com replay sem render e sem ritmo real; zero duplicações, saldos negativos ou exceções não tratadas. Registrar hardware, versões, memória inicial/final, fila, latência p95/p99, custo por tick e FPS. Meta técnica inicial: p95 de tick abaixo de 50 ms, sem crescimento contínuo de backlog; se não atingir, reportar medição e otimizar sem reduzir unidades, frequência ou regras. Meta visual 60 FPS deve ser medida separadamente.
+L38 recuperação ENG: injetar falha de escrita antes do commit e após commit antes de exibir; nenhum estado não durável é anunciado como confirmado. Reabrir arquivo de replay em novo processo e obter mesmos hashes e representantes. Log incompatível não é “consertado” inventando eventos. Disk full gera pausa/erro verificável, não perda silenciosa.
+L39 contrato de configuração: alteração de dano/custo/duração aprovada faz teste de regras falhar; parâmetro EXP exige perfil identificado e fica no replay; proteção do Nexus deve ser 0% conforme DEC-01 aprovada, sem depender de nova confirmação. Mudança de configuração no meio da partida é rejeitada.
+L40 pacote executável: instalação e execução pelos comandos do README em ambiente limpo; nenhuma conexão externa requerida no runtime; executar duas partidas e replay; evidência das habilidades dos três Campeões, reforço, captura, vitória/empate e recuperação. DEC-01 está encerrada; sua implementação deve passar L17. Nenhum teste pode ser dispensado apenas por aprovação documental.
+Cobertura de 0.6: T01→L01; T02→L02; T03→L03; T04→L04; T05→L07/L27; T06→L08; T07→L09/L10; T08→L09; T09→L22/L27; T10→L24; T11→L32/L33/L38; T12→L34; T13→L11/L12/L13/L15; T14→L37 e separação explícita entre evidências locais e externas.
+A matriz de 84 WT permanece anexada, sem sobrescrever. Para o primeiro offline, aplicar L01–L40 e as regras atuais, não exigir como gate de início: WT-035–041 (progressão real), WT-045 (conexão real), WT-048/049 (ensaio prolongado e picos propostos), WT-052/054 (publicação/antiabuso real), WT-057–059 (patentes/conquistas/rankings), WT-074/075 (fórmula final MVP), WT-080 (chat externo), WT-084 (progressão projetada). Partes locais úteis podem ser testadas, sem ampliar escopo nem alegar homologação. WT-051 é local no L36, não valida overlays do LIVE Studio. WT-025/047/083 usam fixtures locais e não provam payloads reais.
+Não declarar bugs de balanceamento só porque uma facção vence mais em uma amostra. Registrar seeds e distribuições; qualquer alteração de atributo, economia, habilidade, cap ou condição de vitória volta ao proprietário. Geometria/implementação podem ser corrigidas para cumprir os contratos, com ADR e replay atualizado. Alteração que exceda a autorização operacional de 0.4 deve ser apresentada como proposta, sem reabrir regras fechadas automaticamente.
+Este pacote foi conferido documentalmente contra o GDD de fechamento e os cinco anexos. Nenhum teste do jogo, benchmark, integração externa ou publicação foi executado. As verificações de geração e legibilidade destes documentos não são testes do protótipo.

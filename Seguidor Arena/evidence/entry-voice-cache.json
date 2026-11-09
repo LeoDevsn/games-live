@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-05T12:46:07.950Z",
+  "configured": true,
+  "results": [
+    {
+      "kind": "current",
+      "bytes": 56841,
+      "prepareMs": 2291,
+      "cachedMs": 9,
+      "played": false
+    },
+    {
+      "kind": "next",
+      "bytes": 50154,
+      "prepareMs": 2073,
+      "cachedMs": 3,
+      "played": false
+    }
+  ],
+  "played": false
+}

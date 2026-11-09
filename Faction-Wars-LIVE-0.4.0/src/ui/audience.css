@@ -1,0 +1,4 @@
+#arena{container-type:inline-size}
+.audience-guide{position:absolute;z-index:30;bottom:1.8%;left:5%;width:90%;padding:2.5% 3%;border:1px solid #bc995b;background:linear-gradient(120deg,#102937f5,#0b1b2af2);box-shadow:0 8px 28px #0008;border-radius:2px 12px 2px 12px;color:#f2e5bf;pointer-events:none}
+.audience-guide[hidden]{display:none}.audience-guide strong{display:block;font:700 2.65cqw/1.4 'Segoe UI',sans-serif;letter-spacing:.1em;color:#e8c786}.audience-guide p{font:500 3.1cqw/1.45 'Segoe UI',sans-serif;margin:1.4% 0;color:#f0f3ed}.audience-guide small{font:600 2.4cqw/1.4 'Segoe UI',sans-serif;color:#8fc9e3}
+.audience-options{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px}.audience-options label{display:flex;align-items:center;gap:7px;margin:4px 0}.audience-options input{width:auto;margin:0}.audience-copy{padding:10px;border-left:2px solid #c9aa6d;background:#102633;color:#d3e5dc;user-select:all}

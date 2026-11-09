@@ -1,0 +1,23 @@
+{
+  "mode": "built-in image_gen",
+  "background": {
+    "path": "public/assets/construction-seabed-v1.png",
+    "prompt": "Use case: stylized-concept. Asset type: production background plate for an existing portrait TikTok construction game, 1080x1920 layout. Create a polished bright 3D cartoon Bikini Bottom underwater construction yard inspired by SpongeBob SquarePants. NO characters, NO towers, NO text, NO UI. View front with slightly elevated isometric ground, clear turquoise water and iconic soft flower-shaped sky motifs, distant blue-purple coral silhouettes. At left edge small nautical Krusty Krab workshop details (wood planks, brass fittings, stacked lumber, barrels), right edge futuristic Chum Bucket laboratory construction details (rivet steel, green glass pipes, gears). Most important: keep center-left and center-right completely clear for two animated 3D towers to be composited, with a spacious pale sandy seabed ground extending across lower 55% of image. Subtle left warm gold-red and right lime-teal lighting, lush colorful coral only at outer borders, playful high quality game environment, readable shapes, excellent lighting, high resolution landscape 4:3 composition, no border, no watermark. Render a landscape environment plate, not a screenshot or mockup."
+  },
+  "characters": {
+    "krabs": {
+      "path": "public/assets/mr-krabs-nickrewind-v1.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Mr_Krabs_character.png",
+      "license": "CC BY 3.0",
+      "attribution": "Nickelodeon / NickRewind",
+      "imageFileEdited": false
+    },
+    "plankton": {
+      "path": "public/assets/plankton-reactions-v1.png",
+      "source": "Existing Games Live / Seguidor Arena asset"
+    }
+  },
+  "generationFallback": {
+    "krabsSpriteSheet": "Generation rejected by image service; existing credited resource used. No substitute generation attempted."
+  }
+}

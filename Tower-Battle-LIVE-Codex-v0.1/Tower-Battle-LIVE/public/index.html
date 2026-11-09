@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#091425">
+  <title>Tower Battle · Sr. Sirigueijo e Plankton</title>
+  <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/broadcast-ui.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="preview" aria-label="Arena vertical TikTok LIVE 9 por 16">
+      <canvas id="arena" width="1080" height="1920" aria-label="Sr. Sirigueijo contra Plankton: construa sua torre com A ou B"></canvas>
+    </section>
+    <aside class="control" id="control">
+      <header>
+        <p class="eyebrow">TOWER BATTLE <span>LIVE</span></p>
+        <h1>Central da transmissão</h1>
+        <p class="subhead">Sr. Sirigueijo × Plankton · contrate trabalhadores pelo chat.</p>
+      </header>
+      <section class="panel">
+        <h2>Modo de operação</h2>
+        <label>Escolha o modo<select id="mode"><option value="live">LIVE · eventos reais</option><option value="simulation">Simulação · teste isolado</option></select></label>
+        <h2>Conexão com o TikFinity</h2>
+        <p class="status" id="connection" role="status">Preparando conexão…</p>
+        <p class="helper" id="lastEvent">Nenhum evento recebido.</p>
+        <div class="buttons">
+          <button id="connect" type="button">Conectar / reconectar</button>
+          <button id="disconnect" type="button" class="secondary">Desconectar</button>
+        </div>
+        <pre id="diagnostics" class="hint"></pre><p id="renderStatus" class="hint"></p><p class="hint">Abra o TikFinity Desktop no mesmo PC. Conexão WebSocket ≠ confirmação de eventos da LIVE.</p>
+      </section>
+      <section class="panel" id="audienceSection">
+        <h2>Chefes da obra · vozes e chat</h2><p class="hint">A: Sr. Sirigueijo. B: Plankton. Vozes salvas na plataforma; entram automaticamente na tela da LIVE. Este painel fica silencioso, exceto nas prévias abaixo.</p>
+        <label class="check"><input id="audienceVoice" type="checkbox" checked> Convites e incentivo por voz</label><label class="check"><input id="audienceChat" type="checkbox" checked> Mensagens no chat</label>
+        <label>Volume<input id="audienceVolume" type="range" min="0" max="100" value="80"></label><label>Voz da prévia<select id="audienceCharacter"><option value="A">Sr. Sirigueijo</option><option value="B">Plankton</option></select></label>
+        <div class="buttons"><button id="testwelcome" class="secondary">Ouvir convite</button><button id="testgift" class="secondary">Ouvir agradecimento</button><button id="testwinner" class="secondary">Ouvir vitória</button></div><p id="audienceStatus" class="hint"></p><p id="audienceRelay" class="hint"></p>
+      </section>
+      <section class="panel">
+        <h2>Simulador (sem LIVE)</h2><p class="hint">Selecione Simulação acima para habilitar os testes. O ranking da LIVE permanece separado.</p>
+        <p class="helper">Valide o jogo e os comandos sem comprar presentes nem iniciar transmissão.</p>
+        <div class="buttons two" id="demoControls">
+          <button id="demoA" type="button" class="red">Chat: A</button>
+          <button id="demoB" type="button" class="blue">Chat: B</button>
+          <button id="likesA" type="button" class="secondary">❤️ +25 A</button>
+          <button id="likesB" type="button" class="secondary">❤️ +25 B</button>
+          <button id="giftA" type="button" class="secondary">🎁 Reforço A</button>
+          <button id="giftB" type="button" class="secondary">🎁 Reforço B</button>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Configuração do OBS / LIVE Studio</h2>
+        <p class="copy">Fonte: <strong>Navegador</strong></p>
+        <p class="copy">URL: <code id="studioUrl">http://127.0.0.1:4175/?studio=1</code></p>
+        <p class="copy">Resolução: <strong>1080 × 1920</strong></p>
+        <div class="buttons"><button id="copyUrl" type="button">Copiar URL</button><a id="studioLink" href="/?studio=1" target="_blank" rel="noopener">Visualizar arena</a></div>
+        <p class="hint">Painel e fonte Navegador mostram a mesma partida, mesmo em abas diferentes.</p>
+      </section>
+      <section class="panel"><h2>Construtores em destaque</h2><p id="rankMode" class="hint"></p><div id="ranking" class="helper"></div></section>
+<section class="panel"><details><summary>Configurações da partida</summary><p class="hint">Os valores atuais são provisórios. Alterações durante uma rodada entram na próxima.</p><form id="configForm"><div id="ruleFields" class="fields"></div><label class="check"><input id="autoRestart" type="checkbox"> Rodadas automáticas</label><label class="check"><input id="giftsEnabled" type="checkbox"> Habilitar reforços opcionais</label><label>IDs de presentes permitidos (separados por vírgula; vazio = todos)<input id="giftIds" maxlength="4600"></label><p class="hint">Todos os presentes habilitados usam o mesmo efeito limitado, sem relação com o preço.</p><button type="submit">Salvar configuração</button><p id="pending" role="status" class="hint"></p></form></details></section>
+<section class="panel"><details><summary>Replay técnico</summary><p class="helper">Ative Simulação e carregue um JSON sintético ou anonimizado. O replay executa o mesmo normalizador e mostra o estado final; não altera o ranking da LIVE.</p><button id="sampleReplay">Executar exemplo</button><label>Importar eventos JSON<input id="replayFile" type="file" accept="application/json,.json"></label></details></section>
+<p id="notice" role="alert"></p><footer>Desenvolvido como projeto independente. Não é afiliado ao TikTok ou TikFinity.</footer>
+    </aside>
+  </main>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

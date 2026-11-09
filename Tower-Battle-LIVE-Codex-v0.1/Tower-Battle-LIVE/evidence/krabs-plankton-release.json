@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-04T17:36:03.771Z",
+  "version": "0.3.0",
+  "theme": "krabs-plankton-v1",
+  "teams": {
+    "A": "Sr. Sirigueijo",
+    "B": "Plankton"
+  },
+  "checks": {
+    "towerTests": 35,
+    "platformTests": 14,
+    "relayFixture": "pass",
+    "webgl": "pass",
+    "voiceProviders": [
+      {
+        "team": "A",
+        "status": "pass"
+      },
+      {
+        "team": "B",
+        "status": "pass"
+      }
+    ],
+    "stability": {
+      "status": "pass",
+      "users": 200,
+      "logicalMinutes": 30
+    }
+  },
+  "deployment": {
+    "towerBackendUpdated": true,
+    "libraryUpdated": true,
+    "narratorProfilesSaved": true,
+    "liveInputActivated": false,
+    "publicAudioPlayed": false,
+    "tikfinityFixedWelcome": "Arena Royale do Plankton - Convite",
+    "fixedWelcomeDecision": "User requested keeping the Arena welcome during the current stream; neutral welcome deferred."
+  },
+  "limitations": [
+    "Tower not validated with real viewer accounts during the current Arena broadcast.",
+    "Headless rendering is isolated QA; the stability exercise measures logical time, not thirty real broadcast minutes."
+  ],
+  "art": "theme-assets.json",
+  "preview": "C:\\Users\\luane\\Desktop\\Leonardo\\Games Live\\previews\\tower-sirigueijo-plankton-webgl.png"
+}

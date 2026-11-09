@@ -1,0 +1,10 @@
+node_modules/
+.runtime/
+dist/
+__pycache__/
+*.blend1
+*.blend2
+
+web-preview/
+
+.local-backup/

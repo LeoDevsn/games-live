@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-03",
+  "voice": "Plankton",
+  "referenceId": "84300d9b3d524313b5eebea451b4821f",
+  "welcome": {
+    "status": 200,
+    "bytes": 126640,
+    "file": ".runtime/voice-check/plankton-convite.mp3"
+  },
+  "results": [
+    {
+      "kind": "gift",
+      "team": "PLANKTON",
+      "status": 200,
+      "bytes": 140851,
+      "file": ".runtime/voice-check/plankton-gift.mp3"
+    },
+    {
+      "kind": "winner",
+      "team": "PLANKTON",
+      "status": 200,
+      "bytes": 161331,
+      "file": ".runtime/voice-check/plankton-winner.mp3"
+    }
+  ],
+  "browserPlaybackVerified": false,
+  "liveChatSent": false
+}

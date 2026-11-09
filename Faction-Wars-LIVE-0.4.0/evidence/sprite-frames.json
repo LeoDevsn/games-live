@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "classesTested": 8,
+  "checks": [
+    "distinct walking poses both directions",
+    "distinct attack poses both directions",
+    "rotating wheels with fixed cannon chassis",
+    "yellow silhouette outline with transparent interior",
+    "smaller units"
+  ],
+  "limitation": "Native Canvas rendering of actual sheet builder, not browser/Studio FPS measurement"
+}

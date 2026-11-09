@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-03",
+  "voice": {
+    "provider": "Fish Audio",
+    "configured": true,
+    "teams": {
+      "A": true,
+      "B": true
+    },
+    "lastError": null,
+    "realProviderSampleBytes": 130402,
+    "sample": ".runtime/voice-check/convite-arena.mp3",
+    "privateConfigReused": true
+  },
+  "tests": {
+    "arenaSuite": 40,
+    "sharedEntry": 2,
+    "platformSuiteBeforeMorph": 10,
+    "factionChatHttp": "pass",
+    "pacingScenarios": 40,
+    "stressUsers": 200,
+    "stressLogicalMinutes": 30
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4188/",
+    "isolated": true,
+    "liveInputDisabled": true,
+    "liveChatDisabled": true
+  },
+  "production": {
+    "arenaVersion": 3,
+    "narrator": false,
+    "mode": "simulation"
+  },
+  "sharedChatGatewayHttp": 404,
+  "restartPending": true,
+  "limitations": [
+    "Native Canvas previews and Audio API doubles, not an actual browser/FPS/live audio test.",
+    "Actual Fish Audio generated one saved sample successfully.",
+    "Chat delivery tested against a local WebSocket fixture, not TikTok.",
+    "Production automatic restart was previously rejected by automatic review; no production process was stopped in this work."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tick": 6000,
+  "result": {
+    "id": "stress-phaser-02-1:result",
+    "winner": null,
+    "reason": "timeout",
+    "combatMs": 300000
+  },
+  "hash": "1d555dafbac4d43b8c4352ca23899b89e3cf807659d79186019d261d2b2c4dfd",
+  "representatives": []
+}

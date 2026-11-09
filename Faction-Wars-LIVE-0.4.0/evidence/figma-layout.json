@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "samples": 307584,
+  "colliders": 10,
+  "slots": 10,
+  "checks": [
+    "native editable positions",
+    "all exported assets exist",
+    "blocked shape interiors",
+    "three continuous traversable routes",
+    "all classes and both factions",
+    "cannon footprint and interpolated paths",
+    "exact objective progress placement",
+    "marker states"
+  ],
+  "engineFiles": [
+    {
+      "file": "src/core/engine.js",
+      "sha256": "0d37e7aab4a886df0af0ee9e89c38c13e1094ebb3c55e736f8eb4544f9f2f0a1"
+    },
+    {
+      "file": "src/core/state.js",
+      "sha256": "f944c75bad0812cd71389c8b8679adc4cc70ae8020d59fc714534042bbbec0cc"
+    },
+    {
+      "file": "src/combat/combat.js",
+      "sha256": "abf32c1633248eb9758235003c899fcb865ba6aa98e55a8e51764eb05bef694c"
+    },
+    {
+      "file": "src/rules/rules.js",
+      "sha256": "99f15440574e8d89204bd5cfb7e13c4ff968debcd700aefb8aa55e313fc6edc4"
+    }
+  ],
+  "scope": "Fixed-lane navigation projected onto supplied collision geometry; combat retains its authoritative logical distances. Not a browser FPS measurement."
+}

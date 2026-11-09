@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-10-29T16:50:30.412Z",
+  "features": {
+    "preview/browser-host.js": "c3495c000b987624fc7f25f1f6fbd2f461b83b75f9b1c89df95795cd7bfc3477",
+    "preview/browser-store.js": "1e079da4db40ab69bb54e9e3b4f399a12a74cdf16d50751f8d8b463d9ed946a9",
+    "integrations/tikfinity/bridge.js": "1d1bec0700acf7cb379fadd89a49f44e6d4817a0095d54fc8b71b0e152b6dc56",
+    "integrations/tikfinity/fixtures.jsonl": "ddc5144bf81e70015f66ce4dbf412c2875f6869fec052d42b2d21b7f96cc2546",
+    "integrations/tikfinity/intake.js": "5ff8c8793269dc1c3ad1c0fea1bc9f919db9343644cc45e5cc5cf20ee8e41381",
+    "integrations/tikfinity/normalize.js": "fb4bae111f9fbd66aff6e532dd4cc8f63f60ef5c6b99498625fce54a7cbe5379",
+    "studio/overlay.html": "2ef41c9b867aa36abd8a1afc53736a3115d1a96f662a5fd7af60cb400f626d4c",
+    "studio/overlay.js": "f7821db24d72a60996aadce4daea8ae7d6aa197e1843d67b4b66ac6202e43675"
+  },
+  "status": "pass",
+  "publicUrl": null,
+  "deploymentStatus": "not-deployed-no-hosting-access",
+  "tikfinity": "off-by-default; shadow-only; zero-real-gameplay-events",
+  "liveStudio": "readonly capture source; installed application not tested",
+  "sourceUnchanged": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "checks": {
+    "preview": "pass",
+    "integration": "pass",
+    "studio": "pass"
+  }
+}

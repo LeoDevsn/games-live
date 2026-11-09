@@ -1,0 +1,41 @@
+.runtime/
+**/.runtime/
+**/.env
+**/.env.*
+!**/.env.example
+**/.app-profile/
+
+# Dependências, arquivos gerados e dados locais
+node_modules/
+dist/
+web-preview/
+exports/
+.logs/
+.local-backup/
+__pycache__/
+*.log
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.blend1
+*.blend2
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db
+
+# Ferramentas locais, backups e versões antigas
+/.tools/
+/backups/
+/games zip/
+/Faction Wars 0.2.0/
+/faction-wars-live-entrega-offline-2026-10-29/
+/Faction-Wars-LIVE-0.4.0/sources/
+*.zip
+
+# Metadados de repositórios e hospedagens anteriores
+**/.git/
+**/.openai/

@@ -1,0 +1,564 @@
+{
+  "timestamp": "2026-11-02T13:04:13.761Z",
+  "runtime": "v24.14.0",
+  "sourceDigest": "ce2569c4c80964bbe0ed86d97b1350b0868c7b8252babdc6840ed656518a9b83",
+  "engineDigest": "eee86d3f0b66d709985d4f3dd23f71d3a282c918038ad55a7ad9dabd54e97756",
+  "totals": {
+    "pass": 8,
+    "fail": 0,
+    "skip": 0
+  },
+  "results": [
+    {
+      "id": "V01",
+      "name": "Arqueiro não recua sozinho ou protegido, comum ou Campeão",
+      "status": "pass",
+      "evidence": [
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": false,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": false,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": false,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": true,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": true,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": false,
+          "protector": true,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": false,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": false,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": false,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": true,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": true,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "R",
+          "champ": true,
+          "protector": true,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": false,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": false,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": false,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": true,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": true,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": false,
+          "protector": true,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": false,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": false,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": false,
+          "distance": 2000,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": true,
+          "distance": 100,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": true,
+          "distance": 800,
+          "attacks": 4
+        },
+        {
+          "faction": "S",
+          "champ": true,
+          "protector": true,
+          "distance": 2000,
+          "attacks": 4
+        }
+      ]
+    },
+    {
+      "id": "V02",
+      "name": "Arqueiro retoma avanço, sem a restrição de um único disparo",
+      "status": "pass",
+      "evidence": [
+        {
+          "faction": "R",
+          "attacks": 6,
+          "resumed": 16050
+        },
+        {
+          "faction": "S",
+          "attacks": 6,
+          "resumed": 15950
+        }
+      ]
+    },
+    {
+      "id": "V03",
+      "name": "Quatro classes alcançam e atacam o Nexus pelas três rotas",
+      "status": "pass",
+      "evidence": [
+        {
+          "faction": "R",
+          "lane": 0,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 0,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 0,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 29000
+        },
+        {
+          "faction": "R",
+          "lane": 0,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 30000
+        },
+        {
+          "faction": "R",
+          "lane": 1,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 1,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 1,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 29000
+        },
+        {
+          "faction": "R",
+          "lane": 1,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 30000
+        },
+        {
+          "faction": "R",
+          "lane": 2,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 2,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 31000
+        },
+        {
+          "faction": "R",
+          "lane": 2,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 29000
+        },
+        {
+          "faction": "R",
+          "lane": 2,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 30000
+        },
+        {
+          "faction": "S",
+          "lane": 0,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 0,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 0,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 3000
+        },
+        {
+          "faction": "S",
+          "lane": 0,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 2000
+        },
+        {
+          "faction": "S",
+          "lane": 1,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 1,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 1,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 3000
+        },
+        {
+          "faction": "S",
+          "lane": 1,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 2000
+        },
+        {
+          "faction": "S",
+          "lane": 2,
+          "kind": "G",
+          "combatMs": 37500,
+          "damage": 10,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 2,
+          "kind": "D",
+          "combatMs": 50000,
+          "damage": 7,
+          "pos": 1000
+        },
+        {
+          "faction": "S",
+          "lane": 2,
+          "kind": "A",
+          "combatMs": 28000,
+          "damage": 12,
+          "pos": 3000
+        },
+        {
+          "faction": "S",
+          "lane": 2,
+          "kind": "C",
+          "combatMs": 72500,
+          "damage": 35,
+          "pos": 2000
+        }
+      ]
+    },
+    {
+      "id": "V04",
+      "name": "Objetivo contestado informa e mantém o proprietário real",
+      "status": "pass",
+      "evidence": {
+        "owners": [
+          null,
+          "R",
+          "S"
+        ],
+        "sidebarPure": true
+      }
+    },
+    {
+      "id": "V05",
+      "name": "Journal0.2 reexecutado com perfil histórico e hashes originais",
+      "status": "pass",
+      "evidence": {
+        "ticks": 40,
+        "hash": "461881f5731af27bc34485537114e1431a1bd46b3f5b73546dff4990d71aa972",
+        "profile": "spatial-2-movement-2x"
+      }
+    },
+    {
+      "id": "V06",
+      "name": "Falha transacional e recuperação mantêm nova decisão e replay",
+      "status": "pass",
+      "evidence": {
+        "path": "C:\\Users\\luane\\AppData\\Local\\Temp/fw-medieval-AoJekO/test.sqlite",
+        "hash": "589e496f39e61b592a1de4d371a8ea518a15c5b5e8cf3869b3f91c8fdce1f20f",
+        "profile": "spatial-4-formation-siege30"
+      }
+    },
+    {
+      "id": "V07",
+      "name": "Layout Figma mantém as três rotas fora dos obstáculos e do HUD lateral",
+      "status": "pass",
+      "evidence": [
+        {
+          "lane": 0,
+          "pos": 0,
+          "x": 363.8257173219979,
+          "y": 1481.3397129186603
+        },
+        {
+          "lane": 0,
+          "pos": 1000,
+          "x": 321.70111968676997,
+          "y": 1465.920081544035
+        },
+        {
+          "lane": 0,
+          "pos": 16000,
+          "x": 269.71307120085015,
+          "y": 829.0909090909091
+        },
+        {
+          "lane": 0,
+          "pos": 31000,
+          "x": 329.94169487882056,
+          "y": 296.14528698453506
+        },
+        {
+          "lane": 0,
+          "pos": 32000,
+          "x": 363.8257173219979,
+          "y": 280.1913875598086
+        },
+        {
+          "lane": 1,
+          "pos": 0,
+          "x": 552.0510095642933,
+          "y": 1394.066985645933
+        },
+        {
+          "lane": 1,
+          "pos": 1000,
+          "x": 552.0510095642933,
+          "y": 1358.755980861244
+        },
+        {
+          "lane": 1,
+          "pos": 16000,
+          "x": 552.0510095642933,
+          "y": 829.0909090909091
+        },
+        {
+          "lane": 1,
+          "pos": 31000,
+          "x": 552.0510095642933,
+          "y": 407.08133971291863
+        },
+        {
+          "lane": 1,
+          "pos": 32000,
+          "x": 552.0510095642933,
+          "y": 378.94736842105266
+        },
+        {
+          "lane": 2,
+          "pos": 0,
+          "x": 735.6854410201913,
+          "y": 1481.3397129186603
+        },
+        {
+          "lane": 2,
+          "pos": 1000,
+          "x": 778.089722691244,
+          "y": 1466.53965763419
+        },
+        {
+          "lane": 2,
+          "pos": 16000,
+          "x": 834.3889479277365,
+          "y": 832.5358851674641
+        },
+        {
+          "lane": 2,
+          "pos": 31000,
+          "x": 770.3236575897447,
+          "y": 295.594334829913
+        },
+        {
+          "lane": 2,
+          "pos": 32000,
+          "x": 735.6854410201913,
+          "y": 280.1913875598086
+        }
+      ]
+    },
+    {
+      "id": "V08",
+      "name": "Regras numéricas e perfil2× intactos",
+      "status": "pass",
+      "evidence": {
+        "rulesHash": "f3602e48",
+        "profile": {
+          "version": "spatial-4-formation-siege30",
+          "formationOrder": true,
+          "formationGap": 300,
+          "siegeWaveMs": 30000,
+          "archerRetreat": false,
+          "movementScale": 2,
+          "movementApproval": "owner-2026-10-29",
+          "unitsPerTile": 10,
+          "positionUnitsPerTile": 1000,
+          "path": 32000,
+          "center": 16000,
+          "zoneHalf": 500,
+          "wallRadius": 3000,
+          "defenseRegion": 4000,
+          "spawn": 1000,
+          "hitbox": 100,
+          "speedConvention": "approved speed in historical units/s; 10 historical units = 1 tile",
+          "sampling": "post movement / post damage",
+          "projectiles": "visual only; same-cycle damage",
+          "archerPreferred": 1600
+        }
+      }
+    }
+  ]
+}

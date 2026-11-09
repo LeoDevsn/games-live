@@ -1,0 +1,36 @@
+{
+  "version": "0.4.2-local",
+  "generator": "built-in image_gen",
+  "files": {
+    "arena-approved-v1.png": {
+      "sha256": "8c3af02ef805cfdab3aa0543bb30681b0a010a7b3c8548de64d9ad1e547a39aa",
+      "width": 941,
+      "height": 1672
+    },
+    "troops-approved-v1.png": {
+      "sha256": "a6ddad54e6b50be101e0336708a1ee113b46e65fe7d3c94ee607848231102661",
+      "width": 1254,
+      "height": 1254
+    },
+    "walk-R-v2.png": {
+      "sha256": "f176e62387a3e77b732035444c527a20e82248bb503ca8fdadb8d4be12a611a0",
+      "width": 887,
+      "height": 1774
+    },
+    "walk-S-v2.png": {
+      "sha256": "6980142c273853d20963456876fa353e627850f2fa547375cff325fe202afb01",
+      "width": 887,
+      "height": 1774
+    },
+    "attack-R-v2.png": {
+      "sha256": "8d80fe0b057661418054598a02efd1ab63b53a475f34bdc4d19060fcc08c44e7",
+      "width": 1254,
+      "height": 1254
+    },
+    "attack-S-v2.png": {
+      "sha256": "4cf6af54ac76e83f9e5a1103dc0aa56d41e57cb844a721b50a1b1a50a20340bd",
+      "width": 1254,
+      "height": 1254
+    }
+  }
+}

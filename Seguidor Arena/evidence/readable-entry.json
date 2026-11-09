@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-05T12:06:41.119Z",
+  "scope": "Arena entry presentation",
+  "rulesUnchanged": true,
+  "backendRestarted": false,
+  "served": true,
+  "checks": {
+    "entrySuitePassed": 2,
+    "visualReviewed": [
+      "waiting",
+      "announcement",
+      "preparation"
+    ],
+    "phonePreviewWidth": 519
+  },
+  "preview": "../previews/arena-entrada-celular-espera.png",
+  "changes": [
+    "Larger card labels and descriptions",
+    "High contrast instructions",
+    "Three wide rule rows",
+    "Larger countdown hint and wrapping tips"
+  ]
+}

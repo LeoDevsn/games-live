@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "offlineRuntimeWithoutNodeModules": true,
+  "runtime": "v24.19.0",
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/scenario.js",
+        "clean-battle-1"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"sourceDigest\": \"d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716\",\n  \"id\": \"clean-battle-1\",\n  \"path\": \".runtime/clean-battle-1.sqlite\",\n  \"ticks\": 6009,\n  \"logicalMs\": 300450,\n  \"result\": {\n    \"id\": \"clean-battle-1:result\",\n    \"winner\": \"S\",\n    \"reason\": \"nexus\",\n    \"combatMs\": 260450\n  },\n  \"abilities\": [\n    \"Disparo Preciso\",\n    \"Golpe Poderoso\",\n    \"Muralha\"\n  ],\n  \"purchases\": 52,\n  \"captures\": 3,\n  \"hash\": \"a71c365ff3e418417aca4afa5a0a2e5c0808bb8ee49e611356c771d9a2f3ef5c\",\n  \"replayHash\": \"a71c365ff3e418417aca4afa5a0a2e5c0808bb8ee49e611356c771d9a2f3ef5c\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/replay.js",
+        ".runtime/clean-battle-1.sqlite"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"tick\": 6009,\n  \"result\": {\n    \"id\": \"clean-battle-1:result\",\n    \"winner\": \"S\",\n    \"reason\": \"nexus\",\n    \"combatMs\": 260450\n  },\n  \"hash\": \"a71c365ff3e418417aca4afa5a0a2e5c0808bb8ee49e611356c771d9a2f3ef5c\",\n  \"representatives\": [\n    {\n      \"id\": \"clean-battle-1:purchase:R:1:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:1:2:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:1:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:1:2:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:2:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:2:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:3:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:3:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:4:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:4:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:5:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:5:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:6:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:6:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:7:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:7:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:8:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:8:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:8:2:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:9:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:9:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:10:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:10:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:11:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:12:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:12:2:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:12:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:R:13:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-1:purchase:S:13:1:unit\",\n      \"actorId\": \"S2\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/scenario.js",
+        "clean-battle-2"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"sourceDigest\": \"d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716\",\n  \"id\": \"clean-battle-2\",\n  \"path\": \".runtime/clean-battle-2.sqlite\",\n  \"ticks\": 6009,\n  \"logicalMs\": 300450,\n  \"result\": {\n    \"id\": \"clean-battle-2:result\",\n    \"winner\": \"S\",\n    \"reason\": \"nexus\",\n    \"combatMs\": 260450\n  },\n  \"abilities\": [\n    \"Disparo Preciso\",\n    \"Golpe Poderoso\",\n    \"Muralha\"\n  ],\n  \"purchases\": 52,\n  \"captures\": 3,\n  \"hash\": \"5eaf5888daf6919f9255a6873abe94b81308ac82ff754e5edc0323ae8a9280b3\",\n  \"replayHash\": \"5eaf5888daf6919f9255a6873abe94b81308ac82ff754e5edc0323ae8a9280b3\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/replay.js",
+        ".runtime/clean-battle-2.sqlite"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"tick\": 6009,\n  \"result\": {\n    \"id\": \"clean-battle-2:result\",\n    \"winner\": \"S\",\n    \"reason\": \"nexus\",\n    \"combatMs\": 260450\n  },\n  \"hash\": \"5eaf5888daf6919f9255a6873abe94b81308ac82ff754e5edc0323ae8a9280b3\",\n  \"representatives\": [\n    {\n      \"id\": \"clean-battle-2:purchase:R:1:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:1:2:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:1:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:1:2:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:2:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:2:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:3:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:3:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:4:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:4:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:5:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:5:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:6:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:6:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:7:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:7:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:8:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:8:1:unit\",\n      \"actorId\": \"S2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:8:2:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:9:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:9:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:10:1:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:10:1:unit\",\n      \"actorId\": \"S0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:11:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:12:1:unit\",\n      \"actorId\": \"R0\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:12:2:unit\",\n      \"actorId\": \"R1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:12:1:unit\",\n      \"actorId\": \"S1\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:R:13:1:unit\",\n      \"actorId\": \"R2\"\n    },\n    {\n      \"id\": \"clean-battle-2:purchase:S:13:1:unit\",\n      \"actorId\": \"S2\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "battles": [
+    {
+      "id": "clean-battle-1",
+      "hash": "a71c365ff3e418417aca4afa5a0a2e5c0808bb8ee49e611356c771d9a2f3ef5c",
+      "replayHash": "a71c365ff3e418417aca4afa5a0a2e5c0808bb8ee49e611356c771d9a2f3ef5c",
+      "result": {
+        "id": "clean-battle-1:result",
+        "winner": "S",
+        "reason": "nexus",
+        "combatMs": 260450
+      }
+    },
+    {
+      "id": "clean-battle-2",
+      "hash": "5eaf5888daf6919f9255a6873abe94b81308ac82ff754e5edc0323ae8a9280b3",
+      "replayHash": "5eaf5888daf6919f9255a6873abe94b81308ac82ff754e5edc0323ae8a9280b3",
+      "result": {
+        "id": "clean-battle-2:result",
+        "winner": "S",
+        "reason": "nexus",
+        "combatMs": 260450
+      }
+    }
+  ]
+}

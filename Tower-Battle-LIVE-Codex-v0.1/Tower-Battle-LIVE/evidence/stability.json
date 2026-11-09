@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "simulationMinutes": 30,
+  "wallSeconds": 4.071,
+  "users": 200,
+  "inputEvents": 18000,
+  "duplicatesRejected": 18000,
+  "accepted": 13853,
+  "rounds": 14,
+  "heapMB": 13,
+  "scope": "30 minutos de tempo lógico; não é ensaio de 30 minutos reais, renderização ou LIVE real. Reconexões são testadas em reliability.test.mjs."
+}

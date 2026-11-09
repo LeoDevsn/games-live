@@ -1,0 +1,62 @@
+{
+  "status": "pass",
+  "timestamp": "2026-11-01T15:09:31.181Z",
+  "runtime": "v24.14.0",
+  "engineDigest": "6e1e93d74fd44898198406f909bd6ef48cd638c76879bb54fae9018e4bf5aefc",
+  "totals": {
+    "pass": 6,
+    "fail": 0,
+    "skip": 0
+  },
+  "checks": [
+    {
+      "name": "Off opens zero sockets; remote URLs and unknown modes rejected",
+      "status": "pass",
+      "evidence": {
+        "opened": 0
+      }
+    },
+    {
+      "name": "Likes require explicit verified semantics, safe IDs and personal delta",
+      "status": "pass",
+      "evidence": {
+        "roomCounterNeverUsed": true
+      }
+    },
+    {
+      "name": "Durable dedupe across restart, stable userId despite nickname and ID collision quarantine",
+      "status": "pass",
+      "evidence": {
+        "rows": 2
+      }
+    },
+    {
+      "name": "Personal cumulative baseline has no historical credit; restart and rewind safe",
+      "status": "pass",
+      "evidence": {
+        "baseline": 900,
+        "awarded": 300
+      }
+    },
+    {
+      "name": "Fixture commands/likes feed actual approved engine, gift stays inert; replay same hash",
+      "status": "pass",
+      "evidence": {
+        "hash": "a6442454911ef11b253e15be810eb6243c092074406bcd105d6d2fdeda45c743",
+        "credits": 2,
+        "personalE": 4,
+        "source": "explicit synthetic fixture only"
+      }
+    },
+    {
+      "name": "Native WebSocket receives fixture in shadow mode and applies zero gameplay events",
+      "status": "pass",
+      "evidence": {
+        "connections": 1,
+        "ready": 2,
+        "applied": 0
+      }
+    }
+  ],
+  "limitation": "Local synthetic WebSocket only; installed TikFinity, LIVE Studio and real LIVE not exercised"
+}

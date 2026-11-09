@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-11-04",
+  "installedVersion": "1.38.0",
+  "validatorFile": "E:/TikTokStudios/TikTok LIVE Studio/1.38.0/resources/app/static/js/modal.09374688.js",
+  "checks": [
+    {
+      "id": "jelly",
+      "oldAccepted": false,
+      "newAccepted": true,
+      "url": "http://127.0.0.1:4174/?studio=1#tiktok.studio"
+    },
+    {
+      "id": "faction",
+      "oldAccepted": false,
+      "newAccepted": true,
+      "url": "http://127.0.0.1:4176/#tiktok.studio"
+    },
+    {
+      "id": "tower",
+      "oldAccepted": false,
+      "newAccepted": true,
+      "url": "http://127.0.0.1:4175/?studio=1#tiktok.studio"
+    },
+    {
+      "id": "arena",
+      "oldAccepted": false,
+      "newAccepted": true,
+      "url": "http://127.0.0.1:4177/?studio=1#tiktok.studio"
+    }
+  ],
+  "serverHttpStatus": 200,
+  "sameHttpDocument": true,
+  "portrait": {
+    "width": 1080,
+    "height": 1920
+  },
+  "libraryCorrectionServed": true,
+  "liveStudioVisualLoadVerified": false
+}

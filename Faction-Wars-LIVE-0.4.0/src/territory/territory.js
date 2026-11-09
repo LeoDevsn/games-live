@@ -1,0 +1,5 @@
+import {living} from '../core/state.js';
+export function capture(s){const all=living(s);for(const p of s.points){const present=all.filter(u=>u.lane===p.lane&&Math.abs(u.pos-s.profile.center)<=s.profile.zoneHalf);const r=present.some(u=>u.faction==='R'),b=present.some(u=>u.faction==='S');p.contested=r&&b;if(r===b)continue;const f=r?'R':'S',dir=r?1:-1;const enemy=p.owner!==null&&p.owner!==f;const rate=enemy&&present.some(u=>u.faction===f&&u.kind==='C')?2:1;const old=p.progress;p.progress=Math.max(-200,Math.min(200,old+dir*rate)); // half-points: ±200 = ±100
+ const delta=Math.abs(p.progress-old);if(delta&&(p.owner===null||enemy)){const champions=present.filter(u=>u.faction===f&&u.champion);for(const u of champions)s.stats[u.id].territorySixths+=delta*3/champions.length;} // <=3 champions (one/class), exact sixth-points
+ if(p.progress===200)p.owner='R';if(p.progress===-200)p.owner='S';}
+ for(const u of all){s.stats[u.id].aliveMs+=50;if(Math.abs(u.pos-s.profile.center)<=s.profile.zoneHalf)s.stats[u.id].zoneMs+=50;}}

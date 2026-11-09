@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-05T13:20:50.335Z",
+  "fix": "Preserve positive follower evidence when subsequent likes/member events contain zero-valued relationship metadata; explicit false still revokes eligibility",
+  "testsPassed": 82,
+  "regressionChecks": [
+    "like before follow stays pending",
+    "follow confirms retained like",
+    "subsequent zero-valued like retains registration",
+    "registration survives recovery",
+    "confirmed viewer spawns next round",
+    "explicit isFollower false revokes eligibility",
+    "unconfirmed new viewers never enter"
+  ],
+  "deployed": true,
+  "operatorDiagnosticsServed": true,
+  "realViewerValidation": false,
+  "transport": {
+    "status": "connected",
+    "received": 0,
+    "lastEvent": null
+  },
+  "observedTikfinity": "Waiting for LIVE on @dzyrazor; UI reports not live",
+  "publicMessagesSentForTesting": false,
+  "testAudioPlayed": false,
+  "roundPreserved": 36
+}

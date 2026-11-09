@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "timestamp": "2026-10-29T16:26:12.901Z",
+  "runtime": "v24.19.0",
+  "sourceDigest": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "engineDigest": "6e1e93d74fd44898198406f909bd6ef48cd638c76879bb54fae9018e4bf5aefc",
+  "lanEvidence": {
+    "origin": "http://172.26.91.249:4197",
+    "actualLan": true
+  },
+  "checks": [
+    "Windows-style network interface and IPv4 discovery",
+    "HTML and real Phaser/arena/troop assets through LAN address",
+    "phone same-origin POST controls reach actual backend",
+    "foreign Origin, cross-site browser request and foreign Host rejected",
+    "SSE initial frame and subsequent authoritative tick forwarded",
+    "CLI auto-detects existing simulator, prints URLs and stops without killing user server",
+    "CLI starts its own simulator and terminates owned child on exit"
+  ],
+  "totals": {
+    "pass": 7,
+    "fail": 0,
+    "skip": 0
+  },
+  "limitation": "HTTP/LAN/SSE exercised on Linux; no physical Android/iPhone or home router/firewall tested"
+}

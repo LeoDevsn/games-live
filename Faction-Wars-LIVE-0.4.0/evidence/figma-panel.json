@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checks": [
+    "all panel DOM targets exist",
+    "initial state updates telemetry",
+    "siege countdown and faction resources",
+    "resume action",
+    "LIVE start wiring"
+  ],
+  "scope": "Operator script executed with VM DOM/fetch doubles; no actual LIVE or browser UI was controlled."
+}

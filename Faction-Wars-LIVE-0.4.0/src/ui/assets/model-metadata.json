@@ -1,0 +1,17 @@
+{
+  "tool": "4.3.2",
+  "method": "original meshes / Workbench studio light, shadows, cavity / orthographic prerender",
+  "rows": [
+    "walk-up",
+    "walk-down",
+    "attack-up",
+    "attack-down",
+    "hurt-up",
+    "hurt-down",
+    "death-up",
+    "death-down"
+  ],
+  "framesPerAction": 4,
+  "frameSize": 128,
+  "geometry": "presentation only; server motor authoritative"
+}

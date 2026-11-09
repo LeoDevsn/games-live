@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-02T13:59:38.711Z",
+  "version": "0.4.4",
+  "tikfinity": "connected",
+  "received": 0,
+  "applied": 0,
+  "waitingForFirstJoin": true,
+  "mode": "live",
+  "phase": "preparation",
+  "tick": 0,
+  "firstRealEventVerified": false
+}

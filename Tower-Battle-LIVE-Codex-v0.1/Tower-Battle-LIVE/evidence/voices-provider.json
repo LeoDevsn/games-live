@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-11-04T17:20:09.010Z",
+  "scope": "Two ordinary round-start phrases generated through saved Fish Audio configuration; private cache only. No playback and no chat messages.",
+  "results": [
+    {
+      "team": "A",
+      "character": "Sr. Sirigueijo",
+      "status": "pass",
+      "bytes": 124968
+    },
+    {
+      "team": "B",
+      "character": "Plankton",
+      "status": "pass",
+      "bytes": 150464
+    }
+  ]
+}

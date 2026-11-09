@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-03",
+  "version": 5,
+  "registration": {
+    "announcementSeconds": 5,
+    "preparationSeconds": 15,
+    "entryUntil": "countdown reaches zero",
+    "lateSignups": "next round only",
+    "presenceConfirmation": "new like per round; silent users not auto-enrolled",
+    "timersAndQueuePersist": true
+  },
+  "tests": {
+    "arenaSuite": 45,
+    "lobbySpecific": 5,
+    "sharedEntry": 2,
+    "httpRealClockLobby": "pass: notice, full 15s countdown, late signup queued, locked match roster",
+    "stressUsers": 200,
+    "stressLogicalMinutes": 30,
+    "pacingScenarios": 40,
+    "audienceTemplates": "pass"
+  },
+  "pacing": [
+    {
+      "traffic": "none",
+      "meanSeconds": 177.5,
+      "minSeconds": 119,
+      "maxSeconds": 246,
+      "allFinished": true
+    },
+    {
+      "traffic": "moderate",
+      "meanSeconds": 196.9,
+      "minSeconds": 84,
+      "maxSeconds": 282.5,
+      "allFinished": true
+    }
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:4189/",
+    "isolated": true,
+    "liveInputDisabled": true,
+    "liveChatDisabled": true
+  },
+  "production": {
+    "version": 5,
+    "narrator": true,
+    "mode": "simulation"
+  },
+  "scope": "Real HTTP local preview, native Canvas and deterministic engine tests. TikTok live delivery and real browser audio were not re-tested."
+}

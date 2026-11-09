@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-03",
+  "policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; media-src 'self' blob:; object-src 'none'; frame-ancestors 'none'",
+  "results": [
+    {
+      "kind": "welcome",
+      "voice": "A",
+      "status": 200,
+      "bytes": 138343,
+      "file": ".runtime/voice-check/arena-convite-A.mp3"
+    },
+    {
+      "kind": "gift",
+      "voice": "B",
+      "status": 200,
+      "bytes": 113266,
+      "file": ".runtime/voice-check/arena-presente-B.mp3"
+    },
+    {
+      "kind": "winner",
+      "voice": "A",
+      "status": 200,
+      "bytes": 145866,
+      "file": ".runtime/voice-check/arena-vencedor-A.mp3"
+    }
+  ],
+  "liveChatSent": false,
+  "browserPlaybackVerified": false
+}

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-11-02T17:10:31.879Z",
+  "track": "Filmic Remix",
+  "bytes": 4802447,
+  "sha256": "530ef8ea5a53228531bf0ca9e12740f5860d3f3a2d8098cbb718cf454a990556",
+  "loop": true,
+  "defaultVolume": 0.22,
+  "preferencesPersisted": true,
+  "tests": 28,
+  "panelSilentUnlessPreview": true,
+  "unlockOnAutoplayBlock": true,
+  "liveServerHasMusic": false,
+  "restartPending": true,
+  "scope": "Native HTML Audio controller with media doubles; real isolated HTTP tests for MP3, HEAD, range and saved preferences. LIVE Studio audio not exercised."
+}

@@ -1,0 +1,474 @@
+Relatório de reauditoria técnica
+Decisões vigentes achados anteriores e novos riscos
+Faction Wars LIVE | Reauditoria independente | 28 de outubro de 2026
+Parecer: a consolidação avança no fechamento das regras, mas permanecem bloqueadores de resultado, integração, recuperação e MVP. Não está pronta para liberação integral de implementação. Todas as recomendações aguardam avaliação do proprietário; nenhuma altera o GDD.
+Evidência: leitura integral do GDD consolidado de 28/10 e dos cinco relatórios de 24/10, comparação documental e conferência aritmética. Não houve implementação, execução do jogo, ensaio de carga, teste de integração ou publicação. A consulta a documentação pública não equivale a validação do ambiente real.
+Resultado da reconciliação
+Conjunto
+Resultado
+30 achados anteriores
+3 resolvidos documentalmente: 005,010,026; 16 parcialmente resolvidos; 10 abertos; 1 sugestão opcional parcialmente atendida.
+12 achados novos
+WORK-AUD-031 a 042: 1 crítico, 9 altos, 1 médio e 1 baixo opcional.
+Severidades atuais
+4 críticos, 27 altos, 6 médios e 2 baixos opcionais; 3 encerramentos documentais sem severidade residual no mesmo escopo.
+Bloqueadores
+B01–B07 parcialmente fechados ou ainda abertos; B08 novo para MVP/estatísticas. Nenhum grupo encerrado integralmente.
+Cobertura
+43 grupos de requisitos; 84 cenários futuros, incluindo revisão dos 60 anteriores; 26 AT e 19 P históricos reconciliados.
+Os números incluem riscos e lacunas, não 39 defeitos demonstrados do produto. As duas sugestões opcionais 030/041 não bloqueiam implementação por si mesmas. Criticidade é técnica; P 0/P 1 do GDD é prioridade de planejamento e não foi copiada automaticamente.
+Precedência e limites da leitura
+APROVADO = declarado aprovado na consolidação; PROVISÓRIO = referência de simulação/proposta, sem força de regra final; PENDENTE = decisão ou especificação ausente; SUBSTITUÍDO = regra histórica superada. VALIDAR/NÃO VERIFICADO é eixo de evidência, não revogação de aprovação. “Resolvido documentalmente” fecha o escopo de regra identificado, sem alegar funcionamento técnico.
+As decisões numeradas 1–9 anteriores à Parte II são referidas aqui como I-B, conforme a abertura. O título desse adendo ficou no final do arquivo. I-A a I-H designam as seções da primeira consolidação; II §n designa a fonte histórica. Citações por seção e trecho, sem atribuir IDs de aprovação que o documento não fornece.
+Não foi demonstrada contradição inequívoca que obrigue escolher entre dois valores posteriores igualmente aprovados. Há ambiguidades de aplicação entre dono e contestação, conversão de unidades da IA e alcance novo, e escopo das conquistas. São registradas como lacunas a decidir. Valores históricos expressamente substituídos não são conflitos abertos.
+
+Conferência matemática independente
+Verificação
+Conclusão e limites
+Formação
+6 pares facção/corredor×(4 convencionais+1 Cerco)=30.24 convencionais deixam 8 vagas globais e 4 por facção. Cerco não ocupa essas vagas.
+Campeões
+HP: G 138, D 230, A 87. Dano-base: G 11, D 7,7, A 13,2. Proteção: G 5%, D 15%, A 5%. Velocidade e alcance iguais aos da classe atual.
+DPS convencional
+Equilibrada contra 0%: G 10; D 4,9; A 14,4. Ofensiva: golpes 11/8/14 e DPS 11/5,6/16,8. Defensiva: 9/7/11 e DPS 9/4,9/13,2. Não incluem habilidades, deslocamento ou cadência inicial.
+Golpe composto
+G Campeão ofensivo+Golpe+Chama contra 40%: ceil(10×1,10×1,10×1,50×1,05×0,60)=12. Antigo exemplo 14 não é mais vigente.
+Proteção e efeito real
+D Campeão defensivo+Muralha=min(40,15+15+20)=40%; ofensivo+Muralha=25%. Ataque 100 contra 25% vira 75; com Muralha/teto 40% vira 60: 15 de dano marginal evitado.
+Cerco e Nexus
+Bases sem modificadores/defesa: 3 DPS em unidades e 17,5 no Nexus; Nexus 20 DPS. São referências condicionais; defesa estrutural e escopo dos buffs pendentes.
+Captura dinâmica
+Reversão: 5 s×10+3 s×20+9 s×10=200 pontos, 17 s totais. Não reinicia quando Cerco entra ou morre. Neutrocom Cerco exige ratificação 042.
+Ciclo
+Máximo 25+300+15=340 s. Vitória aos 90 s de combate: 25+90+15=130 s de ciclo. Nenhuma espera antiga até 300 s.
+Cercos gerados
+6 iniciais+14 ondas×6=90 até 280 s; onda em 300 s produziria 96. Com 32 convencionais: 122/128 entidades, sem mortes. Não é cap aprovado nem benchmark.
+XP vigente
+30+100+3×50+2×430=1140; empate 1060; derrota 1040; anulada 30. Com 43 E: 366/286/266/30. Sem cap de energia, 1140 não é máximo teórico.
+Curva de níveis
+XP(n)=25(n−1)²+75(n−1), diferença 50 n+50. Limiar n 2=100, n 5=700, n 10=2700, n 20=10450, n 35=31450, n 50=63700, n 100=252450, n 101=257500.
+Hipótese de ritmo
+Repetir 1140 desde zero: nível 10 em 3 partidas, 50 em 56,100 em 222. A 340 s cada: 17 min, 5 h 17 min 20 s, 20 h 58 min. Vitórias antecipadas encurtam tempo; não é previsão real.
+Pesos provisórios
+Cada coluna dos pesos MVP soma 100%. Isso não valida normalização, qualidade de escolha nem permite tratá-los como fórmula final.
+Energia coletiva
+As 9 faixas permitem pagar cada habilidade isoladamente; soma Discurso+Chama excede teto em todas. Sem reserva, Chama pode não ativar sob entrada lenta: comportamento permitido, não defeito obrigatório.
+
+Dependências entre os cinco sistemas
+S1 combate e reforços Atributos, duas compras e prioridade do Nexus evoluíram. Geometria, cadência, Muralha, recuo eescopo dos buffs impedem um oráculo completo. Compra e representante devem ter um mesmo estado confirmado.
+S2 território e resultado Maioria somente no timeout está aprovada. A ordem do último tick e a contagem de pontos contestados ainda podem produzir vencedores distintos. Progresso territorial é separado de posse e de pontuação MVP.
+S3 interações Parsing influencia janela, classe, destino, XP e representação. Contabilidade pessoal está fechada, mas eventos reais ainda não estão homologados. Rejeição econômica de eventos não verificáveis precisa ser comprovada.
+S4 progressão e MVP XP mudou legitimamente; não restaurar 2 XP/voto nem 3 XP/energia. P de representação, MVP, XP e rankings são medidas distintas. Conquistas eanuladas ainda precisam deescopo explícito.
+S5 operação Log e transações foram aprovados como requisitos. Replay precisa conservar vínculos, rodízios e frações MVP. Entidades de Cerco e saída de chat ampliam carga; metas antigas não comprovam estabilidade.
+Cadeia crítica: evento verificável→contabilidade pessoal/coletiva→voto final→convocação/representante→combate/captura→resultado único→XP/MVP/ranking→exibição. Cada seta exige IDs e instante de confirmação coerentes. A falha de renderização não autoriza redecidir resultado.
+Como encerrar achados
+Crítica: risco de resultado ou integridade que impede o módulo central. Alta: semântica central/risco relevante; média: detalhe de produto ou persistência secundária; baixa: melhoria localizada. Aprovação de solução é do proprietário. Execução técnica permanece NÃO VERIFICADA para todos os achados; teste não pode passar por falta de regra.
+Três resoluções documentais: 005 fecha quantidade e expiração dos reforços; 010 fecha unidade pessoal; 026 fecha requisito de resultado/recompensa transacional. Não exigir reaprovação desses núcleos. Cenários técnicos continuam necessários após implementação autorizada.
+
+WORK-AUD-001 Geometria e seleção de alvos
+Classificação. S1 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-A/B; I-B §1; II §§3.6/5 — “Geometria e ordem de resolução simultânea permanecem para especificação/auditoria.”
+Reavaliação e problema. Há comprimento 32 tiles e alcance por classe, mas faltam hitboxes, spawns, unidade da velocidade e geometria compartilhada do Nexus. O recuo prefere 10–16 unidades históricas contra alcance novo de 3 tiles: falta conversão ou atualização explícita, não se pode afirmar equivalência.
+Cenário. Dois inimigos equidistantes ou tropa em alcance da fortaleza com inimigo no caminho; motores distintos selecionam alvos diferentes.
+Impacto. Altera dano, bloqueio, ocupação e tempo de vitória.
+Recomendação ou verificação restante. Fechar unidades, linha de tiro e distâncias; decidir atualização do comportamento de distância sem restaurar alcance 16.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-002 Cadência e tempo do ataque
+Classificação. S1 | Alta | Lacuna de especificação | Aberto
+Regra de origem. I-B §1; II §§3.3/3.5 — “sem antecipar/reiniciar cadência por troca de alvo.”
+Reavaliação e problema. Cadências mantidas e Nexus reavalia por disparo; primeiro ataque, projéteis e fração de tick continuam abertos.
+Cenário. Arqueiro: período 0,8333 s; arredondar sempre para 17 ticks produz 1,1765 ataques/s. Guardião em 29 ticks produz 0,6897.
+Impacto. DPS abaixo do aprovado e replay divergente em ataques simultâneos.
+Recomendação ou verificação restante. Preservar cadência por acumulador temporal e aprovar fase inicial, dano em voo, buff no lançamento/impacto e morte simultânea.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-003 Ativação e seleção da Muralha
+Classificação. S1 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-D; I-B §7 — “até 3 aliados próximos”
+Reavaliação e problema. Agora são até três aliados, preferindo até dois Cercos e uma tropa; faltam raio, gatilho, reposição das categorias ausentes, empate, refresh e efeito após morte/afastamento. “Alcance ... continuam válidos” não fornece o raio que já faltava.
+Cenário. Dois Guardiões em zonas próximas cobrem o mesmo aliado; um morre e o aliado se afasta durante os 5 s.
+Impacto. Proteção e sobrevivência variam conforme interpretação.
+Recomendação ou verificação restante. Fechar seleção e duração sem alterar +20 pp, 5 s, CD 20 s, teto 40% e não acúmulo; ligar causalidade ao WORK-AUD-034.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-006 Compra e vaga precisam de confirmação indivisível
+Classificação. S1 | Alta | Risco técnico | Parcial
+Regra de origem. I-B §2; I-G — “Processar convocação 1 e depois 2”
+Reavaliação e problema. Sequência 1→2 e revalidação de saldo/vagas/Campeão estão aprovadas. Falta fronteira durável que englobe débito, nascimento e vínculo de representante.
+Cenário. Com 15 tropas e uma vaga, dois pedidos verificam o mesmo saldo e a ausência do Campeão antes de confirmar.
+Impacto. 17 tropas ou dois Campeões; débito sem unidade após falha.
+Recomendação ou verificação restante. Especificar commit único de compra, incluindo ID do nascimento e reserva do espectador; replay deve reconstruir a mesma escolha.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-032 Cercos automáticos e limite de geração
+Classificação. S1/S5 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §1; I-H — “Capacidade simultânea própria e fronteira de spawn em timeout ainda pendentes.”
+Reavaliação e problema. Falta decidir cap próprio, atraso/descartes de spawn e posição quando bloqueada. A partida finita limita a geração, mas a meta histórica 32 não dimensiona entidades totais.
+Cenário. Sem mortes: 6 iniciais+14 ondas de 6 em 20..280 s=90 Cercos; com onda 300 s=96. Somados 32 convencionais: 122 ou 128.
+Impacto. Carga, bloqueios e pressão sobre Nexus mudam; serialização precisa incluir agenda de Cerco.
+Recomendação ou verificação restante. Aprovar cap e consequência ao atingi-lo, geometria de nascimento e fronteira 300 s; testar todas as ondas e reinício entre elas.
+Impacto da recomendação. Qualquer cap novo modifica disponibilidade e depende do proprietário. Os 122/128 são limites de geração condicionais, não capacidade homologada.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-034 Defesa comprovada e crédito causal
+Classificação. S1/S4 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §7 — “proximidade isolada não basta”
+Reavaliação e problema. Ameaça dinâmica e crédito marginal estão aprovados, mas não existe detector operacional de interceptação/atração, evento causal ou ordem oficial completa de efeitos. Dano recebido por tank não demonstra sozinho proteção a aliado.
+Cenário. Dois Defensores aplicam Muralha ao mesmo Campeão aliado em postura defensiva no mesmo instante, atingindo o teto de 40%. Um deles também recebe um ataque que já o tinha como alvo.
+Impacto. Dupla contagem, crédito arbitrário e MVP defensivo impossível de reproduzir.
+Recomendação ou verificação restante. Definir registros de ataque ameaçado, alvo original, ação protetora, precedência e contribuição marginal após arredondamento/cap; soma creditada≤dano realmente evitado.
+Impacto da recomendação. Detalha métricas aprovadas; não criar janela artificial de ameaça nem creditar autoproteção como proteção a aliado.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-036 Estatísticas efetivas e mortes simultâneas
+Classificação. S1/S4 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §4 — “Registrar por nascimento individual de Campeão”
+Reavaliação e problema. Faltam autoria de eliminação, dano efetivo com overkill, distribuição simultânea e granularidade de tempos. As seis estatísticas não incluem explicitamente dano evitado e progresso, que também precisam de registros para MVP.
+Cenário. Alvo com 5 HP recebe dois golpes de 10 no mesmo tick; dois Campeões reivindicam 10 de dano e eliminação. Campeão morre na fronteira da zona.
+Impacto. Métricas infladas, soma por usuário inconsistente e impossibilidade de explicar pontuação.
+Recomendação ou verificação restante. Fechar atribuição e limitar dano efetivo ao HP realmente removido; aprovar crédito de kill/assistência e intervalos de presença e tempo vivo; registrar métricas adicionais de MVP sem substituir as seis estatísticas.
+Impacto da recomendação. Define estatísticas; não conceder novas recompensas ou conquistas.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-040 Efeitos sobre Cerco e defesa do Nexus
+Classificação. S1/S3 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §1; I-D; II §§3.3/7.2 — “Nexus ... proteção ... Não definida”
+Reavaliação e problema. Cerco tem proteção 0 e recebe Muralha, mas a abrangência de postura/Chama/Discurso para Cerco e a defesa estrutural do Nexus não estão fechadas. Exclusividade de 35 dano-base ao Nexus não define dano final.
+Cenário. Cerco ofensivo sob Chama ataca Nexus: 35 bruto, 39 só postura ou 41 com ambos antes da defesa. Motores diferentes usam bônus distintos.
+Impacto. DPS estrutural e tempo de vitória não são calculáveis sem hipóteses.
+Recomendação ou verificação restante. Aprovar matriz tipo de entidade×efeito e proteção estrutural; preservar bases 6/35,0,5 ataque/s e alcance 2.
+Impacto da recomendação. Detalha interação aprovada; não presumir proteção 0 do Nexus nem imunidade a buffs do Cerco.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-004 Recuo irreversível do Arqueiro
+Classificação. S1 | Média | Lacuna de especificação | Aberto
+Regra de origem. II §3.6; I-B §1 — “NÃO cancela o destino defensivo.”
+Reavaliação e problema. Recuo irreversível foi preservado; “UM disparo” e destino exato continuam indefinidos. Novas escalas não resolvem essa máquina de estados.
+Cenário. Arqueiro perde protetor, recua e encontra três alvos em momentos distintos; reforço chega depois.
+Impacto. Pode ocorrer imobilidade ou dano muito diferente; chegada de protetor não autoriza cancelar recuo.
+Recomendação ou verificação restante. Precisar um disparo total ou por parada e posição de destino; não cancelar recuo com chegada de reforço.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-005 Pedidos e frequência de reforços
+Classificação. S1 | — | Lacuna de especificação | Resolvido documentalmente
+Regra de origem. I-B §2 — “cancelar sem débito e sem fila.”
+Reavaliação e problema. Até duas tentativas sequenciais; falha cancela sem fila; somente comando novo abre próxima janela. Resolve quantidade, retry e validade. A sugestão antiga de uma convocação não foi aprovada e está superada.
+Recomendação ou verificação restante. Verificar WT-005/019/061/062/063; questões residuais de parsing pertencem a 012/013 e não reabrem este escopo.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-007 Ordem do tick e fechamento da partida
+Classificação. S2 | Crítica | Lacuna de especificação | Parcial
+Regra de origem. I-B §1; I-G; II §§2/5 — “destruição do Nexus ou maioria dos 3 pontos de controle na expiração do combate.”
+Reavaliação e problema. Vitória antecipada por domínio foi removida. Continuam ordem de dano/mortes/captura, destruição dupla e precedência de Nexus versus timeout, fechamento de votos e spawn aos 300 s.
+Cenário. No último tick do combate, ambos Nexus recebem dano letal, há captura e uma janela de reforço chega ao fim.
+Impacto. Resultado e XP incorretos e depois imutáveis.
+Recomendação ou verificação restante. Aprovar fases do tick e avaliação simultânea antes do único resultado; usar empate técnico preservado para destruições no mesmo ciclo, sem primeiro-vencedor por ordem de iteração.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-031 Maioria no timeout com posse contestada
+Classificação. S2 | Crítica | Lacuna de especificação | Novo
+Regra de origem. I-A; I-B §1; II §5 — “Empate se nenhuma facção tem maioria ao timeout.”
+Reavaliação e problema. Maioria de 3 implica 2 pontos, mas não está fechado se ponto com dono e presença rival entra na contagem. I-A previa empate com todos contestados, enquanto posse só muda no extremo. A regra posterior não explicita como contar contestados.
+Cenário. Rubra é dona dos 3 pontos e todos estão contestados em 300 s. Contar donos dá vitória Rubra; excluir contestados dá empate.
+Impacto. Resultado e XP imutáveis divergentes. Não é mero caso de empate por HP: esse desempate antigo foi substituído.
+Recomendação ou verificação restante. Aprovar tabela dono×presença→ponto contabilizável; cobrir neutro/parcial, 2–0,1–0,1–1 e 3 contestados.
+Impacto da recomendação. Fecha condição de vitória; a escolha pode alterar vencedor e requer autorização expressa.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-008 Posse neutra e presença na captura
+Classificação. S2 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-C; I-B §§1/8 — “Zona vazia | Progresso congelado.”
+Reavaliação e problema. Entrada/saída do Cerco muda taxa sem retroatividade; presença válida, fronteira geométrica, posse contestada no timeout e neutralidade parcial ainda exigem fechamento.
+Cenário. Unidade morre na borda enquanto progresso chega ao extremo; ponto contestado tem dono no timeout.
+Impacto. Diferença de posse e de até um tick pode decidir a partida.
+Recomendação ou verificação restante. Separar dono, progresso e presença; definir vivos no intervalo, bordas e instante de mudança; ver 031 e 042.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-009 Relógios e fronteiras de estados
+Classificação. S2 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-A/F/G; I-B §§1/2/5 — “Parada do motor pausa o tempo lógico”
+Reavaliação e problema. 25/300/15 e pausa do tempo lógico estão aprovados; janela de reforço é início inclusivo/fim exclusivo. Faltam relógio de admissão, início/fim da preparação, mensagens em resultados e fila da rodada seguinte.
+Cenário. Motor para 20 s; evento enviado na pausa é entregue após retomada ou durante resultados.
+Impacto. Rodada encurta, janelas deslocam ou eventos são aplicados na partida errada.
+Recomendação ou verificação restante. Aprovar tabela estado×evento e associação por partida; preservar pausa do motor e continuidade na desconexão só do integrador.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-035 Progresso territorial reversível e crédito acumulado
+Classificação. S2/S4 | Alta | Possibilidade de exploração | Novo
+Regra de origem. I-B §8 — “Não estornar retroativamente crédito já validamente produzido.”
+Reavaliação e problema. Contribuição preservada permite soma de muitos avanços revertidos. Não há definição sobre recuperar progresso perdido de ponto ainda próprio e sobre crédito acima do tamanho da escala ao longo da partida.
+Cenário. Campeões adversários se alternam sem contestação: avançam 10 pontos e recuam; sucessivas retomadas somam crédito embora nenhuma nova posse seja obtida.
+Impacto. Ranking MVP pode favorecer alternância territorial e coalizão deliberada; isso não invalida progresso legítimo já aprovado.
+Recomendação ou verificação restante. Quantificar cenários de oscilação e aprovar se restauração de ponto próprio pontua. Preservar créditos adquiridos; qualquer limite/penalidade seria nova decisão, não correção automática.
+Impacto da recomendação. Sem estorno. Mitigação eventual altera elegibilidade/normalização e precisa aprovação.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-042 Taxa de captura neutra com Cerco
+Classificação. S2 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-C; I-B §1 — “neutro até posse em 10 s de progresso válido”
+Reavaliação e problema. Aceleração está explicitamente definida para reversão; não diz de forma operacional se Cerco também acelera primeira captura neutra. Dobrar taxa sempre daria 5 s e violaria leitura literal dos 10 s; manter 10 s só no neutro exige distinguir estado de posse da passagem por zero.
+Cenário. Cerco sozinho entra num ponto nunca capturado. Outro atravessa zero na reversão de posse inimiga.
+Impacto. Tempos de posse e crédito territorial divergem.
+Recomendação ou verificação restante. Ratificar tabela neutro/reversão/restauração×Cerco com taxas; preservar 10 s neutro e 20/10 s reversão até decisão expressa em contrário.
+Impacto da recomendação. Não estender aceleração por inferência nem confundir zero com neutralidade após posse.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-011 Contrato real do provedor e deduplicação
+Classificação. S3 | Crítica | Risco técnico | Parcial
+Regra de origem. I-F; I-B §9 P 0 Tik Tok — “somente diagnóstico, nenhum efeito econômico/competitivo.”
+Reavaliação e problema. Eventos sem identidade/unicidade/semântica verificáveis têm somente diagnóstico. É um requisito seguro, mas não há payloads nem evidência de funcionamento econômico com eventos reais. Avatar e saída de chat ampliam o contrato.
+Cenário. Lote acumulado 100 seguido de 150 é tratado como 250; reconexão reapresenta 150; nickname muda.
+Impacto. Créditos, energia, rankings e XP inflados ou perdidos.
+Recomendação ou verificação restante. Obter fixtures autorizadas e versionadas; definir delta/acumulado, identidade, reinício de contadores, sequência, dedupe e backlog. Não confundir ID de usuário com ID de evento.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-012 Comandos parciais e duas votações de corredor
+Classificação. S3 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-B §2 — “Corredor após classe pendente associa-se exclusivamente a reforço”
+Reavaliação e problema. Classe isolada, rota estratégica sem classe pendente, voto por classe e intervalo estão definidos. Falta o ciclo de vida de “classe pendente”: após associar rota, após trocar classe e após fechamento. Rota antes da classe na mesma mensagem e voto de rota de classe perdedora continuam ambíguos.
+Cenário. Usuário vota Arqueiro/esquerda, troca para Guerreiro e envia direita. Não está definido se o vínculo anterior é eliminado e quando a classe deixa de ser pendente.
+Impacto. Janela e compra inesperadas, dupla remuneração de voto.
+Recomendação ou verificação restante. Aprovar transições de preferência e vínculo classe→rota, limpeza por janela e XP de votos válidos de classe não convocada; não pagar duas categorias de rota pelo mesmo token.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-013 Parsing e ordenação de ações
+Classificação. S3 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-B §2; II §6.2 — “Máximo de 3 AÇÕES processadas por mensagem”
+Reavaliação e problema. Aliases A/G/W/D/GD agora aprovados. Máximo três ações permanece sem ordem, política de excesso, capitalização e conflito na mesma mensagem.
+Cenário. !red !attack !left !warrior ou !red !blue !archer; processamento por ordem textual e por categoria divergem.
+Impacto. Votos atribuídos à facção errada e feedback inconsistente.
+Recomendação ou verificação restante. Aprovar gramática incluindo !left !warrior na mesma mensagem, repetições PT/EN e quatro ações; não tratar aliases novos como não autorizados.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-014 Tetos resíduos e decaimento
+Classificação. S3 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-F; II §§4.1/6.3/7.2 — “Likes/novos créditos não suspendem o temporizador”
+Reavaliação e problema. Resíduo pessoal tem escopo de partida. Continuam destino dos excedentes coletivos, reset explícito de energia coletiva e ordem compra/like/decaimento.
+Cenário. Saldo 20 recebe 400 likes e chega ao prazo de decaimento; compra ocorre no mesmo tick; nova partida começa.
+Impacto. Banco oculto de créditos acima do teto, perda de resíduos ou vazamento entre partidas.
+Recomendação ou verificação restante. Especificar resto e excedente no teto e transições; manter crédito inicial 0, teto 20 e decaimento ativo até gasto ou zero.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-015 Rodízio e ativação simultânea dos buffs
+Classificação. S3 | Alta | Lacuna de especificação | Aberto
+Regra de origem. II §7.2; I-B §1 — “não há reserva protegida de energia”
+Reavaliação e problema. Rodízio inicial, prontidão e buffs sobre nascimentos seguem sem contrato; Cercos novos também precisam de escopo. Soma dos dois custos excede teto em todas as nove faixas.
+Cenário. Faixa 31–50, saldo 50, ambos prontos: Discurso 25 ou Chama 35 altera habilidade possível. Na faixa 1–30 soma 40 excede teto 30.
+Impacto. Rodízio pode nunca dar oportunidade à Chama; comportamento difere por implementação.
+Recomendação ou verificação restante. Fechar ordem de entradas/gastos e marcador persistido; preservar ausência de reserva, não impor alternância rígida.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-016 População ativa e múltiplas contas
+Classificação. S3 | Alta | Possibilidade de exploração | Aberto
+Regra de origem. II §§6.3/6.4 — “interação válida nos últimos 60 s.”
+Reavaliação e problema. Não estão definidos tipos de interação ativa, faixa de zero ou inicialização da histerese. Presentes que renovem atividade poderiam alterar custo indiretamente. Um ID não comprova uma pessoa.
+Cenário. Contas entram na facção adversária para elevar custo; coordenam inatividade para baixar faixa e ativam com energia preservada.
+Impacto. Custo artificial, votos desproporcionais e perda de energia ao reduzir teto.
+Recomendação ou verificação restante. Definir atividade e política antiabuso; confirmar efeito de presentes na população e proibir inferência de unicidade humana a partir de conta.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-017 Fronteira de confiança do integrador
+Classificação. S3 | Alta | Risco técnico | Aberto
+Regra de origem. II §§6.2/10.1; I-B §§3/4 — “tratar payload como não confiável”
+Reavaliação e problema. Maior superfície agora: avatar na unidade, nome e resposta pública. Rejeitar evento econômico inválido não fecha origem, autenticação, tamanho e mídia.
+Cenário. Página ou processo envia lote forjado; nome contém marcação ativa; URL de avatar aponta a destino impróprio.
+Impacto. Injeção visual, manipulação de saldo e acesso operacional indevido.
+Recomendação ou verificação restante. Definir confiança do integrador, entrada limitada, texto literal, política de avatar e autorização de comandos; testar entradas hostis sem dados reais sensíveis.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-018 Conformidade de publicação ainda não demonstrada
+Classificação. S3 | Alta | Risco técnico | Aberto
+Regra de origem. II §14; I-B §9 — “Não tratar proibições ou permissões do Tik Tok como definitivas”
+Reavaliação e problema. Nenhuma homologação de publicação foi apresentada. Documentação comercial de chatbot não comprova conformidade da LIVE, da conta ou dos assets.
+Cenário. Publicar prompts ou assets diferentes do texto aprovado; oferecer benefício real por presente ou apresentar personagem fictício como pessoa real.
+Impacto. Restrição de LIVE, monetização ou retirada de assets.
+Recomendação ou verificação restante. Revisar políticas vigentes e ambiente final antes de publicar; não declarar proibição ou autorização nesta reauditoria.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-037 Representação e snapshot da contribuição
+Classificação. S3/S4/S5 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §3 — “P=5×E+10×V”
+Reavaliação e problema. Faltam horizonte de E/V, se V usa cap remunerado 50 ou todos contabilizados, instante do snapshot e rodízio inicial. Elegibilidade do usuário e prioridade dos nunca representados precisam de estado persistido, inclusive em duas compras.
+Cenário. Usuário elegível lidera P e há duas convocações de classes distintas na mesma janela; ambos leem o mesmo candidato. Um voto da janela ainda não foi finalizado.
+Impacto. Dois Campeões vivos com mesmo representante ou seleção diferente após replay.
+Recomendação ou verificação restante. Fechar snapshot após apuração, definição de V, desempate persistido e reserva sequencial do representante no commit; genérico quando nenhum elegível.
+Impacto da recomendação. Preservar prioridade dos nunca representados e máximo 1 vivo; não confundir P com XP nem usar presentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-038 Consulta pessoal e entrega pública
+Classificação. S3/S5 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §4; I-B §9 P 0 — “A resposta proposta é pública no chat”
+Reavaliação e problema. !meustatus/!mystatus são conceituais; faltam partida consultada, campos, resumo, limite global/individual, duplicatas/retry e relação com !status de 30 s. A documentação oficial oferece caminhos de chatbot, mas não prova contrato de saída do motor pretendido.
+Cenário. Usuário repete consulta no resultado e na preparação seguinte; resposta atrasada traz partida errada ou excede limite da plataforma.
+Impacto. Spam, informação pública excessiva e resposta inconsistente.
+Recomendação ou verificação restante. Aprovar contrato de consulta e visibilidade; validar via autorizada com fixtures, limites e erro de entrega. Não usar 30 s histórico como aprovação implícita do novo comando.
+Impacto da recomendação. Publicação pública continua proposta até decisão; portal futuro não entra na entrega inicial.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-010 Unidade contábil da energia individual
+Classificação. S3 | — | Lacuna de especificação | Resolvido documentalmente
+Regra de origem. I-F; I-B §1 — “gerada a cada 100 likes pessoais válidos”
+Reavaliação e problema. Unidade pessoal é cada 100 likes pessoais válidos, resíduos dentro da partida e XP independente do teto coletivo. Multiplicador vigente é 2 XP/E. A regra antiga 3 XP/E está substituída.
+Recomendação ou verificação restante. Validar WT-037 com payload real após fechar 011; resolução da definição não comprova precisão do provedor.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-019 Elegibilidade e remuneração de votos
+Classificação. S4 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-F; I-B §§1/2 — “+3 XP por voto final válido efetivamente contabilizado”
+Reavaliação e problema. Participação restrita à preparação, bônus exclusivos, quatro categorias finais e cap 50 definidos. Restam fronteiras de entrada, likes antes de vincular facção, categorias encerradas no fim antecipado e voto de classe perdedora.
+Cenário. Entrada exatamente no fim da preparação; voto final de classe perde a eleição; combate encerra com janela incompleta.
+Impacto. XP sem contribuição efetiva, multiplicação de votos e divergência entre teste e regra.
+Recomendação ou verificação restante. Precisar admissão e elegibilidade por categoria/estado; contabilizar voto final uma vez, com 3 XP e teto 150, sem restaurar números de 24/10.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-020 Progressão sem limite e curva vigente
+Classificação. S4 | Alta | Possibilidade de exploração | Aberto
+Regra de origem. I-B §1; II §8.2 — “sem teto antigo de 10 unidades por janela”
+Reavaliação e problema. Curva permanece correta. Energia sem teto ainda domina o total; 430 E e 50 votos rendem 1140 com vitória. P de representação também recompensa volume.
+Cenário. Vitória com 50 votos válidos e 430 E gera 1140 XP; repetir é hipótese de ritmo, não observação empírica.
+Impacto. Ranking dominado por volume ou automação não detectada; expectativa de progressão não mensurável.
+Recomendação ou verificação restante. Medir distribuição válida e aprovar expectativa de progressão; qualquer limite, curva ou política de abuso exige decisão, sem presumir que volume legítimo é fraude.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-021 Anulação e conquistas de participação
+Classificação. S4 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-B §§1/5/9; II §10.2 — “Sem MVP; aviso de anulação”
+Reavaliação e problema. Anulada: 30 XP e nenhum MVP. Persistem efeitos sobre likes, contagem de participação e conquistas, cujo próprio escopo está pendente em 039.
+Cenário. Jogador atinge 50 participações em rodada anulada ou ganha voto provisório antes da queda.
+Impacto. Progresso permanente inconsistente e possível farm de anuladas.
+Recomendação ou verificação restante. Aprovar tabela de efeitos em válida/anulada e pós-resultado confirmado; não apagar resultado por falha de apresentação.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-033 Oráculo completo de MVP por classe
+Classificação. S4/S5 | Alta | Lacuna de especificação | Novo
+Regra de origem. I-B §§4/6/9 — “Percentuais acima são EXCLUSIVAMENTE referências iniciais para simulação, não valores finais autorizados.”
+Reavaliação e problema. Faltam normalizadores, referências, limites, arredondamento, pesos finais e universo de candidatos: aparição individual, soma por usuário/classe ou usuário total. Não define se morto, zero pontos ou Campeão genérico é elegível.
+Cenário. Usuário tem dois Guerreiros com 40 pontos cada; outro tem um com 70. Melhor aparição e soma dão vencedores diferentes. Usuário aparece em classes diferentes na partida.
+Impacto. MVP pode premiar entidade diferente e indicadores incomparáveis.
+Recomendação ou verificação restante. Aprovar unidade candidata, agregação por classe/facção, exclusões, normalização monotônica, denominadores positivos e desempate; calibrar em simulações futuras.
+Impacto da recomendação. Não fixar pesos provisórios nem inventar MVP quando não houver elegível. Fórmula final exige aprovação.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-022 Temporada e rankings
+Classificação. S4 | Média | Lacuna de especificação | Aberto
+Regra de origem. II §8.4; I-B §§5/6 — “Temporadas competitivas de 7 dias”
+Reavaliação e problema. Temporada 7 dias e rankings históricos continuam sem rollover/desempates completos. MVP por classe não substitui automaticamente os quatro destaques antigos.
+Cenário. Partida inicia antes do fechamento e termina depois; recompensa é reprocessada na semana seguinte.
+Impacto. Duas temporadas recebem o mesmo resultado ou placar muda no replay.
+Recomendação ou verificação restante. Definir season_id, momento de vinculação, fórmulas e relação de MVP com Estrategista/Mobilizador/Veterano/Comandante.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-023 Contribuição para conquista de energia
+Classificação. S4 | Média | Lacuna de especificação | Aberto
+Regra de origem. II §8.5; I-B §9 — “25 ativações de energia em partidas distintas”
+Reavaliação e problema. Atribuição da Voz da Multidão permanece aberta e dependente da decisão de escopo de conquistas.
+Cenário. Usuário contribui para saldo, sai e os dois buffs ativam depois.
+Impacto. Conquista pode ser dada a todos os membros ou contada duas vezes por partida.
+Recomendação ou verificação restante. Decidir se a conquista histórica permanece na entrega; se sim, definir participação verificável por ativação e partidas distintas. Ver 039.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-024 Identidade privacidade e migração
+Classificação. S4 | Média | Risco técnico | Parcial
+Regra de origem. I-B §§3/4/8; II §§1/8.3 — “Estatísticas de Campeão não compõem ranking permanente.”
+Reavaliação e problema. Estatísticas de Campeão são da partida, não ranking permanente. Retenção desse registro, identidade, mudança de handle e apresentação de avatar ainda precisam de contrato.
+Cenário. Usuário renomeia conta ou retema troca texto usado como chave; avatar deixa de existir.
+Impacto. Perda de histórico, duplicação de perfis e exposição desnecessária.
+Recomendação ou verificação restante. Versionar regras e IDs, definir retenção/exibição e separar nome de identidade; não confundir registro da partida com ranking histórico.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-039 Escopo atual das conquistas
+Classificação. S4 | Média | Lacuna de especificação | Novo
+Regra de origem. I-B §9; II §8.5 — “Conquistas | Nenhuma definição final”
+Reavaliação e problema. A pendência geral não diz expressamente se suspende as quatro conquistas históricas aprovadas ou apenas conquistas novas ligadas a Campeões, explicitamente não aprovadas em§4.
+Cenário. Implementador concede Primeira Batalha por§8.5; outro desativa todas por§9.
+Impacto. Escopo e persistência divergem; impossível encerrar 021/023 sem decisão.
+Recomendação ou verificação restante. Registrar status individual das quatro conquistas e separar propostas novas de Campeões; preservar histórico existente até autorização.
+Impacto da recomendação. Pode confirmar ou substituir aprovação anterior; auditor não escolhe silenciosamente.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-025 Checkpoint não garante replay consistente
+Classificação. S5 | Crítica | Risco técnico | Parcial
+Regra de origem. I-G; I-B §§2/3/4/7/8 — “registro durável ordenado de operações, com commits únicos.”
+Reavaliação e problema. Log durável ordenado e pausa lógica aprovados. Faltam fronteira de confirmação e contrato recuperável dos rodízios, vínculos, causalidade, frações territoriais e estatísticas novos.
+Cenário. Queda após conceder 1/3 de progresso territorial, reservar representante e pagar reforço, antes do próximo checkpoint.
+Impacto. Perda ou duplicação de economia, ações e elegibilidade.
+Recomendação ou verificação restante. Definir estado completo/versionado, posição de log, integridade e política de escrita interrompida; cenário precisa recuperar mesmos representantes e créditos MVP, não só saldo/HP.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-027 Sobrecarga e atraso sem política de admissão
+Classificação. S5 | Alta | Risco técnico | Aberto
+Regra de origem. I-F/G; II §§6.4/10.2 — “Fila lógica/motor, fila de interações e fila visual separadas.”
+Reavaliação e problema. Sem limite de filas, política de admissão atrasada e fairness. Comando de status acrescenta fila de saída e possíveis retries.
+Cenário. Pico durante checkpoint acumula votos além dos 10 s e presentes por minutos.
+Impacto. Votos fora da janela, perda silenciosa, travamento e vantagem de quem inundou fila.
+Recomendação ou verificação restante. Aprovar relógio e limites de admissão/saída, descarte observável e prioridade; resultado confirmado nunca reabre.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-028 Metas de desempenho não têm ambiente e tolerâncias
+Classificação. S5 | Alta | Lacuna de especificação | Parcial
+Regra de origem. I-H; I-B §9; II §10.3 — “Capacidade máxima própria de Cercos ainda não definida.”
+Reavaliação e problema. Metas antigas de 32 entidades não cobrem 32 convencionais mais Cercos. Capacidade de Cerco pendente não significa infinita nesta partida de 300 s; há limite de geração teórico calculável.
+Cenário. Teste limitado a 32 unidades ignora ondas de Cerco e médias de FPS ocultam picos durante checkpoint.
+Impacto. Não há critério objetivo para declarar estabilidade e capacidade.
+Recomendação ou verificação restante. Revisar carga para até 122 ou 128 entidades antes de mortes, conforme fronteira final; aprovar ambiente e tolerâncias. Sem executar benchmark agora.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-029 HUD filas visuais e acessibilidade
+Classificação. S5 | Média | Lacuna de especificação | Parcial
+Regra de origem. I-A; I-B §5; II §9 — “três telas de 5 s”
+Reavaliação e problema. Três telas de 5 s e sequência por resultado estão aprovadas. Restam safe areas, campos, legibilidade e sincronização com resultado oficial e chat.
+Cenário. Vitória ocorre enquanto discurso de 5 s e destaque de 6 s ocupam tela; overlays do aplicativo ocultam HP.
+Impacto. Resultado confuso ou informação crítica ilegível, embora motor continue.
+Recomendação ou verificação restante. Testar fronteiras 0/5/10/15 s, ausência de representante, anulada, nomes longos e overlays; 6/7 s por tela não aprovados.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-030 Registro de decisões e pacote de evidências
+Classificação. S5 | Baixa | Sugestão opcional | Opcional parcialmente atendido
+Regra de origem. Abertura da consolidação; I-B §9 — “Valores em PROPOSTA/PENDENTE não são requisitos aprovados.”
+Reavaliação e problema. Precedência e estados estão explícitos; matriz cruzada ainda se beneficia de IDs de decisão. Não é defeito obrigatório.
+Cenário. Uma recomendação é aprovada parcialmente e reaparece como mudança integral.
+Impacto. Risco de perda de contexto em revisões futuras.
+Recomendação ou verificação restante. Manter histórico achado→decisão→teste se o proprietário desejar; correção editorial 041 é igualmente opcional.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+WORK-AUD-041 Posição do título do adendo
+Classificação. S5 | Baixa | Sugestão opcional | Novo
+Regra de origem. Abertura e último parágrafo — “PARTE I-B — ADENDO APROVADO APÓS A EDIÇÃO DE 25/10/2026”
+Reavaliação e problema. O título Parte I-B aparece no fim do arquivo, após a fonte histórica; as decisões numeradas 1–9 estão antes da Parte II sem esse título junto delas. A precedência está descrita na abertura e continua inteligível.
+Cenário. Leitor usa sumário ou busca pelo título e conclui que o adendo está vazio.
+Impacto. Navegação e rastreabilidade dificultadas; não é conflito de mecânica.
+Recomendação ou verificação restante. Em próxima edição autorizada, mover o título para antes do corte documental e numerar decisões.
+Impacto da recomendação. Editorial opcional; original não foi alterado.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+WORK-AUD-026 Confirmação de resultado e recompensas
+Classificação. S5 | — | Risco técnico | Resolvido documentalmente
+Regra de origem. I-G; II §10.2 — “transacionais e idempotentes por partida/jogador/motivo”
+Reavaliação e problema. Confirmar resultado, elegibilidade e evidências antes dos prêmios; chave partida/jogador/motivo, transação e retomada só de entregas não confirmadas fecham requisito de unicidade.
+Recomendação ou verificação restante. Exigir teste de falhas WT-042/050 antes de operação. Esquema/tecnologia seguem para projeto técnico autorizado; resolução documental não é transação testada.
+Impacto da recomendação. A recomendação não está aprovada. Detalhes que definam comportamento retornam ao proprietário; requisitos já aprovados permanecem vigentes.
+Status decisório. Aguardando avaliação do proprietário. Evidência técnica não verificada.
+
+Fontes e registro de evidência
+Arquivos lidos integralmente: GDD consolidado anexado em 28/10 e os cinco relatórios anteriores anexados. A cópia v 0.9 original foi preservada; a Parte II do consolidado foi lida como fonte histórica. A preservação dos arquivos de entrada foi conferida por SHA 256, sem sobrescrita.
+01-FACTION_WARS_LIVE_GDD_MESTRE_CONSOLIDADO_2026-10-28_REVISAO_WORK.docx | 61894 bytes | SHA256 45fe4fe08dba0b86bfc3aafb688cd26ec8a49472427d7393b98e3d6f5915feb6
+02-01_Relatorio_Auditoria_Tecnica.docx | 52409 bytes | SHA256 473f2932dae8eb4b2c75f0d4d6b1985ca1ebe6630f2e3b2256ea19c3385fd832
+03-02_Matriz_Rastreabilidade.docx | 41818 bytes | SHA256 e391d8cf51a0f3c904e7023382ba0b5ec6bf3a302f29a9cf1b09ee60c0c976a4
+04-03_Matriz_Testes_Aceitacao.docx | 46598 bytes | SHA256 016a90c35014210eddba2ebe30e9dd3bfaf284737ae5049b6d0e72a09e5f582d
+05-04_Lista_Bloqueadores.docx | 39231 bytes | SHA256 96f509b82a9b832430456650fe6866a8e356853c2d97938a42ddbac81123db26
+06-05_Resumo_Executivo.docx | 39390 bytes | SHA256 d00ce0d386cf30c908cadda11a5e3f68e7b2931e865ca1d71f700f4e553341dd
+01-Faction_Wars_LIVE_GDD_Mestre_Auditoria_v0_9-2-.docx | 55283 bytes | SHA256 6d8c8475549f55d5b99f50e695122e32151f0c6024fb87e6c9322a8b91a900b6
+Consulta pública em 28 de outubro de 2026
+TikFinity LIVE API — https://tikfinity.zerody.one/tiktok/dapi — confirma recepção via WebSocket e Desktop no mesmo computador. Não prova unicidade dos eventos, replay ou completude de likes pessoais.
+TikFinity Streamer.bot Integration — https://tikfinity.zerody.one/streamerbot-integração — documenta campos condicionais de usuário/likes/avatar e envio de mensagens pela via Streamer.bot quando habilitada. Não transportar esse contrato automaticamente ao WebSocket direto do jogo.
+TikFinity Chatbot — https://tikfinity.zerody.one/tiktok/chatbot — documenta comandos automáticos e sessão autenticada no Desktop. Confirma um caminho de produto, não homologação do !meustatus nem limites do ambiente pretendido.
+A busca por políticas atuais não forneceu evidência primária suficiente para homologar o cenário final. Artigo antigo da Newsroom e cópias de terceiros não foram usados para declarar permissão/proibição. WORK-AUD-018 continua aberto para revisão antes da publicação. Nenhuma sessão autenticada, credencial ou LIVE foi acessada.

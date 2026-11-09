@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-11-04T17:32:13.240Z",
+  "renderer": {
+    "renderer": "WebGL 3D",
+    "failure": ""
+  },
+  "assets": {
+    "plankton": {
+      "width": 1254,
+      "height": 1254
+    },
+    "krabs": {
+      "width": 300,
+      "height": 390
+    },
+    "background": {
+      "width": 1448,
+      "height": 1086
+    }
+  },
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "errors": [],
+  "httpFailures": [],
+  "screenshot": "C:\\Users\\luane\\Desktop\\Leonardo\\Games Live\\previews\\tower-sirigueijo-plankton-webgl.png",
+  "scope": "Isolated headless Edge; preview database, LIVE input and speech disabled."
+}

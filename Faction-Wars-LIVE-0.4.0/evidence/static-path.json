@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "system": "Windows",
+      "route": "/",
+      "allowed": true
+    },
+    {
+      "system": "Windows",
+      "route": "/src/ui/app.js",
+      "allowed": true
+    },
+    {
+      "system": "Windows",
+      "route": "/src/ui/assets/arena.svg",
+      "allowed": true
+    },
+    {
+      "system": "Windows",
+      "route": "/src/ui/vendor/phaser-3.90.0.min.js",
+      "allowed": true
+    },
+    {
+      "system": "Windows",
+      "route": "/profiles/manifest.json",
+      "allowed": true
+    },
+    {
+      "system": "Windows",
+      "route": "/package.json",
+      "allowed": false
+    },
+    {
+      "system": "Windows",
+      "route": "/src/../package.json",
+      "allowed": false
+    },
+    {
+      "system": "Windows",
+      "route": "/src/../../private",
+      "allowed": false
+    },
+    {
+      "system": "Windows",
+      "route": "/.runtime/session.sqlite",
+      "allowed": false
+    },
+    {
+      "system": "Linux",
+      "route": "/",
+      "allowed": true
+    },
+    {
+      "system": "Linux",
+      "route": "/src/ui/app.js",
+      "allowed": true
+    },
+    {
+      "system": "Linux",
+      "route": "/src/ui/assets/arena.svg",
+      "allowed": true
+    },
+    {
+      "system": "Linux",
+      "route": "/src/ui/vendor/phaser-3.90.0.min.js",
+      "allowed": true
+    },
+    {
+      "system": "Linux",
+      "route": "/profiles/manifest.json",
+      "allowed": true
+    },
+    {
+      "system": "Linux",
+      "route": "/package.json",
+      "allowed": false
+    },
+    {
+      "system": "Linux",
+      "route": "/src/../package.json",
+      "allowed": false
+    },
+    {
+      "system": "Linux",
+      "route": "/src/../../private",
+      "allowed": false
+    },
+    {
+      "system": "Linux",
+      "route": "/.runtime/session.sqlite",
+      "allowed": false
+    }
+  ],
+  "note": "Windows paths simulated with node:path.win32; full browser/runtime tests executed on Linux"
+}

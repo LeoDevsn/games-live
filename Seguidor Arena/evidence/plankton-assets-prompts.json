@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-03",
+  "assets": [
+    {
+      "path": "public/assets/plankton-lab-v1.png",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Asset type: production raster background for a 1080x1920 portrait TikTok game titled Arena dos Seguidores do Plankton. Create ONLY a polished, beautiful, colorful 3D animated-cartoon underwater laboratory environment in Bikini Bottom, inspired by Plankton's Chum Bucket laboratory from SpongeBob SquarePants. No characters: Plankton will be animated separately. True portrait 9:16 composition. Camera predominantly top-down so moving circular user portraits can be composited on the floor. Main playfield spans nearly the FULL WIDTH, across the middle 23% to 68% of image height. This area must be spacious unobstructed dark turquoise brushed-metal floor, large soft geometric panels, restrained seams, very low-contrast detail, subtle underwater caustics. Do not draw an arena boundary/ring: the game draws a moving green energy barrier. High-quality rendered materials and dimensional shading: teal steel, green-glowing machinery, warm brass details, rounded bolts, conduits. Upper 20% of image: elevated curved laboratory control wall and broad portholes looking out into blue water with Bikini Bottom-style flower silhouettes and distant whimsical undersea buildings; side details remain at the periphery. Lower 30%: darker coherent teal laboratory panels where interface cards will be composited. Leave the center floor clear. Mood: playful scheming scientist, inviting, magical undersea light, lime green accent with turquoise/blue ambiance, not horror or toxic sludge. No characters, no faces, no avatars, no text, no labels, no interface, no podium, no logos, no watermark."
+    },
+    {
+      "path": "public/assets/plankton-reactions-v1.png",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent game character reaction sprite sheet. Create a clean 2-by-2 GRID with FOUR equally sized square cells, 1024x1024 total image. On a truly transparent background with no floor, no shadows outside character, no panels, no text, no labels, no watermark. Character is SHELDON J. PLANKTON from SpongeBob SquarePants, unmistakably recognizable: tiny green pill-shaped copepod, single large yellow eye with a red pupil, one black eyebrow, two long slender green antennae, short arms and legs, scheming mischievous scientist. Polished appealing 3D animated-cartoon render with consistent soft underwater rim light, green body, lively expressive features. Show full body including all antennae and feet in EACH cell with generous 12 percent padding. Exact same camera, scale, vertical baseline, body proportions and centered placement in all four cells, independent cutouts not overlapping. Top-left: idle confident scheming smile, mouth CLOSED, arms at hips. Top-right: same pose and body placement, mouth OPEN in mid speech, one arm gesturing as if recruiting allies. Bottom-left: gleeful scheming laughter, wide open mouth and eye partly narrowed, hands raised. Bottom-right: victorious celebration, one fist raised proudly, mouth in a triumphant grin. Each sprite must fit inside its own square quarter of the sheet without crossing its boundaries. Transparent alpha background."
+    }
+  ]
+}

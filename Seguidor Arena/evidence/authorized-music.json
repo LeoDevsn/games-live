@@ -1,0 +1,56 @@
+{
+  "downloadedAt": "2026-11-03",
+  "differentRecordingsFromCartoon": true,
+  "youtubeRipped": false,
+  "tracks": [
+    {
+      "title": "Drunken Sailor",
+      "artist": "Alexander Nakarada",
+      "file": "drunken-sailor-nakarada.mp3",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://creatorchords.com/music/drunken-sailor/",
+      "download": "https://d19p7hqu4j8vx0.cloudfront.net/media/media/Drunken_Sailor.mp3",
+      "creditRequired": true,
+      "bytes": 4902211,
+      "sha256": "0a52ab89794bff7c7be44127bcc597c204a3eb06e95191ca220d6d714d827bae",
+      "modified": false
+    },
+    {
+      "title": "12th Street Rag",
+      "artist": "Imperial Marimba Band",
+      "recorded": 1921,
+      "composer": "Euday L. Bowman",
+      "file": "12th-street-rag-1921.mp3",
+      "license": "Public domain as identified by source",
+      "source": "https://commons.wikimedia.org/wiki/File:Twelfth_Street_Rag.ogg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6e/Twelfth_Street_Rag.ogg/Twelfth_Street_Rag.ogg.mp3",
+      "creditRequired": false,
+      "bytes": 4009193,
+      "sha256": "76a47c621152a4108f660d2ae657e65dcaaf0e79c70585d73c9c1f39d5aa02ec",
+      "modified": false
+    }
+  ],
+  "tests": {
+    "clientPlaylistAndDucking": true,
+    "selectionSurvivesSQLiteRestart": true,
+    "headAndRangeRequests": true,
+    "actualBrowserAudioPlaybackVerified": false,
+    "actualTikTokPlaybackVerified": false
+  },
+  "preview": "http://127.0.0.1:4193/?studio=1",
+  "phaseUpdate": {
+    "date": "2026-11-04",
+    "selection": "liberadas",
+    "waitingNoticeCountdownIntermission": "12th Street Rag - Imperial Marimba Band (1921)",
+    "running": "Drunken Sailor - Alexander Nakarada",
+    "loopEachTrack": true,
+    "retainTrackDuringPause": true,
+    "noRestartOnRepeatedSnapshots": true,
+    "oneTimeMigrationPreservesVolumeAndEnabled": true,
+    "phaseAndHttpTestsPassed": 7,
+    "actualLiveStudioPlaybackVerified": false,
+    "previewHttpServesUpdatedRouting": true,
+    "productionRestartNeeded": true
+  }
+}

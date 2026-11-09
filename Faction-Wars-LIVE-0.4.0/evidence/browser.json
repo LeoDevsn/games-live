@@ -1,0 +1,197 @@
+{
+  "sourceDigest": "d0b0124acbef9942b5b413e6b2b31bfce649d0acc29fe1d159c29c2f7611b716",
+  "status": "pass",
+  "runtime": "v24.19.0",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "aspect": 0.5625,
+  "dimensions": {
+    "w": 1080,
+    "h": 1920,
+    "css": {
+      "x": 27.71875,
+      "y": 151,
+      "width": 529.5625,
+      "height": 943,
+      "top": 151,
+      "right": 557.28125,
+      "bottom": 1094,
+      "left": 27.71875
+    }
+  },
+  "renderer": {
+    "engine": "Phaser",
+    "version": "3.90.0",
+    "ready": true,
+    "assetsReady": true,
+    "canvasWidth": 1080,
+    "canvasHeight": 1920,
+    "art": "Blender prerendered 3D",
+    "objectiveStates": [
+      {
+        "owner": null,
+        "status": "Em contestação",
+        "label": "Em contestação · Proprietário: Neutro",
+        "progress": 0,
+        "contested": true
+      },
+      {
+        "owner": null,
+        "status": "Em contestação",
+        "label": "Em contestação · Proprietário: Neutro",
+        "progress": 0,
+        "contested": true
+      },
+      {
+        "owner": null,
+        "status": "Em contestação",
+        "label": "Em contestação · Proprietário: Neutro",
+        "progress": 0,
+        "contested": true
+      }
+    ],
+    "nexusLabels": [
+      "ALIANÇA RUBRA",
+      "COALIZÃO SAFIRA"
+    ],
+    "nexusBars": {
+      "S": 480,
+      "R": 480
+    },
+    "objectiveSidebar": [
+      {
+        "state": "Em\ncontestação",
+        "owner": "Dono:\nNeutro"
+      },
+      {
+        "state": "Em\ncontestação",
+        "owner": "Dono:\nNeutro"
+      },
+      {
+        "state": "Em\ncontestação",
+        "owner": "Dono:\nNeutro"
+      }
+    ],
+    "units": 28,
+    "activeFx": 34,
+    "phase": "combat",
+    "paused": true,
+    "frames": 1340,
+    "framesReceived": 45,
+    "interpolatedFrames": 0,
+    "damageEffects": 78,
+    "abilityEffects": 0,
+    "birthEffects": 34,
+    "deathEffects": 6,
+    "droppedCosmetics": 0,
+    "abilities": {},
+    "animationFrames": {
+      "walk": [],
+      "attack": [],
+      "hurt": [],
+      "death": []
+    },
+    "hurtEffects": 30
+  },
+  "finalRenderer": {
+    "engine": "Phaser",
+    "version": "3.90.0",
+    "ready": true,
+    "assetsReady": true,
+    "canvasWidth": 1080,
+    "canvasHeight": 1920,
+    "art": "Blender prerendered 3D",
+    "objectiveStates": [
+      {
+        "owner": "R",
+        "status": "Aliança Rubra",
+        "label": "Aliança Rubra",
+        "progress": 200,
+        "contested": false
+      },
+      {
+        "owner": "S",
+        "status": "Coalizão Safira",
+        "label": "Coalizão Safira",
+        "progress": -200,
+        "contested": false
+      },
+      {
+        "owner": "R",
+        "status": "Aliança Rubra",
+        "label": "Aliança Rubra",
+        "progress": 200,
+        "contested": false
+      }
+    ],
+    "nexusLabels": [
+      "ALIANÇA RUBRA",
+      "COALIZÃO SAFIRA"
+    ],
+    "nexusBars": {
+      "S": 473.28,
+      "R": 0
+    },
+    "objectiveSidebar": [
+      {
+        "state": "Aliança\nRubra",
+        "owner": ""
+      },
+      {
+        "state": "Coalizão\nSafira",
+        "owner": ""
+      },
+      {
+        "state": "Aliança\nRubra",
+        "owner": ""
+      }
+    ],
+    "units": 31,
+    "activeFx": 0,
+    "phase": "results",
+    "paused": true,
+    "frames": 2357,
+    "framesReceived": 99,
+    "interpolatedFrames": 0,
+    "damageEffects": 1948,
+    "abilityEffects": 42,
+    "birthEffects": 156,
+    "deathEffects": 125,
+    "droppedCosmetics": 0,
+    "abilities": {
+      "Disparo Preciso": 15,
+      "Golpe Poderoso": 14,
+      "Muralha": 13
+    },
+    "animationFrames": {
+      "walk": [],
+      "attack": [],
+      "hurt": [],
+      "death": []
+    },
+    "hurtEffects": 932
+  },
+  "unitInspectorVerified": true,
+  "tickAdvancedWhileRenderStopped": true,
+  "tickBefore": 11,
+  "tickAfter": 35,
+  "measuredFps": 55,
+  "errors": [],
+  "nextCycleVerified": true,
+  "pause20sVerified": true,
+  "checks": [
+    "20s pause and rejection",
+    "render failure isolation",
+    "literal names",
+    "mobile width",
+    "combat HUD",
+    "three result screens",
+    "no MVP election"
+  ]
+}

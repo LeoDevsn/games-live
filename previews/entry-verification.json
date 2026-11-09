@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-02T15:30:34.151Z",
+  "scope": "Canvas component previews, local HTTP assets and VM/engine tests; no LIVE Studio UI control",
+  "tests": {
+    "jelly": 26,
+    "tower": 28,
+    "arena": 18,
+    "platform": 10
+  },
+  "jellyLayout": "existing 9:16 style retained; entry mounted only inside ocean",
+  "servedPorts": [
+    4174,
+    4175,
+    4177
+  ],
+  "capture": "Faction source4176, studio=1 for other games",
+  "liveConnection": "pending: user reported not connected; no real event or outgoing chatbot delivery validated"
+}

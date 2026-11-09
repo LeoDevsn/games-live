@@ -1,0 +1,43 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif; font-synthesis: none; }
+* {box-sizing: border-box}
+html,body {margin:0;min-height:100%;background:#070e1c;color:#e9f3ff}
+body {min-height:100vh}
+.shell {display:flex;gap:clamp(12px,3vw,48px);align-items:center;justify-content:center;padding:18px;max-width:1640px;margin:auto;min-height:100vh}
+.preview {height:min(calc(100vh - 36px), min(900px,calc((100vw - 460px) * 16 / 9)));aspect-ratio:9 / 16;flex:none;border-radius:18px;overflow:hidden;box-shadow:0 30px 110px #000a,0 0 0 1px #507da54f;background:#0c1835}
+canvas {height:100%;width:100%;display:block}
+.control {max-width:485px;flex:1;max-height:calc(100vh - 30px);overflow:auto;padding:0 6px 12px 0;scrollbar-color:#47617a transparent}
+.eyebrow {font-size:12px;letter-spacing:.27em;font-weight:800;color:#5ed5fe}
+.eyebrow span {color:#ff6e8f}
+h1 {font-size:clamp(25px,3vw,37px);letter-spacing:-.055em;margin:7px 0 4px}
+.subhead,.helper,.hint {color:#a3b3c9;line-height:1.5}
+.subhead {margin:0 0 19px;font-size:14px}
+.panel {background:#111e33;border:1px solid #263c58;border-radius:16px;padding:18px;margin-bottom:13px;box-shadow:0 6px 25px #0002}
+h2 {font-size:15px;margin:0 0 12px;letter-spacing:.02em}
+.status {border-radius:9px;background:#1b3442;color:#72f4ce;border:1px solid #2a675f;padding:10px 11px;font-size:12px;font-weight:700;margin:0 0 9px}
+.helper {font-size:13px;margin:7px 0 14px}
+.hint {font-size:12px;margin:12px 0 0}
+.buttons {display:flex;gap:9px;flex-wrap:wrap}
+.buttons.two>* {flex:1 1 44%;}
+button,a {border:1px solid #456283;border-radius:9px;padding:10px 12px;cursor:pointer;font-size:12px;font-weight:700;text-decoration:none;transition:transform .1s,filter .1s;color:#ecf6ff;background:#2368ba}
+button:hover,a:hover {filter:brightness(1.13)}
+button:active {transform:scale(.985)}
+.secondary,a {background:#1d2d49}
+.red {background:#982e5c;border-color:#d35884}
+.blue {background:#0d7085;border-color:#15bdd5}
+.copy {font-size:13px;line-height:1.45;margin:8px 0;color:#c4d3e9}
+code {overflow-wrap:anywhere;background:#0b162b;padding:2px 5px;border-radius:4px}
+footer {font-size:11px;color:#60738e;margin:13px 3px}
+body.studio {width:100vw;height:100vh;overflow:hidden;background:transparent}
+body.studio .shell {width:100%;height:100%;min-height:0;max-width:none;padding:0;display:flex;align-items:center;justify-content:center}
+body.studio .preview {width:min(100vw,calc(100vh * 9 / 16));height:min(100vh,calc(100vw * 16 / 9));max-height:none;aspect-ratio:9 / 16;border-radius:0;box-shadow:none}
+body.studio .control {display:none}
+@media(max-width:980px){.shell{flex-direction:column;padding:12px;align-items:center}.preview{width:min(calc(100vw - 24px),calc(84vh * 9 / 16));height:auto;max-height:84vh}.control{width:100%;max-width:600px;max-height:none}}
+@media(prefers-reduced-motion:reduce){button,a{transition:none}}
+
+label{display:block;font-size:12px;color:#aebdd4;line-height:1.6;margin:12px 0}input,select{display:block;width:100%;font:inherit;border:1px solid #395372;border-radius:8px;background:#0b1629;color:#e4efff;padding:9px;margin-top:5px}summary{cursor:pointer;font-size:14px;font-weight:700;padding:4px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.check{display:flex;gap:10px;align-items:center}.check input{width:auto;margin:0}.disabled{opacity:.35}#notice{color:#ffb5b5;line-height:1.5}#ranking p{padding:8px 0;margin:0;border-bottom:1px solid #ffffff12}#renderStatus{font-variant-numeric:tabular-nums}
+
+.preview{position:relative}
+
+.entry-controls button{margin:6px 8px 0 0}.entry-controls p{line-height:1.6}
+/* Underwater construction collection */
+html,body{background:#072f38;color:#e7f4e7}.panel{background:#0c373c;border-color:#477260}.eyebrow{color:#ffd18c}.eyebrow span{color:#b6ed70}.preview{container-type:inline-size}#audienceVolume{accent-color:#ffc371;padding:0}.voice-caption{position:absolute;z-index:20;left:5.9259259259%;right:5.9259259259%;top:70.8333333333%;height:4.0625%;padding:.45cqw 1.2cqw;display:flex;align-items:center;justify-content:center;border:1px solid #ffc37199;border-radius:1.2cqw;background:#07343af2;color:#fff1d6;font:600 2.15cqw/1.25 'Segoe UI',sans-serif;text-align:center;overflow-wrap:anywhere;overflow:hidden;pointer-events:none;box-shadow:0 8px 24px #0008}.voice-caption[hidden],.voice-unlock[hidden]{display:none}.voice-unlock{position:absolute;z-index:26;right:12px;bottom:54px;background:#163d36ef;border-color:#ffd18c;color:#fff1d6}

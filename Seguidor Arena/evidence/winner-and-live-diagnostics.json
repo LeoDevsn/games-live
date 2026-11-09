@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-04T18:00:42.852Z",
+  "winnerOverlay": {
+    "saved": true,
+    "served": true,
+    "testsPassed": 5,
+    "preview": "../previews/arena-royale-vencedor.png",
+    "requiresSourceRefresh": true,
+    "backendRestarted": false
+  },
+  "liveDiagnostics": {
+    "active": true,
+    "status": "inactive",
+    "received": 400,
+    "rejected": 33,
+    "lastEvent": "like",
+    "lastEventAt": 1793814473042,
+    "passiveObservationSeconds": 32,
+    "eventsObserved": 0,
+    "targetAccounts": {
+      "count": 2,
+      "followingConfirmed": false,
+      "joinedRound": false
+    },
+    "resolved": false,
+    "waitingForFreshViewerActivity": true,
+    "tikfinityUi": {
+      "liveBadgeObserved": true,
+      "chatbotDeliveryErrorObserved": true,
+      "automationError": "failed to activate captured window"
+    }
+  },
+  "note": "No viewer eligibility overrides, fake likes, test audio, public chat tests, or live server restarts were used."
+}

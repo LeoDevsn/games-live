@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-03",
+  "sourceArenaVersion": 4,
+  "shape": "square to circle",
+  "floorArea": 0.4,
+  "bands": [
+    {
+      "alive": 100,
+      "area": 1
+    },
+    {
+      "alive": 80,
+      "area": 0.9
+    },
+    {
+      "alive": 60,
+      "area": 0.8
+    },
+    {
+      "alive": 40,
+      "area": 0.6
+    },
+    {
+      "alive": 20,
+      "area": 0.4
+    },
+    {
+      "alive": 10,
+      "area": 0.4
+    },
+    {
+      "alive": 0,
+      "area": 0.4
+    }
+  ],
+  "geometry": [
+    {
+      "area": 1,
+      "left": 100,
+      "right": 980,
+      "top": 420,
+      "bottom": 1300,
+      "cx": 540,
+      "cy": 860,
+      "radius": 440,
+      "cornerRadius": 0,
+      "morph": 0
+    },
+    {
+      "area": 0.9,
+      "left": 122.57934885777394,
+      "right": 957.420651142226,
+      "top": 442.57934885777394,
+      "bottom": 1277.420651142226,
+      "cx": 540,
+      "cy": 860,
+      "radius": 417.42065114222606,
+      "cornerRadius": 0,
+      "morph": 0
+    },
+    {
+      "area": 0.8,
+      "left": 133.52721671571203,
+      "right": 946.472783284288,
+      "top": 453.52721671571203,
+      "bottom": 1266.472783284288,
+      "cx": 540,
+      "cy": 860,
+      "radius": 406.47278328428797,
+      "cornerRadius": 219.50587415655437,
+      "morph": 0.540026007111604
+    },
+    {
+      "area": 0.6,
+      "left": 155.42295243158816,
+      "right": 924.5770475684119,
+      "top": 475.42295243158816,
+      "bottom": 1244.577047568412,
+      "cx": 540,
+      "cy": 860,
+      "radius": 384.57704756841184,
+      "cornerRadius": 384.57704756841184,
+      "morph": 1
+    },
+    {
+      "area": 0.4,
+      "left": 225.99415555711232,
+      "right": 854.0058444428877,
+      "top": 545.9941555571123,
+      "bottom": 1174.0058444428878,
+      "cx": 540,
+      "cy": 860,
+      "radius": 314.0058444428877,
+      "cornerRadius": 314.0058444428877,
+      "morph": 1
+    }
+  ],
+  "tests": {
+    "arenaSuite": 40,
+    "sharedEntry": 2,
+    "platformSuiteBeforeMorph": 10,
+    "factionChatHttp": "pass",
+    "pacingScenarios": 40,
+    "stressUsers": 200,
+    "stressLogicalMinutes": 30
+  },
+  "pacing": [
+    {
+      "traffic": "none",
+      "meanSeconds": 179.7,
+      "minSeconds": 135,
+      "maxSeconds": 232,
+      "allFinished": true
+    },
+    {
+      "traffic": "moderate",
+      "meanSeconds": 221.1,
+      "minSeconds": 163,
+      "maxSeconds": 278.5,
+      "allFinished": true
+    }
+  ],
+  "voice": {
+    "provider": "Fish Audio",
+    "configured": true,
+    "teams": {
+      "A": true,
+      "B": true
+    },
+    "lastError": null,
+    "realProviderSampleBytes": 130402,
+    "sample": ".runtime/voice-check/convite-arena.mp3",
+    "privateConfigReused": true
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4188/",
+    "isolated": true,
+    "liveInputDisabled": true,
+    "liveChatDisabled": true
+  },
+  "production": {
+    "arenaVersion": 3,
+    "narrator": false,
+    "mode": "simulation"
+  },
+  "sharedChatGatewayHttp": 404,
+  "restartPending": true,
+  "limitations": [
+    "Native Canvas previews and Audio API doubles, not an actual browser/FPS/live audio test.",
+    "Actual Fish Audio generated one saved sample successfully.",
+    "Chat delivery tested against a local WebSocket fixture, not TikTok.",
+    "Production automatic restart was previously rejected by automatic review; no production process was stopped in this work."
+  ]
+}

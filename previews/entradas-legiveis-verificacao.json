@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-05T12:17:44.442Z",
+  "games": [
+    "Jelly Battle",
+    "Tower Battle",
+    "Faction Wars"
+  ],
+  "served": {
+    "jelly": true,
+    "tower": true,
+    "faction": true
+  },
+  "gameplayChanged": false,
+  "apiConfigurationChanged": false,
+  "checks": {
+    "sharedEntryTests": 2,
+    "publicPresentationTests": 1,
+    "factionSceneLifecycle": "pass",
+    "phonePreviewsReviewed": true
+  },
+  "preview": "entradas-legiveis-demais-jogos.png"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "formationCases": 12,
+  "waves": [
+    30000,
+    60000
+  ],
+  "initialSiege": 6,
+  "profile": "spatial-4-formation-siege30",
+  "replay": "pass",
+  "checks": [
+    "R/lane0/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "R/lane0/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death",
+    "R/lane1/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "R/lane1/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death",
+    "R/lane2/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "R/lane2/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane0/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane0/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane1/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane1/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane2/speechfalse: D > G > A, no retreat, promotes Warrior after Defender death",
+    "S/lane2/speechtrue: D > G > A, no retreat, promotes Warrior after Defender death"
+  ]
+}

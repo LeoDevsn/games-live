@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "users": 200,
+  "logicalMinutes": 30,
+  "wallSeconds": 13.547,
+  "damage": 104353,
+  "round": 14,
+  "heapMB": 19,
+  "scope": "Tempo lógico: motor e colisões; não é ensaio de 30min reais nem teste de FPS/avatares em LIVE."
+}

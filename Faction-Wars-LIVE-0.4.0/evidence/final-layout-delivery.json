@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "version": "0.4.3",
+  "bundleEntriesVerified": 32,
+  "ports": [
+    4173,
+    4176
+  ],
+  "coreHashesUnchanged": true,
+  "scope": "Local bundles/static resources/HTTP parity; no browser or real broadcast exercised."
+}

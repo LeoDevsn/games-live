@@ -1,0 +1,2 @@
+import {ensureTowerServer} from './runtime.mjs';
+try{const result=await ensureTowerServer({force:true});console.log('Tower Battle atualizado. Ranking, regras e vozes salvas foram preservados.');console.log('Painel: '+result.panel);console.log('Tela da LIVE: '+result.studio);console.log('Atualize a fonte no Studio para carregar o novo visual.');}catch(error){console.error(error.message);process.exitCode=1;}

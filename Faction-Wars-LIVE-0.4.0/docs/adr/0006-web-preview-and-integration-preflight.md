@@ -1,0 +1,13 @@
+# ADR0006 — Prévia web e preparação da integração
+
+Data:29/10/2026. Solicitação atual: teste fora da rede de casa e preparação para TikFinity/TikTok LIVE Studio. Autoriza preparar uma prévia acessível externamente; não significa ativar uma LIVE real, conectar eventos reais à economia ou mudar regras. As instruções anteriores que vedavam publicação continuam aplicáveis ao jogo de produção; a prévia de teste solicitada é um escopo novo e limitado.
+
+O site estático roda o mesmo motor puro e o mesmo Phaser/artes no próprio aparelho. O build copia byte a byte módulos de regras/combate/economia/território/comandos/match e altera somente caminhos de apresentação e transporte do controller na cópia publicada. Não replica motor com regras simplificadas. A UI recebe frames confirmados após commits IndexedDB; checkpoint200ticks, hashes SHA256, replay técnico exportável e escritor antigo rejeitado. Não substitui SQLite/servidor autoritativo de produção e não recebe eventos reais. Dados do navegador podem ser removidos pelo OS.
+
+O pacote público não contém GDDs, fontes originais do pacote, bancos de partidas do PC, arquivos de configuração local ou adaptador de conexão ao TikFinity. A prévia é de uma partida por aparelho, não uma transmissão compartilhada. Hospedagem exige um serviço configurado; a API do GitHub retornou Forbidden neste ambiente. Não foi criada URL fictícia nem alterada visibilidade do repositório. Há bundle estático, configuração Netlify e workflow Pages manual, sem deploy automático no push.
+
+TikFinity: contrato externo isolado, inbox SQLite WAL/FULL, identidade por userId estável e ID do evento por sala; likes desativados até verificar semântica. Total de likes da sala nunca é contador pessoal. Duplicatas sobrevivem ao reinício; ausência/contradição de IDs e contadores regressivos ficam em quarentena. WebSocket aceita loopback apenas. Modos off/shadow; shadow não tem rota de aplicação ao jogo. Fixtures podem gerar localEvent marcado explicitamente como teste, sem disfarçar evento real como simulador.
+
+LIVE Studio: servidor local separado em4175, GET-only, arena1080×1920 sem painel de operação e stream do backend existente. Não gerencia credenciais, RTMP nem início de transmissão. Fonte Link/Navegador ou Captura de janela será validada na versão instalada pelo proprietário.
+
+Resultados executados estão em evidence/preview.json, integration.json e studio.json. Uma batalha web completa teve replay independente em Node. WebSocket foi sintético local. Nenhum teste em TikFinity/LIVE Studio instalado ou LIVE real é declarado. Não houve alteração dos fontes em src/, profiles/, scenarios/ ou sources/.

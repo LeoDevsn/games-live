@@ -1,0 +1,127 @@
+{
+  "status": "pass",
+  "engineDigest": "eee86d3f0b66d709985d4f3dd23f71d3a282c918038ad55a7ad9dabd54e97756",
+  "checks": [
+    {
+      "faction": "R",
+      "kind": "G",
+      "speech": false,
+      "oldDistance": 400,
+      "newDistance": 800
+    },
+    {
+      "faction": "R",
+      "kind": "G",
+      "speech": true,
+      "oldDistance": 440,
+      "newDistance": 880
+    },
+    {
+      "faction": "R",
+      "kind": "D",
+      "speech": false,
+      "oldDistance": 300,
+      "newDistance": 600
+    },
+    {
+      "faction": "R",
+      "kind": "D",
+      "speech": true,
+      "oldDistance": 330,
+      "newDistance": 660
+    },
+    {
+      "faction": "R",
+      "kind": "A",
+      "speech": false,
+      "oldDistance": 500,
+      "newDistance": 1000
+    },
+    {
+      "faction": "R",
+      "kind": "A",
+      "speech": true,
+      "oldDistance": 550,
+      "newDistance": 1100
+    },
+    {
+      "faction": "R",
+      "kind": "C",
+      "speech": false,
+      "oldDistance": 200,
+      "newDistance": 400
+    },
+    {
+      "faction": "R",
+      "kind": "C",
+      "speech": true,
+      "oldDistance": 220,
+      "newDistance": 440
+    },
+    {
+      "faction": "S",
+      "kind": "G",
+      "speech": false,
+      "oldDistance": 400,
+      "newDistance": 800
+    },
+    {
+      "faction": "S",
+      "kind": "G",
+      "speech": true,
+      "oldDistance": 440,
+      "newDistance": 880
+    },
+    {
+      "faction": "S",
+      "kind": "D",
+      "speech": false,
+      "oldDistance": 300,
+      "newDistance": 600
+    },
+    {
+      "faction": "S",
+      "kind": "D",
+      "speech": true,
+      "oldDistance": 330,
+      "newDistance": 660
+    },
+    {
+      "faction": "S",
+      "kind": "A",
+      "speech": false,
+      "oldDistance": 500,
+      "newDistance": 1000
+    },
+    {
+      "faction": "S",
+      "kind": "A",
+      "speech": true,
+      "oldDistance": 550,
+      "newDistance": 1100
+    },
+    {
+      "faction": "S",
+      "kind": "C",
+      "speech": false,
+      "oldDistance": 200,
+      "newDistance": 400
+    },
+    {
+      "faction": "S",
+      "kind": "C",
+      "speech": true,
+      "oldDistance": 220,
+      "newDistance": 440
+    }
+  ],
+  "legacyReplayHash": "99975e5ebe6a5f40897003a09cc808909af4811978709abb329c20ede0e3ca58",
+  "newReplayHash": "d4ee8731bc864d6961817a4c1d0e9986ab9930589ddf301d3b38375dda52b0c0",
+  "preserved": {
+    "cadence": true,
+    "capture10s": true,
+    "clock20Hz": true,
+    "durations": true,
+    "nexusDefense0": true
+  }
+}

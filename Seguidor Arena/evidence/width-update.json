@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "sourceArenaVersion": 6,
+  "oldWidth": 880,
+  "newWidth": 1024,
+  "height": 880,
+  "marginEachSide": 28,
+  "testsPassed": 47,
+  "preview": {
+    "url": "http://127.0.0.1:4191/",
+    "isolated": true,
+    "liveInputDisabled": true,
+    "liveChatDisabled": true
+  },
+  "production": {
+    "version": 5,
+    "narrator": true,
+    "mode": "simulation"
+  },
+  "restartPending": true,
+  "scope": "Native Canvas image, real local HTTP policy, provider returned three MP3 samples. Actual browser sound output remains unverified."
+}

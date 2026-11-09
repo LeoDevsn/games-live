@@ -1,0 +1,338 @@
+Matriz de testes de reauditoria
+Oitenta e quatro cenários para validação futura
+Faction Wars LIVE | Reauditoria independente | 28 de outubro de 2026
+Nenhum teste de produto desta matriz foi executado. A conferência aritmética do relatório é análise documental. Cada linha contém entrada, resultado esperado e condição de aprovação; os oráculos pendentes não podem ser marcados como aprovados.
+Base do oráculo: Aprovado=resultado derivado de regra aprovada; Misto=invariantes aprovadas com parte pendente; Pendente=decisão necessária; Proposto=cenário/limite sugerido. A etiqueta não significa execução bem-sucedida.
+Procedimento comum futuro: registrar versão de regras, ID de partida/usuário/evento, sequência/tempo lógico, estado antes/depois, saídas e falhas. Inteiros contábeis exigem igualdade exata; zero duplicações confirmadas é obrigatório. Precisão territorial, limites de fila e tolerâncias temporais precisam aprovação prévia. Fixtures sintéticas não devem gerar engajamento artificial em LIVE pública.
+Para passar: todas as asserções aprovadas da linha devem ser verdadeiras; sem decisão pendente, sem erro e com evidências. Para testes mistos, pode-se verificar uma invariante isolada, mas o caso completo fica bloqueado. Comparar replay com estado de referência confirmado. Não aceitar “sem crash” como prova de integridade.
+Os 60 IDs anteriores foram mantidos.24 tiveram oráculos ou escopo revisados; 36 mantêm núcleo com dependências atuais.24 novos cenários cobrem Cerco, MVP, representação e consulta. Para cenário ainda referido àParte II, aplicar somente regras não substituídas.
+
+Cenários 1 a 6
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-001AprovadoI-B §1; I-B §2Achados —
+Iniciar nova partida, sem likes ou votos.
+30 unidades iniciais: 24 comuns G 1/D 1/A 2 e 6 Cercos, um por facção/corredor; nenhum Campeão; 12 convencionais por facção.
+WT-002AprovadoAT-02/03; §§3.2/3.4Achados 006
+Solicitar compra com 32 globais; depois 16 na facção; depois 8 na lane.
+Cada limite isoladamente impede excesso; zero débito sem spawn. Um Campeão por classe/lane/facção.
+WT-003AprovadoAT-04/05; §4.2Achados —
+Sem Campeão: testar A com saldos 0/1/2; G com 1/2/3; D com 2/3/4.
+Por classe: nenhum/comum/Campeão; débitos 0/custo comum/custo Campeão; saldo nunca negativo.
+WT-004AprovadoAT-03/04; §4.2Achados —
+Campeão da classe vivo no destino; saldo suficiente para comum.
+Convoca comum; não cria segundo Campeão. Após morte, Campeão pode voltar em pedido posterior.
+WT-005MistoAT-02/03; §4.2Achados 005,006,012
+Lane escolhida cheia; duas alternativas empatadas; uma tem Campeão.
+Destino usa rodízio aprovado e reavalia Campeão no destino; débito corresponde à unidade realmente criada. Inicialização do rodízio precisa ser aprovada.
+WT-006AprovadoI-B §1; II §§3.3–3.5Achados —
+G Campeão ofensivo, Golpe 150%, Chama 105%, alvo proteção 40%.
+ceil(10×1,10×1,10×1,50×1,05×0,60)=ceil(11,4345)=12. Dano-base do Campeão G=11, sem arredondamento intermediário.
+
+Cenários 7 a 12
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-007Aprovado§§3.3–3.5Achados —
+D Campeão defensivo sob Muralha; depois muda para ofensiva durante buff.
+Proteção min(40,15+15+20)=40%; depois 15−10+20=25%; Muralha não encerra antes dos 5 s.
+WT-008MistoI-D; I-B §7Achados 003
+Duas Muralhas no mesmo alvo e emissor morto ou alvo afastado.
+Até 3 aliados além do emissor, preferindo até 2 Cercos e 1 convencional/Campeão; não somar Muralhas, teto 40%. Raio, vagas não preenchidas, refresh e persistência dependem de decisão.
+WT-009Pendente§§3.1/10.3Achados 002
+Janela 60 s, alvo contínuo, sem buffs; comparar cadência em 20 Hz.
+Após aprovar fase inicial, frequência média converge para 1/1,2/0,7 e não para taxa arredondada por tick. Tolerância de contagem na borda deve ser fixada.
+WT-010Misto§3.6Achados 001,004
+Último protetor morre; Arqueiro recua; chega novo Guerreiro.
+Destino não é cancelado; não cruza lane. Quantidade de tiros e ponto central precisam de especificação.
+WT-011Aprovado§§3.3/3.2Achados —
+Mudar de equilibrada para ofensiva com composição inicial viva.
+Nenhuma tropa é removida ou transformada; dano+10%; G/A sem penalidade de proteção; D perde 10 pp.
+WT-012AprovadoI-C; I-B §1Achados —
+Neutro sem Cerco 10 s; depois reversão sem Cerco 20 s e com Cerco 10 s, sempre sem contestação.
+Neutro 0→extremo em 10 s; reversão 200 pontos em 20 s ou 10 s com Cerco; não muda posse no zero. Captura neutra COM Cerco é WT-066 pendente.
+
+Cenários 13 a 18
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-013AprovadoAT-14; §5Achados —
+Progresso 40; duas facções presentes por 3 s; depois nenhuma por 3 s.
+Permanece 40 em ambas situações; posse anterior preservada.
+WT-014AprovadoI-B §1Achados —
+Facção possui 3 pontos durante 15 s antes do timeout, Nexus intactos.
+Nenhuma vitória territorial antecipada. Continuar até destruição de Nexus ou 300 s de combate.
+WT-015MistoI-B §1; II §§2/5Achados 007
+Ambos Nexus recebem dano letal no mesmo ciclo lógico; repetir no tick do timeout.
+Empate técnico único para destruição simultânea (II §§2/5 preservados). Ordenação de dano versus timeout ainda precisa aprovação; não passar o teste integral sem esse oráculo.
+WT-016MistoI-B §1; WORK-AUD-031Achados 007
+Timeout: 2×1; 2×0; 1×0+2 neutros; 1×1+1 neutro; todos contestados, Rubra dona dos 3; HP distintos.
+2×1 e 2×0: facção com 2 vence.1×0 e 1×1: nenhuma maioria de 3, empate. HP não desempata. Todos contestados dependem da decisão 031.
+WT-017AprovadoI-A; I-B §§1/5Achados —
+25 s preparação e vitória por Nexus aos 90 s de combate.
+15 s resultados; próximo ciclo aos 130 s desde início. Ciclo máximo 340 s, sem espera para completar 300 s.
+WT-018MistoI-GAchados 009,025
+Pausar processo 20 s no combate e reiniciar em novo relógio do sistema.
+Tempo lógico não avança durante 20 s de parada; retoma estado verificável ou anula, exceto resultado já confirmado. Eventos recebidos na pausa dependem do contrato de admissão.
+
+Cenários 19 a 24
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-019AprovadoAT-06; §4.2Achados —
+Primeiro pedido válido vermelho em t=3 s; azul em t=7 s.
+Janelas próprias de 10 s: encerramentos 13 s e 17 s; nenhuma janela antecipada na facção sem pedido.
+WT-020MistoI-B §2Achados 012,019
+Enviar só classe, só rota e depois ambos; empate sem preferência anterior.
+Classe isolada vota classe e abre janela válida; rota isolada sem classe pendente só vota estratégia se aberta; rota após classe pendente pertence apenas ao reforço. Troca de classe e ordem inversa na mesma mensagem aguardam 012/013.
+WT-021MistoI-B §§1/2Achados 019
+Mesmo usuário envia !atacar e !attack; depois troca por !defend.
+Uma preferência final por categoria/janela; aliases não duplicam voto. Preferência final elegível contabilizada paga 3 XP dentro do limite 50, não cada mensagem.
+WT-022Pendente§6.2Achados 013
+Mensagem com facção+postura+rota+classe; outra com!red !blue.
+No máximo 3 ações e uma facção; ordem/rejeição conforme gramática ratificada; sem troca dentro da rodada.
+WT-023MistoI-B §2; I-FAchados 009,012,027
+Voto em t 0+9,999 s e t 0+10,000 s; evento antigo entregue na nova partida.
+[t 0, t 0+10 s) aprovado. Evento exatamente emt 0+10 s não entra na anterior e pode abrir nova se for comando novo válido. Eventos antigos não reabrem resultado; relógio de admissão pendente.
+WT-024AprovadoAT-08; §6.3Achados —
+Facção sem tetos atingidos recebe lotes válidos 150 e 50 likes.
+Após 150: C 0 resto 150, E 1 resto 50. Após 50: C 1 resto 0, E 2 resto 0. Lote único 200 produz mesmo resultado.
+
+Cenários 25 a 30
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-025MistoAT-07; §§6.2/6.3Achados 011
+Reentregar evento com mesmo ID; testar acumulado 100→150 e mudança de handle.
+Um efeito por evento; acumulados convertidos conforme contrato do provedor, nunca somados como deltas por suposição; perfil estável.
+WT-026AprovadoAT-09; §4.1Achados —
+Atingir 20 C emt 0, sem novos likes/gasto; avançar 30 s.
+Saldo 19,18,17 emt 10, t 20, t 30; decaimento continua abaixo de 20; zero é piso.
+WT-027MistoAT-09; §4.1Achados 014
+Durante decaimento receber likes; depois compra válida.
+Likes não cancelam timer; compra encerra estado. Nova ativação só ao alcançar 20 novamente. Ordem no mesmo tick pendente.
+WT-028MistoI-F; II §§4.1/7.2Achados 014
+Tetos cheios recebem 400 likes; nova rodada começa.
+Nunca exceder 20 C/teto coletivo E; partida nova C=0 e resíduos pessoais não atravessam partida. Destino de excesso coletivo/reset de E ainda exige decisão.
+WT-029AprovadoAT-10; §§6.3/7.1Achados —
+Medir em 30 s e 60 s cada transição 30/31,50/51,100/101,200/201,300/301,400/401,500/501,600/601.
+Faixa muda só após 2 medições consecutivas; tabela custo/teto exata; redução do teto trunca E e preserva buff ativo.
+WT-030MistoAT-13; §6.3Achados 016
+Todos ficam inativos; buff anterior ainda em duração.
+Nenhuma ativação nova com 0 ativos; buff anterior continua. Faixa/teto durante zero exige decisão.
+
+Cenários 31 a 36
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-031AprovadoAT-11; §7.2Achados —
+Discurso ou Chama ativa emt 0 com custo disponível.
+Discurso: velocidade×1,10 por 6 s/CD 20 s; Chama: dano×1,05 por 8 s/CD 30 s; desconto uma vez; CDs próprios.
+WT-032MistoAT-12; §7.2Achados 015
+Faixa 31–50, E 50, ambas prontas; repetir com uma indisponível.
+Prioridade pelo marcador aprovado; sem saldo negativo; outra pode ativar fora da alternância rígida quando única disponível. Regra de dupla ativação pendente.
+WT-033Misto§§3.5/7.2Achados 003,015
+Spawn em buff ativo; morte de Campeão e nova convocação.
+Novo Campeão não herda CD do morto; prontidão inicial e aplicação de buff no spawn seguem decisão ainda necessária.
+WT-034Aprovado§§6.4/8.1Achados —
+Presentes isolados ou streak com replay, sem likes/comandos.
+Nenhuma variação de dano, crédito, E ou XP causada pelo presente; efeito cosmético não bloqueia motor; registro não é apagado por fila visual.
+WT-035AprovadoI-B §1Achados —
+Participante elegível, 50 votos finais contabilizados e 43 E pessoais; variar resultado.
+Vitória 366=30+100+150+86; empate 286; derrota 266; anulada 30. Bônus de resultado exclusivos.
+WT-036MistoI-B §§1/2/3Achados 019
+51 votos elegíveis; substituições e aliases; votos após cap.
+XP de votos máximo 150; até 50 preferências finais remuneradas; substituição não multiplica. V de representação após cap depende 037.
+
+Cenários 37 a 42
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-037AprovadoI-F; I-B §1Achados 010
+A 60 likes+B40; depois A 40; repetir por lotes diferentes e em teto.
+A 60+B40: E pessoal A 0/B0 e E coletiva 1; A+40: E pessoal A 1/B0, XP pessoal A 2. Lotes distintos com mesmos likes validados produzem mesmos saldos pessoais. Teto coletivo não suprime XP pessoal.
+WT-038MistoI-B §§1/5/9Achados 021,026
+Anular rodada com votos/E e participação válida já comprovada.
+30 XP por participante válido e nenhum MVP; sem XP de voto/E/resultado. Contagens de likes/conquistas e retenção de estatísticas dependem 021/039.
+WT-039Aprovado§8.2Achados —
+XP nos limiares 100,700,2700,10450,31450,63700,252450,257500; também limiar−1.
+Níveis 2,5,10,20,35,50,100,101 respectivamente; um XP abaixo é nível anterior; nível pode passar 100.
+WT-040Misto§§8.3/8.4; AT-26Achados 022,024
+Rollover semanal e migração visual autorizada; usuário muda nickname.
+XP/nível/conquistas permanentes preservados; placares sazonais reiniciados sem apagar histórico; regra de rodada atravessada pendente.
+WT-041Pendente§8.5Achados 023
+Duas ativações em uma rodada; depois 25 partidas com contribuição.
+Conquista não concede atributos; atribuição e contagem distintas exigem decisão, sem inferir que duas ativações na mesma rodada contam duas partidas.
+WT-042AprovadoAT-20; §10.2Achados 026
+Queda antes do commit do resultado, após commit, após pagar um usuário.
+Antes: nenhuma confirmação parcial; após: mesmo resultado e pagamento exatamente uma vez por chave; nunca anular resultado já confirmado.
+
+Cenários 43 a 48
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-043MistoI-G; I-B §§2–8Achados 025
+Checkpoint a cada 10 s; quedas em 9,9 s e logo após snapshot; reexecutar log.
+Estado confirmado reconstruído exatamente: tempo lógico, entidades incluindo Cercos, agendas, resíduos, votos, rodízios, representantes, estatísticas por nascimento, frações territoriais e ledger. Protocolo de checkpoint/log ainda precisa fechar 025.
+WT-044MistoAT-21; §10.2Achados 025,021
+Último checkpoint corrompido ou log truncado; elegíveis em registro íntegro.
+Usar estado anterior comprovadamente consistente ou anular conforme regra; conceder 30 apenas a elegíveis comprovados; nunca inventar eventos.
+WT-045MistoAT-22; §10.2Achados 011,027
+Desconectar TikFinity 60 s e reconectar com backlog e duplicatas.
+Combate autônomo continua e indicador aparece; nada é criado para cobrir lacuna; backlog validado por partida/tempo/ID.
+WT-046AprovadoAT-23; §§6.4/9Achados 029
+Inundar efeitos cosméticos e derrubar renderizador.
+Motor e resultado continuam; cosméticos podem expirar; registros de eventos permanecem; exibição recupera estado oficial.
+WT-047Misto§§6.2/10.1Achados 017,011
+Payload inválido, enorme, saldo negativo, identidade ausente e nome com marcação.
+Nenhuma mutação inválida; origem e formato validados; nome literal; ausência de identidade não fabrica jogador. Limites exatos devem ser aprovados.
+WT-048MistoI-B §9; II §10.3Achados 028
+24 h a 100 eventos/s, incluindo fases de maior geração de Cerco e 32 convencionais, persistência ativa.
+8.640.000 eventos de entrada e 1.728.000 ticks nominais; zero duplicações confirmadas. Medir 20 Hz/60 FPS; cap Cerco, hardware, picos e percentis precisam aprovação. Não usar 32 como máximo total.
+
+Cenários 49 a 54
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-049PropostoAT-24; §10.3Achados 027,028
+Proposta: base 100/s, picos 1000/s por 10 s a cada 10 min; mistura de chat/likes/gifts.
+Filas retornam ao patamar inicial dentro do SLA aprovado, sem fome por facção e sem alteração de eventos confirmados. Perfil/SLA ainda propostos.
+WT-050Misto§§9/10.2Achados 025,026,028
+Disco cheio, banco indisponível, checkpoint falha e renderer congela.
+Nenhuma confirmação sem durabilidade; alerta e recuperação/anulação coerentes; resultado oficial nunca reescrito. Política operacional/RTO pendentes.
+WT-051Misto§9Achados 029
+Capturar 1080×1920 no LIVE Studio e observar em celular com overlays ativos.
+HP, setores, tempo e comandos PT/EN legíveis; cor não é único sinal; efeitos não ocultam resultado. Medidas de safe area precisam homologação.
+WT-052PendenteP-09; §§1/6.4/9Achados 018
+Revisar conta, textos, assets e políticas vigentes antes da publicação.
+Evidências datadas e decisão do proprietário; nenhuma aprovação inferida de página comercial do integrador.
+WT-053AprovadoI-B §§2/3; I-GAchados 006,025
+31 convencionais globais (Rubra 15/Safira 16), espaço local, duas tentativas Rubra e saldo suficiente; queda após débito.
+Primeira pode ocupar 32ª vaga; segunda cancela sem débito. Spawn e débito atômicos; máximo 1 Campeão vivo por espectador. O GDD já indica cancelamento sequencial; não precisa inventar novo mecanismo.
+WT-054Pendente§§6.2/6.3Achados 016,020
+20 contas repetem comandos e alternam atividade perto das faixas.
+Não duplicar uma identidade; comportamento mult_contas e falso positivo avaliados contra política antiabuso aprovada, sem alegar unicidade humana só por ID.
+
+Cenários 55 a 60
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-055AprovadoI-B §1; II §3.4Achados —
+Inspecionar atributos normais e Campeões.
+G 120 HP/dano 10/1 ataque/s/alcance 1/vel 4/0%; D 200/7/0,7/1/3/10%; A 75/12/1,2/3/5/0%. Campeões HP 138/230/87, dano 11/7,7/13,2, proteção 5/15/5%. Cerco 90/6 ou 35/0,5/2/2/0%. Nexus 2000/20/1/4/imóvel, defesa pendente.
+WT-056MistoI-B §§2/4; II §6.2Achados —
+Aliases PT/EN aprovados: !G/!W, !D/!GD, !A; !status em 0/29/30 s; novo !meustatus.
+Aliases de classe são oficiais. !status histórico limitado 30 s; não presumir o mesmo contrato para !meustatus/!mystatus. Case/gramática e saída nova precisam decisão.
+WT-057Aprovado§8.3Achados —
+Níveis 1,4,5,9,10,14,15,19,20,29,30,39,40,49,50,59,60,69,70,79,80,89,90,94,95,100,101.
+Patentes correspondem às 14 faixas do§8.3; retema autorizado só muda apresentação e preserva IDs/XP/histórico.
+WT-058PendenteI-B §§4/9; II §8.5Achados 019,021
+Primeira participação, 49→50 batalhas e 99→100 vitórias válidas.
+Execução bloqueada até 039 esclarecer vigência das quatro conquistas históricas; se mantidas, testar limiares e unicidade sem bônus de atributos. Nenhuma conquista nova de Campeão está aprovada.
+WT-059PendenteI-B §§4/6; II §8.4Achados 022
+Dois usuários empatam em likes/XP e partidas cruzam temporada.
+7 rankings históricos e 4 destaques precisam fórmulas/empates. Até 6 MVPs novos não substituem esses destaques por inferência; estatísticas de Campeão não viram ranking permanente.
+WT-060Misto§§3.1/3.6/5Achados 001
+Mapa espelhado com alvos equidistantes, aliados sobrepostos e inimigos bloqueando.
+Sem cruzar lanes, aliado não bloqueia fisicamente; inimigo corpo a corpo bloqueia; alvo e alcance seguem geometria aprovada.
+
+Cenários 61 a 66
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-061AprovadoI-B §2Achados 005,006
+Uma classe A recebe todos votos; saldo 4, sem Campeão A e com 2 vagas locais.
+Primeira convoca Campeão A por 2; segunda comum A por 1; saldo 1 e 2 unidades, sem segundo Campeão A no corredor.
+WT-062AprovadoI-B §2Achados 005,006,012
+G 10 votos, D 8, A 2; saldo 5, espaço, sem Campeões; destino de G/D definido.
+Tentativa G Campeão 3; sobra 2, D não cabe nem comum 3, cancela. Não promover A terceira. Se saldo 7, G 3+D 4.
+WT-063AprovadoI-B §2Achados 005
+Janela fecha sem saldo; depois chegamlikes sem novo comando; por fim chega classe válida.
+Falha sem débito/sem fila; likes sozinhos não reabrem janela. Novo comando válido abre 10 s.
+WT-064PendenteI-B §2Achados 012,013,019
+A esquerda; depois troca para G; manda direita; fecha; manda rota na janela seguinte sem classe.
+Nenhuma preferência vaza entre janelas nem duplica rota estratégica. Associação da rota antiga à nova classe e limpeza da classe pendente aguardam tabela 012.
+WT-065AprovadoI-C; I-B §1Achados 008
+Reversão de−100: 5 s sem Cerco, 3 s com Cerco, depois Cerco morre; demais aliados ficam.
+Taxa 10/s leva−50; taxa 20/s leva+10; 9 s finais levam+100. Total 17 s, sem retroatividade/reinício, posse só no extremo.
+WT-066MistoI-B §1Achados 042
+Cerco sozinho no ponto neutro 0; repetir em ponto com dono rival cujo progresso atravessa 0.
+Ratificar 10 s no neutro e 10 s reversão completa com Cerco; não reduzir neutro a 5 s por extensão implícita. Passagem por 0 não muda dono. Decisão 042 antes do oráculo completo.
+
+Cenários 67 a 72
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-067MistoI-B §§1/8Achados 035,036
+2 Campeões participam de 1 ponto de progresso; um sai; outro produz 1; terceiro entra em intervalo posterior.
+Primeiro intervalo 0,5 cada; segundo 1 só ao remanescente. Comuns/Cercos não dividem crédito. Soma por intervalo=progresso quando há elegíveis, zero se nenhum. Frações/intervalos dependem precisão aprovada.
+WT-068MistoI-B §8Achados 035
+Campeão produz 20 pontos; inimigo reverte 20; primeiro produz 20 de novo.
+Preservar 20 iniciais e contabilizar novo progresso válido conforme elegibilidade final; nenhum estorno. Verificar se restauração de ponto ainda próprio é elegível antes de prever 40.
+WT-069MistoI-B §7Achados 034
+Golpe 100 contra aliado com 25% proteção; Muralha eleva ao teto 40%.
+HP perdido 60 em vez 75; ganho marginal da Muralha 15, não 20. Creditar 15 apenas se causalidade e atribuição forem aprovadas. Muralha redundante não ganha parcela duplicada.
+WT-070MistoI-B §§4/7Achados 034,036
+Defensor perto do Nexus recebe dano sem ataque a aliado/objetivo detectado.
+Registrar todo HP efetivamente perdido na ficha; proximidade sozinha não produz pontuação defensiva. Detecção de ameaça deve ser aprovada e demonstrável.
+WT-071PendenteI-B §4Achados 036,007
+Alvo 5 HP sofre golpes simultâneos 10+10; dois Campeões envolvidos.
+Soma do dano efetivo registrado contra alvo≤5; eliminação não pode ser duplicada por iteração. Divisão/crédito de kill precisam decisão; nenhum teste integral passa sem ela.
+WT-072AprovadoI-B §3Achados 037,006,025
+Dois spawns seguidos; U nunca representou P 10, V já representou P 1000; U está elegível.
+U precede V no primeiro. No segundo U excluído enquanto vivo; escolher próximo elegível ou genérico. Replay mantém vínculo.
+
+Cenários 73 a 78
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-073MistoI-B §3Achados 037,033
+Nenhum espectador elegível; saldo/vagas permitem Campeão.
+Campeão genérico nasce sem bloquear convocação; não inventar identidade nem dar XP por esse vínculo. Elegibilidade de genérico para MVP depende 033.
+WT-074PendenteI-B §§3/6Achados 033,037
+Um usuário tem 51 votos contabilizados, 50 remunerados; dois nascimentos da mesma classe em momentos distintos.
+P e agregação MVP seguem decisões específicas de V e unidade candidata; cap XP não limita P por inferência. Resultado numérico bloqueado até 033/037.
+WT-075PendenteI-B §6Achados 033
+Indicador com referência 0; candidatos empatados; maior peso repetido; classes ausentes.
+Rejeitar fórmula sem domínio definido; normalizadores positivos/escala aprovada, desempate normativo; não inventar candidato ausente. Pesos de referência não são oráculo final.
+WT-076MistoI-B §5Achados 029,033
+Vitória, empate eanulada; observar 0/5/10/15 s de resultados.
+Vitória: resultado, vencedora, perdedora; empate: resultado, Rubra, Safira; anulada: aviso sem MVP em todas. Máximo 3 por facção, um/classe; 0–5,5–10,10–15 como proposta de fronteiras a ratificar.
+WT-077MistoI-B §§1/9Achados 032,007,025
+Contar todos spawns com relógio controlado, nenhuma morte, até 300 s; reiniciar perto de 20 s.
+6 Cercos iniciais e 6 por onda 20..280=90 antes 300. Onda 300 depende decisão; nunca fora docombate ou duplicada por replay. Teto 32 só convencionais.
+WT-078PendenteI-B §1; I-DAchados 040,003,015
+Cerco recebe Muralha; postura muda; Chama/Discurso ativos; ataca Nexus.
+Proteção passiva 0 e Muralha elegível 20 pp, teto 40%; buffs/postura Nexus e defesa estrutural conforme matriz aprovada 040. Não aprovar DPS estrutural com hipóteses ocultas.
+
+Cenários 79 a 84
+Teste e base
+Preparação e entradas
+Oráculo e critério de aprovação
+WT-079PendenteI-F; I-B §1Achados 009,019,011
+Entrada 25 s; likes antes de facção; usuário enfila para próxima; nova preparação inicia.
+Entrada após preparação não recebe participação atual. Fronteira exata 25 s, crédito de likes/XP e confirmação dafila na próxima precisam decisão 009/019.
+WT-080PendenteI-B §4Achados 038,017,027
+Duas consultas duplicadas; emissor renomeado; resposta atrasa atravessando partida; erro externo.
+Só consulta próprio perfil via ID; resposta identifica partida e segue política de saída/retry aprovada. Sem alteração do estado competitivo; semexpor campos não aprovados.
+WT-081MistoI-B §§4/8; I-GAchados 025,035,036
+Três Campeões dividem 1 ponto; queda/replay após registrar; resultado depois.
+Conservar soma≤1 sem arredondar cada 1/3 para 1; mesmos créditos após replay; totais por usuário iguais à soma das aparições; não criar ranking permanente. Precisão contratada antes deexecutar.
+WT-082PendenteI-B §2; I-GAchados 006,007,012,025
+Duas facções fecham janelas no mesmo instante; saldo e vagas apertados, marcadores empatados.
+Mesmo estado e eventos ordenados geram mesmosspawns, rodízios e débitos após replay. Ordemglobal e atualização de marcadores devem estar aprovadas; nenhum saldo negativo.
+WT-083MistoI-F; I-B §9Achados 011,017,024
+Payload sem ID do evento, sem identidade, acumulado ambíguo; replay comavatar inválido.
+Somente diagnóstico quando identidade/unicidade/semântica não verificáveis; zero efeito econômico/competitivo. Avatar inválido não altera atributos nem bloqueia motor; fallback visual a aprovar.
+WT-084AprovadoI-B §1; II §8.2Achados 020,019
+50 votos, 430 E, participação elegível; vitória/empate/derrota/anulada.
+1140/1060/1040/30 XP respectivamente; curva inalterada. Ao repetir 1140 desde 0: nível 10 em 3 partidas, 50 em 56,100 em 222. Hipótese aritmética, não benchmark deprogressão.
+
+Evidências e perfil de carga a aprovar
+Lógica Casos com relógio controlado, espelhamento de facções e iteração invertida de entidades. Resultado, compras e estatísticas devem coincidir para mesma entrada ordenada. Sequência normativa ainda depende das decisões listadas.
+Integração Amostras reais autorizadas, anonimizadas e versionadas com significado de cada campo; distinguir delta/acumulado, ID deusuário/evento, lotes, reset, reconexão e saída de chat. Receber WebSocket não comprova exatamente uma entrega.
+Falhas Quedas antes/depois do commit, snapshot truncado, log parcial, disco cheio, banco indisponível, render perdido e desconexão isolada. Contratos e RTO devem ser aprovados antes de executar; não requer implementação nesta auditoria.
+Carga Meta 100 eventos/s×24 h=8.640.000 eventos; 20 Hz=1.728.000 ticks.32 convencionais não são 32 entidades totais. Perfil de pior caso inclui Cercos e estatísticas MVP. Aprovar CPU/GPU/RAM/disco, versões, mistura/tamanho dos payloads, picos, latência p 95/p 99, memória/retenção e orçamento por tick.
+Dados e volume Exemplo puramente dimensional: 1 KB decimal por evento gera 8,64 GB de payload antes de índices/logs/checkpoints. Não é tamanho medido. Aprovar retenção e compactação sem eliminar evidência necessária a dedupe ou recompensa.
+Visual e saída Validar em 1080×1920 e celular real com overlays; três telas de 5 s, nome/avatar, classe ausente eanulada. Limites da resposta pública ainda não aprovados; não usar entrega de chat como condição para confirmar resultado.

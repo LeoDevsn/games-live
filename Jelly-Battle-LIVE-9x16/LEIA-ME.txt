@@ -1,0 +1,52 @@
+JELLY BATTLE — TIKFINITY + FISH AUDIO
+
+1. Instale Node.js 22 ou superior.
+2. Copie .env.example para .env e preencha a chave Fish Audio e os IDs das
+   duas vozes: A = Bob Esponja, B = Patrick. Não envie sua chave pelo chat.
+3. Execute INICIAR.bat e abra http://127.0.0.1:4174.
+   Para configurar as vozes, use CONFIGURAR-VOZ.bat. Esses atalhos ligam
+   o servidor em segundo plano e abrem a página quando ela estiver pronta.
+4. Abra TikFinity Desktop no mesmo computador e conecte a live.
+5. No jogo, abra Integração da live e clique em Conectar TikFinity.
+6. Configure o convite de entrada no Chatbot conforme CHATBOT.md.
+7. O espectador digita A ou B no chat. Seus likes e presentes ajudam esse time.
+8. Teste as vozes em Testar voz com nome, escolhendo Fish Audio.
+
+LIVE STUDIO
+Adicione uma fonte Link com http://127.0.0.1:4174/?studio=1 e habilite o som.
+Esse modo conecta ao TikFinity e começa rodadas automaticamente.
+Para operação manual, capture a janela da página normal.
+Use somente uma instância com som para não duplicar agradecimentos.
+
+FALAS
+As pastas em public/assets/audio/bobesponja e patrick são carregadas
+automaticamente ao iniciar: tela inicial, durante a batalha, capturado,
+errou a captura, presente especial e vitoria.
+A tela inicial dura 15 segundos antes da partida de 2 minutos.
+Em presente especial, os nomes dos arquivos são frases com {nome}.
+A Fish Audio fala a frase completa com o nome de quem enviou o presente.
+Também pode usar .txt com uma frase por linha nessa pasta.
+As outras situações usam os áudios gravados.
+
+O Chatbot precisa estar autenticado e configurado no TikFinity para enviar
+o convite. O jogo apenas recebe eventos e registra a escolha A/B.
+Sem Fish Audio configurada, o bônus continua, mas não há voz automática.
+As vozes dependem dos IDs escolhidos na conta Fish Audio; as pastas não
+criam uma voz nova na conta automaticamente.
+
+Após alterar pastas, .env ou live-config.json, reinicie INICIAR.bat.
+As configurações feitas dentro do jogo são locais ao navegador usado.
+Confira README.md para presentes personalizados, testes e exportação.
+
+TESTES
+  npm.cmd test
+
+EXPORTAR HTML PARA SIMULAÇÃO OFFLINE
+  node scripts/export-standalone.mjs
+Use o servidor local para a integração completa com a live e Fish Audio.
+
+NOVA VERSAO: TikTok LIVE 9:16: http://127.0.0.1:4174/?studio=1 (1080 x 1920).
+Primeiro espectador que escreve A ou B inicia a batalha automaticamente.
+TikFinity Desktop deve estar aberto no MESMO computador e com Event API/WebSocket na porta 21213.
+O arquivo .env privado nao acompanha o ZIP: copie da sua instalacao anterior.
+Para abrir diretamente a arena LIVE vertical, clique INICIAR-LIVE-9X16.bat.
